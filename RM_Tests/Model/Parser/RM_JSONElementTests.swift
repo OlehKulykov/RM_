@@ -54,7 +54,7 @@ class RM_JSONElementTests: XCTestCase {
 		XCTAssertTrue(json["status"].string == "ok", "Located string is not as expected.")
 
 		XCTAssertNotNil(json["data"].array, "Can't find array element.")
-		XCTAssertTrue(json["data"].array?.count == 2, "Located array has wrong count.")
+		XCTAssertTrue(json["data"].array?.count == 1, "Located array has wrong count.")
 
 		guard let
 			datas = json["data"].array,
