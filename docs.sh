@@ -15,7 +15,7 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; th
     git config user.name ${GIT_NAME}
     git add -A
     git commit -m "Documentation from Travis build of $TRAVIS_COMMIT"
-    git push --force --quiet "https://${GH_TOKEN}@github.com/OlehKulykov/RM_.git" master:gh-pages > /dev/null 2>&1
+    git push --force "https://${GH_TOKEN}@github.com/OlehKulykov/RM_.git" master:gh-pages
         
     echo -e "Published documentation to gh-pages.\n"
 

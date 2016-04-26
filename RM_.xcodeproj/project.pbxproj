@@ -25,6 +25,7 @@
 		3D49767F1CCF9E6600401EA1 /* RM_DALBaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D49767E1CCF9E6600401EA1 /* RM_DALBaseTests.swift */; };
 		3D4976831CCFA6DB00401EA1 /* RM_DALCrossThreadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4976821CCFA6DB00401EA1 /* RM_DALCrossThreadTests.swift */; };
 		3D4976861CCFA96000401EA1 /* RM_DAL+UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4976851CCFA96000401EA1 /* RM_DAL+UserTests.swift */; };
+		3D572B5C1CD026C0008A3FEE /* RM_NetworkIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D572B5B1CD026C0008A3FEE /* RM_NetworkIndicator.swift */; };
 		3D65F1AF1CCAB9A8004F8B29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D65F1AE1CCAB9A8004F8B29 /* AppDelegate.swift */; };
 		3D65F1B11CCAB9A8004F8B29 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D65F1B01CCAB9A8004F8B29 /* ViewController.swift */; };
 		3D65F1B41CCAB9A8004F8B29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D65F1B21CCAB9A8004F8B29 /* Main.storyboard */; };
@@ -74,6 +75,7 @@
 		3D49767E1CCF9E6600401EA1 /* RM_DALBaseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RM_DALBaseTests.swift; sourceTree = "<group>"; };
 		3D4976821CCFA6DB00401EA1 /* RM_DALCrossThreadTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RM_DALCrossThreadTests.swift; sourceTree = "<group>"; };
 		3D4976851CCFA96000401EA1 /* RM_DAL+UserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RM_DAL+UserTests.swift"; sourceTree = "<group>"; };
+		3D572B5B1CD026C0008A3FEE /* RM_NetworkIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RM_NetworkIndicator.swift; sourceTree = "<group>"; };
 		3D65F1AB1CCAB9A8004F8B29 /* RM_.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RM_.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D65F1AE1CCAB9A8004F8B29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D65F1B01CCAB9A8004F8B29 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +187,14 @@
 				3D4976851CCFA96000401EA1 /* RM_DAL+UserTests.swift */,
 			);
 			path = "Specific DALs";
+			sourceTree = "<group>";
+		};
+		3D572B5A1CD026AC008A3FEE /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				3D572B5B1CD026C0008A3FEE /* RM_NetworkIndicator.swift */,
+			);
+			path = Misc;
 			sourceTree = "<group>";
 		};
 		3D65F1A21CCAB9A8004F8B29 = {
@@ -365,6 +375,7 @@
 			isa = PBXGroup;
 			children = (
 				3DB398691CCAFBB200A387E0 /* Base */,
+				3D572B5A1CD026AC008A3FEE /* Misc */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -502,6 +513,7 @@
 				3D2101A21CCE2E3F00E1CBFD /* RM_User+CoreDataProperties.swift in Sources */,
 				3D65F1AF1CCAB9A8004F8B29 /* AppDelegate.swift in Sources */,
 				3D65F1EC1CCAD270004F8B29 /* RM_User.swift in Sources */,
+				3D572B5C1CD026C0008A3FEE /* RM_NetworkIndicator.swift in Sources */,
 				3D2101A01CCE2E3A00E1CBFD /* RM_Entity+CoreDataProperties.swift in Sources */,
 				3D4976791CCF894700401EA1 /* RM_DALs.swift in Sources */,
 			);
