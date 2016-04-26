@@ -1,21 +1,20 @@
 language: objective-c
 osx_image: xcode7.3
 xcode_sdk: iphonesimulator9.3
+
 install:
 - gem install xcpretty --no-rdoc --no-ri --no-document
 - gem install jazzy --no-rdoc --no-ri --no-document
+
 script:
 - xcrun swift -version
 - open -b com.apple.iphonesimulator
-- set -o pipefail && xcodebuild test -project RM_.xcodeproj -scheme RM_ -destination
-  'platform=iOS Simulator,name=iPhone 4s,OS=8.4' | xcpretty -c
-- set -o pipefail && xcodebuild test -project RM_.xcodeproj -scheme RM_ -destination
-  'platform=iOS Simulator,name=iPhone 6,OS=9.0' | xcpretty -c
-- set -o pipefail && xcodebuild test -project RM_.xcodeproj -scheme RM_ -destination
-  'platform=iOS Simulator,name=iPhone 6 Plus,OS=9.3' | xcpretty -c
-- set -o pipefail && xcodebuild test -project RM_.xcodeproj -scheme RM_ -destination
-  'platform=iOS Simulator,name=iPad Pro,OS=9.3' | xcpretty -c
+- set -o pipefail && xcodebuild test -project RM_.xcodeproj -scheme RM_ -destination 'platform=iOS Simulator,name=iPhone 4s,OS=8.4' | xcpretty -c
+- set -o pipefail && xcodebuild test -project RM_.xcodeproj -scheme RM_ -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.0' | xcpretty -c
+- set -o pipefail && xcodebuild test -project RM_.xcodeproj -scheme RM_ -destination 'platform=iOS Simulator,name=iPhone 6 Plus,OS=9.3' | xcpretty -c
+- set -o pipefail && xcodebuild test -project RM_.xcodeproj -scheme RM_ -destination 'platform=iOS Simulator,name=iPad Pro,OS=9.3' | xcpretty -c
 - ./docs.sh
+
 env:
   global:
   - secure: eW0y56L3woCQgvw5TcmSv8b7qoDa5EvA6kjFiIuU7RnfB0jl75CnEsG44ZaUqnxQjlikX8pkUAuZkF0B8c5VV+GQ72uuAat6jp+4zp+w5qLMHznRbKbZqWQLhXDeHtsJNCN6dAZMkRkMHk1iwRw75g35cHJE5/u0l8tUPvB/iJkfx+FZArzBW9vKn6tzzXAvIFBFrjYTrT/1tI41/drAvznh2SUX2ZpjCQ4WcQiB45nNpzcgQd/ZqUwizYR5YjQeCyq/NIz8aOCZnHxBWTHB6kuC6FwFnswNAvkMvVFFOe5bWnpyCxychVT4PSx0o7xZTQYMBUz/KpJ8TTfCZB130WN9Bs/UL/s/lfIB3NInL73/1+deZSslVbf0T7V4w8A2Ldww+EGS/YYLLPN67Y8+q5Y/ItSG6UYlbwU3L+q0a5fFGVd5Wk4ikRkLncuwqOON2JLR/M5rMsHJf0wf2GxHp6XXL+9mktR5RhvswEFuY/oY6tSvbKz46/SZ2gK9OlXRr/Da+r6sUmQgWKBFvVlvgnmusb+/3+kOGWC5twUcqj9juEoL1uIYHVSFaBQzJHM/a4u3gGv5BGi8hFCzxeUHDQcyPAn7BhyxlIbPAxXLb/abED3DqCFtQEHuQXjYyrfbNRxG+afWB77J9XtzjWU+tKoYyOchYKJbTA+huuDok2o=
