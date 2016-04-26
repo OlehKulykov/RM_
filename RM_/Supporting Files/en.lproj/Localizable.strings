@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  RM_
+
+  Created by Oleh Kulykov on 25/04/16.
+  Copyright © 2016 Oleh Kulykov. All rights reserved.
+*/
+
+"apiRequestCantHandleResponce" = "Unfortunately, request can't handle the responce.\nPlease let us know and try again later.";

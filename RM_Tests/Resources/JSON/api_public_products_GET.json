@@ -1,0 +1,17 @@
+{
+	"status": "ok",
+	"data": [
+			 {
+			 "_id": "56baf9d2bb375c3477176bd9",
+			 "auditing": {
+			 "canbedeleted": true,
+			 "deleted": false
+			 },
+			 "price": 148.85,
+			 "surcharge": 0.1
+			 },
+			 {
+
+			 }
+			 ]
+}
