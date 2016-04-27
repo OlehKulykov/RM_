@@ -16,6 +16,8 @@ API request to communicate with server API.
 Can be used with any available parser to convert received raw data
 into internal, parsable `RM_ParsableElement` presentation.
 
+- Note: During the network request `RM_NetworkIndicator` visibility will be updated.
+
 Example: pseudo code for the basic GET request.
 
 ```swift
@@ -52,8 +54,8 @@ class RM_APIRequest<Parser: RM_ParsableElementType> {
 	private var completionHandler: (RM_Result<Parser> -> Void)?
 
 
-	/// Current session task for the requent.
-	private var task: NSURLSessionTask?
+	/// Current session data task for the requent.
+	private var dataTask: NSURLSessionTask?
 
 
 	/**
@@ -96,8 +98,8 @@ class RM_APIRequest<Parser: RM_ParsableElementType> {
 	*/
 	func cancel() {
 		completionHandler = nil
-		task?.cancel()
-		task = nil
+		dataTask?.cancel()
+		dataTask = nil
 	}
 
 
@@ -135,10 +137,11 @@ class RM_APIRequest<Parser: RM_ParsableElementType> {
 			return
 		}
 
-		task = NSURLSession.sharedSession().dataTaskWithRequest(request) { [weak self] (data, response, error) in
+		dataTask = NSURLSession.sharedSession().dataTaskWithRequest(request) { [weak self] (data, response, error) in
 			self?.processTaskResult(data, response: response, error: error)
 		}
-		task?.resume()
+		dataTask!.resume()
+		RM_APIRequest.setNetworkIndicatorVisibility(dataTask!)
 	}
 
 
@@ -165,14 +168,30 @@ class RM_APIRequest<Parser: RM_ParsableElementType> {
 	/// Call the completion handler(if not canceled) with an operation result
 	/// and clean up request specific data, like task and handler.
 	private func informResult(result: RM_Result<Parser>) {
-		guard let handler = completionHandler else {
+		guard let
+			handler = completionHandler,
+			task = dataTask
+		else {
 			return
 		}
 
 		completionHandler = nil
-		task = nil
+		dataTask = nil
+
+		RM_APIRequest.setNetworkIndicatorVisibility(task)
 
 		handler(result)
+	}
+
+	/// Set `RM_NetworkIndicator` visibility based on task status.
+	/// - Parameter task: The network session task.
+	private static func setNetworkIndicatorVisibility(task: NSURLSessionTask) {
+		switch task.state {
+		case .Running, .Suspended:
+			RM_NetworkIndicator.visible = true
+		default:
+			RM_NetworkIndicator.visible = false
+		}
 	}
 
 }
