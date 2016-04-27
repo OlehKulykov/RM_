@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/OlehKulykov/RM_.svg?branch=master)](https://travis-ci.org/OlehKulykov/RM_)
 
 ## Project directory structure
-Current project directory structure conforms [Model-View-Controller design pattern (MVC)][1], plus extra project specific **Supporting Files**:
+Current project directory structure conforms [Model-View-Controller][1] design pattern (MVC), plus extra project specific **Supporting Files**:
 - **Model** - _Application’s data and the logic that manipulates that data._
   - **[Core Data]** - _Manipulation logic, data model, managed objects, etc._
     - **[Core Data] Stack** - _Stask that manipulates with context and low level managed objects._
@@ -23,8 +23,6 @@ Current project directory structure conforms [Model-View-Controller design patte
 Code commenting style conforms [Apple Markup Format][3] that allows to generate [documentation][4] from code comments.
 
 This [documentation][4] generates using [jazzy][5] command-line utility after passing all tests on [Travis] continuous integration service.
-
-Generated documentations from code comments: 
 
 
 
