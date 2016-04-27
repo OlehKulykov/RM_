@@ -18,6 +18,7 @@ Use `visible` static variable to change visibility.
 - Note: Based on counter logic, so if you want to change this value you need to set reverse value same times.
 
 Example: 
+
 ```swift
 	RM_NetworkIndicator.visible = true // visible
 	RM_NetworkIndicator.visible = true // visible
