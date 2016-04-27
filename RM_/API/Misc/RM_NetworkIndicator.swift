@@ -29,6 +29,8 @@ Example:
 */
 class RM_NetworkIndicator {
 
+	//MARK: Private variables and functions
+
 	/// Counts number of visible calls. Positive value is visible, otherwice invisible.
 	/// - Warning: Get/set value from main thread. Min value is zero - invisible.
 	private static var visibilityCounter: Int = 0 {
@@ -45,6 +47,8 @@ class RM_NetworkIndicator {
 		visibilityCounter = max(newValue, 0)
 	}
 
+
+	//MARK: Public variables
 
 	/**
 	Set/get network indicator visibility.

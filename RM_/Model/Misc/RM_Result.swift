@@ -13,7 +13,7 @@ import Foundation
 /**
 Type of operation result, which are success or failure with additional object.
 
-'T' - type of object provided with `Success` case.
+`T` - type of object provided with `Success` case.
 */
 enum RM_Result<T> {
 
