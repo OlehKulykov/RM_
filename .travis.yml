@@ -12,7 +12,6 @@ script:
 - set -o pipefail && xcodebuild test -project RM_.xcodeproj -scheme RM_ -destination 'platform=iOS Simulator,name=iPhone 4s,OS=8.4' | xcpretty -c
 - set -o pipefail && xcodebuild test -project RM_.xcodeproj -scheme RM_ -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.0' | xcpretty -c
 - set -o pipefail && xcodebuild test -project RM_.xcodeproj -scheme RM_ -destination 'platform=iOS Simulator,name=iPhone 6 Plus,OS=9.3' | xcpretty -c
-- set -o pipefail && xcodebuild test -project RM_.xcodeproj -scheme RM_ -destination 'platform=iOS Simulator,name=iPad Pro,OS=9.3' | xcpretty -c
 - ./docs.sh
 
 env:
