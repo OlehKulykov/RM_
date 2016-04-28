@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo -e "Executing docs"
+echo -e "Executing docs."
 
 if [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then
     echo -e "Generating Jazzy output \n"
