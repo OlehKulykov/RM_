@@ -13,7 +13,7 @@ Add shadows to the view.
 */
 extension UIView {
 
-	// Set shadow path with common parameters.
+	/// Set shadow path with common parameters.
 	private func setShadowPath(path: CGPath, color: UIColor, offset: CGSize, radius: CGFloat, opacity: CGFloat) {
 		layer.masksToBounds = false
 		layer.shadowRadius = radius
