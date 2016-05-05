@@ -30,6 +30,7 @@ class RM_BackgroundedSectionTableViewController: UIViewController {
 }
 
 
+//MARK: TableView DataSource. Nothing special, just example
 extension RM_BackgroundedSectionTableViewController: UITableViewDataSource {
 
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -42,23 +43,25 @@ extension RM_BackgroundedSectionTableViewController: UITableViewDataSource {
 
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+
+		// Setup the cell with data
 		if let textLabel = cell.textLabel {
 			textLabel.text = "indexPath section: \(indexPath.section), row: \(indexPath.row)"
 			textLabel.font = RM_Font.LatoRegular.fontWithSize(14)
 			textLabel.textColor = UIColor(hexString: "#6D757A")
 		}
-		cell.contentView.backgroundColor = UIColor.clearColor()
-		cell.backgroundColor = UIColor.clearColor()
 		return cell
 	}
 }
 
-extension RM_BackgroundedSectionTableViewController: RM_GroupedTableViewDelegate, UIScrollViewDelegate {
+extension RM_BackgroundedSectionTableViewController: RM_BackgroundedSectionTableViewDelegate, UIScrollViewDelegate {
 
+	//MARK: UIScrollViewDelegate, inform tableview that the table view did scrolled
 	func scrollViewDidScroll(scrollView: UIScrollView) {
 		tableView.onDidScroll()
 	}
 
+	//MARK: RM_BackgroundedSectionTableViewDelegate, manage table view section backgrounds
 	func tableView(tableView: RM_BackgroundedSectionTableView, sectionBackground section: Int) -> RM_TableViewSectionBackground? {
 		let background = RM_SectionBackground()
 		background.backgroundColor = UIColor.whiteColor()

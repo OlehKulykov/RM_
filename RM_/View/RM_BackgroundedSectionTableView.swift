@@ -10,11 +10,11 @@ import UIKit
 
 public class RM_TableViewSectionBackground : UIView {
 
-	public var calculatedFrame = CGRectZero
+	private(set) var calculatedFrame = CGRectZero
 }
 
 @objc
-public protocol RM_GroupedTableViewDelegate {
+public protocol RM_BackgroundedSectionTableViewDelegate {
 	optional func tableView(tableView: RM_BackgroundedSectionTableView, sectionBackground section: Int) -> RM_TableViewSectionBackground?
 
 	optional func tableView(tableView: RM_BackgroundedSectionTableView, sectionBackgroundEdgeInsets section: Int) -> UIEdgeInsets
@@ -55,7 +55,7 @@ public class RM_BackgroundedSectionTableView : UITableView {
 
 	private func createBackgroundViewForSection(section: Int) {
 		if backgroundViewForSection(section) == nil {
-			guard let view = (delegate as? RM_GroupedTableViewDelegate)?.tableView?(self, sectionBackground: section) else {
+			guard let view = (delegate as? RM_BackgroundedSectionTableViewDelegate)?.tableView?(self, sectionBackground: section) else {
 				return
 			}
 			view.tag = tagForSection(section)
@@ -65,7 +65,7 @@ public class RM_BackgroundedSectionTableView : UITableView {
 	}
 
 	private func calculateSectionBackgroundFrames() {
-		let sectionDelegate = delegate as? RM_GroupedTableViewDelegate
+		let sectionDelegate = delegate as? RM_BackgroundedSectionTableViewDelegate
 		for section in 0..<numberOfSectionsInDataSource {
 			if let back = backgroundViewForSection(section) {
 				var frame = rectForSection(section)
