@@ -8,8 +8,10 @@
 
 import UIKit
 
-// Interface Builder inpectable properties. No need to hardcode this parameters.
 
+/**
+Interface Builder inpectable properties. No need to hardcode this parameters.
+*/
 extension UIView {
 
 	@IBInspectable public var cornerRadius: CGFloat {

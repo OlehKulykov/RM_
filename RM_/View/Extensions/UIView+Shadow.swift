@@ -8,6 +8,9 @@
 
 import UIKit
 
+/**
+Add shadows to the view.
+*/
 extension UIView {
 
 	// Set shadow path with common parameters.
