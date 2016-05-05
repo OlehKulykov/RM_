@@ -1,7 +1,9 @@
 [![Build Status](https://travis-ci.org/OlehKulykov/RM_.svg?branch=master)](https://travis-ci.org/OlehKulykov/RM_)
+[![OnlineDocumentation Status](https://img.shields.io/badge/online%20documentation-generated-brightgreen.svg)](http://olehkulykov.github.io/RM_)
 
 ## Project directory structure
 Current project directory structure conforms [Model-View-Controller][1] design pattern (MVC), plus extra project specific **Supporting Files**:
+
 - **Model** - _Application’s data and the logic that manipulates that data._
   - **[Core Data]** - _Manipulation logic, data model, managed objects, etc._
     - **[Core Data] Stack** - _Stask that manipulates with context and low level managed objects._
