@@ -40,10 +40,42 @@ public protocol RM_BackgroundedSectionTableViewDelegate {
 	optional func tableView(tableView: RM_BackgroundedSectionTableView, sectionBackground section: Int) -> RM_TableViewSectionBackground?
 
 
+	/**
+	Ask gelegate object for the section background edge insets. Provide positive values to decrease section background size.
+	Default is `UIEdgeInsetsZero`.
+
+	- Parameter tableView: The table view that required for the section insets.
+
+	- Parameter section: Requested section index.
+	
+	- Returns: Section background edge insets.
+	*/
 	optional func tableView(tableView: RM_BackgroundedSectionTableView, sectionBackgroundEdgeInsets section: Int) -> UIEdgeInsets
 
+
+	/**
+	Ask gelegate object that section background should be placed also under section footer.
+	Default is `false` - ignore section footer.
+
+	- Parameter tableView: The table view that could place section background under footer.
+ 
+	- Parameter section: Requested section index.
+	
+	- Returns: `true` - section background also locates under footer, `false` - ignore section footer.
+	*/
 	optional func tableView(tableView: RM_BackgroundedSectionTableView, sectionBackgroundUnderFooter section: Int) -> Bool
 
+
+	/**
+	Ask gelegate object that section background should be placed also under section header.
+	Default is `false` - ignore section header.
+
+	- Parameter tableView: The table view that could place section background under header.
+
+	- Parameter section: Requested section index.
+
+	- Returns: `true` - section background also locates under header, `false` - ignore section header.
+	*/
 	optional func tableView(tableView: RM_BackgroundedSectionTableView, sectionBackgroundUnderHeader section: Int) -> Bool
 }
 
