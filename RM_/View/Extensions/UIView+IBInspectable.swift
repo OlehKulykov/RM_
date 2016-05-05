@@ -8,50 +8,52 @@
 
 import UIKit
 
+// Interface Builder inpectable properties. No need to hardcode this parameters.
+
 extension UIView {
 
-	@IBInspectable var cornerRadius: CGFloat {
+	@IBInspectable public var cornerRadius: CGFloat {
 		get {
-			return self.layer.cornerRadius
+			return layer.cornerRadius
 		}
 		set {
-			self.layer.cornerRadius = newValue
+			layer.cornerRadius = newValue
 		}
 	}
 
-	@IBInspectable var borderColor: UIColor {
+	@IBInspectable public var borderColor: UIColor {
 		get {
-			return UIColor(CGColor: self.layer.borderColor ?? UIColor.clearColor().CGColor) ?? UIColor.clearColor()
+			return UIColor(CGColor: layer.borderColor ?? UIColor.clearColor().CGColor) ?? UIColor.clearColor()
 		}
 		set {
-			self.layer.borderColor = newValue.CGColor
+			layer.borderColor = newValue.CGColor
 		}
 	}
 
-	@IBInspectable var borderWidth: CGFloat {
+	@IBInspectable public var borderWidth: CGFloat {
 		get {
-			return self.layer.borderWidth
+			return layer.borderWidth
 		}
 		set {
-			self.layer.borderWidth = newValue
+			layer.borderWidth = newValue
 		}
 	}
 
-	@IBInspectable var clipsToBounds_: Bool {
+	@IBInspectable public var clipsToBounds_: Bool {
 		get {
-			return self.clipsToBounds
+			return clipsToBounds
 		}
 		set {
-			self.clipsToBounds = newValue
+			clipsToBounds = newValue
 		}
 	}
 
-	@IBInspectable var masksToBounds_: Bool {
+	@IBInspectable public var masksToBounds_: Bool {
 		get {
-			return self.layer.masksToBounds
+			return layer.masksToBounds
 		}
 		set {
-			self.layer.masksToBounds = newValue
+			layer.masksToBounds = newValue
 		}
 	}
 

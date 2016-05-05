@@ -8,9 +8,17 @@
 
 import UIKit
 
+
 extension UIColor {
 
-	convenience init(hexString hex: String) {
+	/**
+	Initialize color object with HEX string.
+	
+	- Parameter hexString: The color HEX string with a first `#` character.
+	
+	- Returns: Initialized color object or red color if `hexString` `#` character is missed or conversion error occurred during conversion.
+	*/
+	public convenience init(hexString hex: String) {
 		guard hex.hasPrefix("#") else {
 			self.init(red: 1, green: 0, blue: 0, alpha: 1)
 			print("UIColor hexString required # character")
