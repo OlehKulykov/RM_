@@ -38,6 +38,7 @@
 		3DB3985F1CCAF08500A387E0 /* RM_JSONElementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB3985E1CCAF08500A387E0 /* RM_JSONElementTests.swift */; };
 		3DB398631CCAF13800A387E0 /* api_public_products_GET.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DB398621CCAF13800A387E0 /* api_public_products_GET.json */; };
 		3DB398651CCAF17A00A387E0 /* XCTestCase+BundleResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB398641CCAF17A00A387E0 /* XCTestCase+BundleResources.swift */; };
+		3DCAFC7D1CDBBFFD0055273C /* RM_GroupedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCAFC7C1CDBBFFD0055273C /* RM_GroupedTableView.swift */; };
 		3DCB4EB61CD1063A00BF6F1D /* RM_APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB4EB21CD1063A00BF6F1D /* RM_APIRequest.swift */; };
 		3DCB4EB71CD1063A00BF6F1D /* RM_HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB4EB31CD1063A00BF6F1D /* RM_HTTPMethod.swift */; };
 		3DCB4EB81CD1063A00BF6F1D /* RM_NetworkIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB4EB51CD1063A00BF6F1D /* RM_NetworkIndicator.swift */; };
@@ -92,6 +93,7 @@
 		3DB3985E1CCAF08500A387E0 /* RM_JSONElementTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RM_JSONElementTests.swift; sourceTree = "<group>"; };
 		3DB398621CCAF13800A387E0 /* api_public_products_GET.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = api_public_products_GET.json; sourceTree = "<group>"; };
 		3DB398641CCAF17A00A387E0 /* XCTestCase+BundleResources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+BundleResources.swift"; sourceTree = "<group>"; };
+		3DCAFC7C1CDBBFFD0055273C /* RM_GroupedTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RM_GroupedTableView.swift; sourceTree = "<group>"; };
 		3DCB4EB21CD1063A00BF6F1D /* RM_APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RM_APIRequest.swift; sourceTree = "<group>"; };
 		3DCB4EB31CD1063A00BF6F1D /* RM_HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RM_HTTPMethod.swift; sourceTree = "<group>"; };
 		3DCB4EB51CD1063A00BF6F1D /* RM_NetworkIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RM_NetworkIndicator.swift; sourceTree = "<group>"; };
@@ -412,6 +414,7 @@
 		3DCB4EC21CD106CB00BF6F1D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3DCAFC7C1CDBBFFD0055273C /* RM_GroupedTableView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 				3D65F1EB1CCAD270004F8B29 /* RM_Entity.swift in Sources */,
 				3D49767C1CCF9AA700401EA1 /* RM_DAL+User.swift in Sources */,
 				3D65F1B11CCAB9A8004F8B29 /* ViewController.swift in Sources */,
+				3DCAFC7D1CDBBFFD0055273C /* RM_GroupedTableView.swift in Sources */,
 				3D65F1DF1CCABC98004F8B29 /* RM_.xcdatamodeld in Sources */,
 				3D2101701CCDE2C400E1CBFD /* RM_ParsableElementType.swift in Sources */,
 				3D2101A21CCE2E3F00E1CBFD /* RM_User+CoreDataProperties.swift in Sources */,
