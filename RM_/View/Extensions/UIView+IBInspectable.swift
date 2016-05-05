@@ -10,10 +10,15 @@ import UIKit
 
 
 /**
-Interface Builder inpectable properties. No need to hardcode this parameters.
+Interface Builder inspectable properties. 
+All this properties/variables interacts dirrectly with view or it's layer.
+No need to hardcode this parameters.
 */
 extension UIView {
 
+	/**
+	The radius to use when drawing rounded corners for the layer’s background.
+	*/
 	@IBInspectable public var cornerRadius: CGFloat {
 		get {
 			return layer.cornerRadius
@@ -23,6 +28,10 @@ extension UIView {
 		}
 	}
 
+
+	/**
+	The color of the layer’s border. 
+	*/
 	@IBInspectable public var borderColor: UIColor {
 		get {
 			return UIColor(CGColor: layer.borderColor ?? UIColor.clearColor().CGColor) ?? UIColor.clearColor()
@@ -32,6 +41,10 @@ extension UIView {
 		}
 	}
 
+
+	/**
+	The width of the layer’s border.
+	*/
 	@IBInspectable public var borderWidth: CGFloat {
 		get {
 			return layer.borderWidth
@@ -41,6 +54,10 @@ extension UIView {
 		}
 	}
 
+
+	/**
+	A Boolean value that determines whether subviews are confined to the bounds of the view.
+	*/
 	@IBInspectable public var clipsToBounds_: Bool {
 		get {
 			return clipsToBounds
@@ -50,6 +67,10 @@ extension UIView {
 		}
 	}
 
+
+	/**
+	A Boolean indicating whether sublayers are clipped to the layer’s bounds
+	*/
 	@IBInspectable public var masksToBounds_: Bool {
 		get {
 			return layer.masksToBounds
