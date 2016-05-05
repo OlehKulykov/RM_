@@ -26,7 +26,7 @@ with the public getters, vars and functions.
 And, `InternalType` will be `RM_User` and `PublicType` is `RM_UserType`.
 
 - Note: Following OOP encapsulation, all internal functionality use `InternalType` and the result
-provided as `PublicType` protocol.
+provided as `PublicType`.
 */
 protocol RM_DALType {
 
