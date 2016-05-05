@@ -8,14 +8,37 @@
 
 import UIKit
 
+/**
+Base table view section background view.
+Use subclass to make view customization.
+*/
 public class RM_TableViewSectionBackground : UIView {
 
+	/**
+	Calculated by the `RM_BackgroundedSectionTableView` section frame.
+	*/
 	private(set) var calculatedFrame = CGRectZero
 }
 
+
+/**
+Delegate to the `RM_BackgroundedSectionTableView` table view.
+Table view have no delegate property for this type, so, extend you `UITableViewDataSource` with this type.
+*/
 @objc
 public protocol RM_BackgroundedSectionTableViewDelegate {
+	/**
+	Ask gelegate object to create section background view for the section by it's index.
+	By default no section background, e.g. `nil`.
+	
+	- Parameter tableView: The table view that required for the section view.
+	
+	- Parameter section: Requested section index.
+	
+	- Returns: Initialized section background view or nil if no background needed. 
+	*/
 	optional func tableView(tableView: RM_BackgroundedSectionTableView, sectionBackground section: Int) -> RM_TableViewSectionBackground?
+
 
 	optional func tableView(tableView: RM_BackgroundedSectionTableView, sectionBackgroundEdgeInsets section: Int) -> UIEdgeInsets
 
