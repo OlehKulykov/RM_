@@ -23,10 +23,10 @@ class RM_GroupedTableViewGroupBackgroundView : UIView, RM_GroupedTableViewBackgr
 
 class RM_GroupedTableView : UITableView {
 
-	private var backClass:AnyClass? = RM_GroupedTableViewGroupBackgroundView
+	//private var backClass:AnyClass? = RM_GroupedTableViewGroupBackgroundView
 
 	func registerBackgroundClass(viewClass: AnyClass?) {
-		backClass = viewClass
+//		backClass = viewClass
 	}
 
 	var groupOffset: CGFloat = 0
