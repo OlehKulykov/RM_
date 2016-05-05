@@ -101,6 +101,29 @@ extension UIView {
 		setShadowPath(path.CGPath, color: color, offset: CGSizeZero, radius: radius, opacity: opacity)
 	}
 
+
+	/**
+	Set rounded shadow for all view sides.
+
+	- Parameter color: The color of the shadow. This value applies directly to view `layer`.
+
+	- Parameter offset: Offset of the shadow layer.
+
+	- Parameter radius: Shadow radius. This value applies directly to view `layer`.
+
+	- Parameter opacity: Shadow opacity. This value applies directly to view `layer`.
+
+	- Note: It's recommended to do this after view layout was changed.
+
+	Example:
+
+	```swift
+		override func layoutSubviews() {
+			super.layoutSubviews()
+			setShadow(UIColor.blackColor(), offset: CGSizeMake(0, 1), radius: cornerRadius, opacity: 0.16)
+		}
+	```
+	*/
 	public func setShadow(color: UIColor, offset: CGSize, radius: CGFloat, opacity: CGFloat) {
 		let shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: radius)
 		setShadowPath(shadowPath.CGPath, color: color, offset: offset, radius: radius, opacity: opacity)
