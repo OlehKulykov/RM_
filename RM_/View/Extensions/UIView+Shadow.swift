@@ -10,6 +10,7 @@ import UIKit
 
 extension UIView {
 
+	// Set shadow path with common parameters.
 	private func setShadowPath(path: CGPath, color: UIColor, offset: CGSize, radius: CGFloat, opacity: CGFloat) {
 		layer.masksToBounds = false
 		layer.shadowRadius = radius
@@ -19,6 +20,30 @@ extension UIView {
 		layer.shadowPath = path
 	}
 
+
+	/**
+	Set shadow for some or all view sides. 
+ 
+	- Parameter insets: Shadow insets in points for each view side.
+	Provide `0` to ignore or positive value in points to define thickness of the shadow part.
+	
+	- Parameter color: The color of the shadow. This value applies directly to view `layer`.
+	
+	- Parameter radius: Shadow radius. This value applies directly to view `layer`.
+	
+	- Parameter opacity: Shadow opacity. This value applies directly to view `layer`.
+	
+	- Note: It's recommended to do this after view layout was changed.
+	
+	Example: 
+	
+	```swift
+		override func layoutSubviews() {
+			super.layoutSubviews()
+			setShadow(UIEdgeInsetsMake(1, 2.5, 6, 2.5), color: UIColor.blackColor(), radius: 4, opacity: 0.16)
+		}
+	```
+	*/
 	public func setShadow(insets: UIEdgeInsets, color: UIColor, radius: CGFloat, opacity: CGFloat) {
 		let screenPixel = 1.0 / UIScreen.mainScreen().scale
 		let offset = radius + screenPixel
