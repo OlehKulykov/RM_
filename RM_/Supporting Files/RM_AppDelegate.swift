@@ -1,5 +1,5 @@
 //
-//  AppDelegate.swift
+//  RM_AppDelegate
 //  RM_
 //
 //  Created by Oleh Kulykov on 22/04/16.
@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class RM_AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
 

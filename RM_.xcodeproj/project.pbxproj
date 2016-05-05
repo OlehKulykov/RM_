@@ -25,7 +25,6 @@
 		3D49767F1CCF9E6600401EA1 /* RM_DALBaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D49767E1CCF9E6600401EA1 /* RM_DALBaseTests.swift */; };
 		3D4976831CCFA6DB00401EA1 /* RM_DALCrossThreadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4976821CCFA6DB00401EA1 /* RM_DALCrossThreadTests.swift */; };
 		3D4976861CCFA96000401EA1 /* RM_DAL+UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4976851CCFA96000401EA1 /* RM_DAL+UserTests.swift */; };
-		3D65F1B11CCAB9A8004F8B29 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D65F1B01CCAB9A8004F8B29 /* ViewController.swift */; };
 		3D65F1D51CCABC8A004F8B29 /* RM_CoreDataStackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D65F1D41CCABC8A004F8B29 /* RM_CoreDataStackTests.swift */; };
 		3D65F1DD1CCABC98004F8B29 /* RM_CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D65F1D91CCABC98004F8B29 /* RM_CoreDataStack.swift */; };
 		3D65F1DF1CCABC98004F8B29 /* RM_.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3D65F1DB1CCABC98004F8B29 /* RM_.xcdatamodeld */; };
@@ -49,7 +48,7 @@
 		3DCB4EBE1CD1065B00BF6F1D /* RM_APIRequestGETJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB4EBB1CD1065B00BF6F1D /* RM_APIRequestGETJSON.swift */; };
 		3DCB4EBF1CD1065B00BF6F1D /* RM_NetworkIndicatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB4EBD1CD1065B00BF6F1D /* RM_NetworkIndicatorTests.swift */; };
 		3DCB4EC71CD1072700BF6F1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DCB4EC61CD1072700BF6F1D /* Assets.xcassets */; };
-		3DCB4EC91CD1074700BF6F1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB4EC81CD1074700BF6F1D /* AppDelegate.swift */; };
+		3DCB4EC91CD1074700BF6F1D /* RM_AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB4EC81CD1074700BF6F1D /* RM_AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,7 +81,6 @@
 		3D4976821CCFA6DB00401EA1 /* RM_DALCrossThreadTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RM_DALCrossThreadTests.swift; sourceTree = "<group>"; };
 		3D4976851CCFA96000401EA1 /* RM_DAL+UserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RM_DAL+UserTests.swift"; sourceTree = "<group>"; };
 		3D65F1AB1CCAB9A8004F8B29 /* RM_.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RM_.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3D65F1B01CCAB9A8004F8B29 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3D65F1C21CCAB9A8004F8B29 /* RM_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RM_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D65F1C81CCAB9A8004F8B29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D65F1D41CCABC8A004F8B29 /* RM_CoreDataStackTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RM_CoreDataStackTests.swift; sourceTree = "<group>"; };
@@ -108,7 +106,7 @@
 		3DCB4EBB1CD1065B00BF6F1D /* RM_APIRequestGETJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RM_APIRequestGETJSON.swift; sourceTree = "<group>"; };
 		3DCB4EBD1CD1065B00BF6F1D /* RM_NetworkIndicatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RM_NetworkIndicatorTests.swift; sourceTree = "<group>"; };
 		3DCB4EC61CD1072700BF6F1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3DCB4EC81CD1074700BF6F1D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3DCB4EC81CD1074700BF6F1D /* RM_AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RM_AppDelegate.swift; sourceTree = "<group>"; };
 		3DCB4ECA1CD1075C00BF6F1D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,7 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				3DCAFC821CDBD8D60055273C /* Storyboards */,
-				3DCB4EC81CD1074700BF6F1D /* AppDelegate.swift */,
+				3DCB4EC81CD1074700BF6F1D /* RM_AppDelegate.swift */,
 				3DCB4EC61CD1072700BF6F1D /* Assets.xcassets */,
 				3D21017E1CCE02BC00E1CBFD /* Fonts */,
 				3D2101781CCDEE5A00E1CBFD /* Localizable.strings */,
@@ -230,7 +228,6 @@
 				3DCB4EC21CD106CB00BF6F1D /* View */,
 				3D65F1D61CCABC98004F8B29 /* Model */,
 				3D2101731CCDEE3500E1CBFD /* Supporting Files */,
-				3D65F1B01CCAB9A8004F8B29 /* ViewController.swift */,
 			);
 			path = RM_;
 			sourceTree = "<group>";
@@ -576,14 +573,13 @@
 				3D65F1EF1CCAD3B9004F8B29 /* RM_JSONElement.swift in Sources */,
 				3D65F1EB1CCAD270004F8B29 /* RM_Entity.swift in Sources */,
 				3D49767C1CCF9AA700401EA1 /* RM_DAL+User.swift in Sources */,
-				3D65F1B11CCAB9A8004F8B29 /* ViewController.swift in Sources */,
 				3DCAFC7D1CDBBFFD0055273C /* RM_BackgroundedSectionTableView.swift in Sources */,
 				3D65F1DF1CCABC98004F8B29 /* RM_.xcdatamodeld in Sources */,
 				3D2101701CCDE2C400E1CBFD /* RM_ParsableElementType.swift in Sources */,
 				3D2101A21CCE2E3F00E1CBFD /* RM_User+CoreDataProperties.swift in Sources */,
 				3D65F1EC1CCAD270004F8B29 /* RM_User.swift in Sources */,
 				3DCB4EB81CD1063A00BF6F1D /* RM_NetworkIndicator.swift in Sources */,
-				3DCB4EC91CD1074700BF6F1D /* AppDelegate.swift in Sources */,
+				3DCB4EC91CD1074700BF6F1D /* RM_AppDelegate.swift in Sources */,
 				3D2101A01CCE2E3A00E1CBFD /* RM_Entity+CoreDataProperties.swift in Sources */,
 				3D4976791CCF894700401EA1 /* RM_DALs.swift in Sources */,
 				3DCAFC891CDBE7610055273C /* UIView+Shadow.swift in Sources */,
