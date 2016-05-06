@@ -117,6 +117,7 @@ extension MyTableViewController: RM_BackgroundedSectionTableViewDelegate {
 */
 public class RM_BackgroundedSectionTableView : UITableView {
 
+	/// Removed all section background views from table view.
 	private func removeBackgroundViews() {
 		for subview in subviews {
 			if let back = subview as? RM_TableViewSectionBackground {
@@ -125,6 +126,7 @@ public class RM_BackgroundedSectionTableView : UITableView {
 		}
 	}
 
+	/// Create new section background view for each data source section.
 	private func createBackgroundViews() {
 		let count = dataSource?.numberOfSectionsInTableView?(self) ?? 0
 		for section in 0..<count {
@@ -132,6 +134,7 @@ public class RM_BackgroundedSectionTableView : UITableView {
 		}
 	}
 
+	/// Create single section background by it's index.
 	private func createBackgroundViewForSection(section: Int) {
 		guard let
 			sectionDelegate = delegate as? RM_BackgroundedSectionTableViewDelegate,
@@ -144,6 +147,7 @@ public class RM_BackgroundedSectionTableView : UITableView {
 		self.sendSubviewToBack(view)
 	}
 
+	/// Read all available background and update it's frames.
 	private func updateSectionBackgroundFrames() {
 		let sectionDelegate = delegate as? RM_BackgroundedSectionTableViewDelegate
 		for subview in subviews {
@@ -178,10 +182,20 @@ public class RM_BackgroundedSectionTableView : UITableView {
 		}
 	}
 
+
+	/**
+	Inform table view that content was scrolled.
+	
+	- Warning: Call this function within `scrollViewDidScroll(:)` delegate function of the `UITableViewDelegate`
+	*/
 	public func onDidScroll() {
 		updateSectionBackgroundFrames()
 	}
 
+
+	/**
+	Reload table view data and section backgrounds.
+	*/
 	public override func reloadData() {
 		super.reloadData()
 		removeBackgroundViews()
@@ -189,6 +203,10 @@ public class RM_BackgroundedSectionTableView : UITableView {
 		setNeedsLayout()
 	}
 
+
+	/**
+	Table view layout was changed and need to update section backgrounds frames.
+	*/
 	public override func layoutSubviews() {
 		super.layoutSubviews()
 		updateSectionBackgroundFrames()
