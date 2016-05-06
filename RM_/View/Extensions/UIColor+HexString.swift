@@ -19,7 +19,7 @@ extension UIColor {
 	
 	- Parameter hexString: The color HEX string with a first `#` character.
 	
-	- Returns: Initialized color object or red color if `#` character is missed or conversion error occurred during conversion.
+	- Returns: Initialized color object or red color if `#` character is missed or an error occurred during conversion.
 	*/
 	public convenience init(hexString hex: String) {
 		guard hex.hasPrefix("#") else {
