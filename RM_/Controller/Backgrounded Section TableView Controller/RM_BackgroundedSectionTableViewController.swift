@@ -29,6 +29,14 @@ class RM_BackgroundedSectionTableViewController: UIViewController {
 
 }
 
+extension RM_BackgroundedSectionTableViewController: UITableViewDelegate {
+
+	//MARK: UIScrollViewDelegate, inform tableview that the table view did scrolled
+	func scrollViewDidScroll(scrollView: UIScrollView) {
+		tableView.onDidScroll()
+	}
+	
+}
 
 //MARK: TableView DataSource. Nothing special, just example
 extension RM_BackgroundedSectionTableViewController: UITableViewDataSource {
@@ -54,12 +62,7 @@ extension RM_BackgroundedSectionTableViewController: UITableViewDataSource {
 	}
 }
 
-extension RM_BackgroundedSectionTableViewController: RM_BackgroundedSectionTableViewDelegate, UIScrollViewDelegate {
-
-	//MARK: UIScrollViewDelegate, inform tableview that the table view did scrolled
-	func scrollViewDidScroll(scrollView: UIScrollView) {
-		tableView.onDidScroll()
-	}
+extension RM_BackgroundedSectionTableViewController: RM_BackgroundedSectionTableViewDelegate {
 
 	//MARK: RM_BackgroundedSectionTableViewDelegate, manage table view section backgrounds
 	func tableView(tableView: RM_BackgroundedSectionTableView, sectionBackground section: Int) -> RM_TableViewSectionBackground? {

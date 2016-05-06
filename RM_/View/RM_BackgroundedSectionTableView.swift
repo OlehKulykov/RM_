@@ -17,13 +17,19 @@ public class RM_TableViewSectionBackground : UIView {
 	/**
 	Calculated by the `RM_BackgroundedSectionTableView` section frame.
 	*/
-	private(set) var calculatedFrame = CGRectZero
+	private(set) var calculatedFrame: CGRect = CGRectZero
+
+
+	/**
+	Section index of the background.
+	*/
+	private(set) var section: Int = -1
 }
 
 
 /**
-Delegate to the `RM_BackgroundedSectionTableView` table view.
-Table view have no delegate property for this type, so, extend you `UITableViewDataSource` with this type.
+`RM_BackgroundedSectionTableView` table view delegate.
+`RM_BackgroundedSectionTableView` have no special property/variable for this type, so, extend your `UITableViewDelegate` with this protocol.
 */
 @objc
 public protocol RM_BackgroundedSectionTableViewDelegate {
@@ -41,8 +47,8 @@ public protocol RM_BackgroundedSectionTableViewDelegate {
 
 
 	/**
-	Ask gelegate object for the section background edge insets. Provide positive values to decrease section background size.
-	Default is `UIEdgeInsetsZero`.
+	Ask gelegate object for the section background edge insets. Provide positive values to decrease section background size from top, left, etc.
+	Default - no insets.
 
 	- Parameter tableView: The table view that required for the section insets.
 
@@ -80,14 +86,45 @@ public protocol RM_BackgroundedSectionTableViewDelegate {
 }
 
 
+/**
+Table view that manages custom backgrounds for sections.
+
+- Note: To use this features your delegate object should also conforms to 'RM_BackgroundedSectionTableViewDelegate' protocol.
+
+- Warning: Additionaly, need to redirect `scrollViewDidScroll(:)` event from your 'UITableViewDelegate' to this
+table view using `onDidScroll()` function.
+
+Example:
+
+```swift
+extension MyTableViewController: UITableViewDelegate {
+
+	func scrollViewDidScroll(scrollView: UIScrollView) {
+		// Just call 'onDidScroll()' of the table view
+		tableView.onDidScroll()
+	}
+}
+
+extension MyTableViewController: RM_BackgroundedSectionTableViewDelegate {
+
+	func tableView(tableView: RM_BackgroundedSectionTableView, sectionBackground section: Int) -> RM_TableViewSectionBackground? {
+
+		// Create custom background view that inherited from 'RM_TableViewSectionBackground'
+		let background = MySectionBackgroundView()
+
+		// Make customizations
+		background.backgroundColor = UIColor.whiteColor()
+
+		return background
+	}
+}
+
+```
+*/
 public class RM_BackgroundedSectionTableView : UITableView {
 
-	private func tagForSection(section: Int) -> Int {
-		return -section - 100 // any value
-	}
-
 	private func removeBackgroundViews() {
-		for subview in self.subviews {
+		for subview in subviews {
 			if let back = subview as? RM_TableViewSectionBackground {
 				back.removeFromSuperview()
 			}
@@ -105,15 +142,23 @@ public class RM_BackgroundedSectionTableView : UITableView {
 	}
 
 	private func backgroundViewForSection(section: Int) -> RM_TableViewSectionBackground? {
-		return viewWithTag(tagForSection(section)) as? RM_TableViewSectionBackground
+		for subview in subviews {
+			if let back = subview as? RM_TableViewSectionBackground where back.section == section {
+				return back
+			}
+		}
+		return nil
 	}
 
 	private func createBackgroundViewForSection(section: Int) {
 		if backgroundViewForSection(section) == nil {
-			guard let view = (delegate as? RM_BackgroundedSectionTableViewDelegate)?.tableView?(self, sectionBackground: section) else {
+			guard let
+				sectionDelegate = delegate as? RM_BackgroundedSectionTableViewDelegate,
+				view = sectionDelegate.tableView?(self, sectionBackground: section)
+			else {
 				return
 			}
-			view.tag = tagForSection(section)
+			view.section = section
 			self.addSubview(view)
 			self.sendSubviewToBack(view)
 		}
@@ -125,12 +170,12 @@ public class RM_BackgroundedSectionTableView : UITableView {
 			if let back = backgroundViewForSection(section) {
 				var frame = rectForSection(section)
 
-				let insets = sectionDelegate?.tableView?(self, sectionBackgroundEdgeInsets: section) ?? UIEdgeInsetsZero
-
-				frame.origin.x += insets.left
-				frame.origin.y += insets.top
-				frame.size.width -= insets.left + insets.right
-				frame.size.height -= insets.top + insets.bottom
+				if let insets = sectionDelegate?.tableView?(self, sectionBackgroundEdgeInsets: section) {
+					frame.origin.x += insets.left
+					frame.origin.y += insets.top
+					frame.size.width -= insets.left + insets.right
+					frame.size.height -= insets.top + insets.bottom
+				}
 
 				let includeHeader = sectionDelegate?.tableView?(self, sectionBackgroundUnderHeader: section) ?? false
 				if !includeHeader {
