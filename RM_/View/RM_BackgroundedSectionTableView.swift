@@ -83,10 +83,10 @@ public protocol RM_BackgroundedSectionTableViewDelegate {
 /**
 Table view that manages custom backgrounds for sections.
 
-- Note: To use this features your delegate object should also conforms to 'RM_BackgroundedSectionTableViewDelegate' protocol.
+- Note: To use this features your delegate object should also conforms to `RM_BackgroundedSectionTableViewDelegate` protocol.
 
-- Warning: Additionaly, need to redirect `scrollViewDidScroll(:)` event from your 'UITableViewDelegate' to this
-table view using `onDidScroll()` function.
+- Warning: Need to redirect `scrollViewDidScroll(:)` event from your `UITableViewDelegate` to this
+table view using `onDidScroll()` function. See example.
 
 Example:
 
