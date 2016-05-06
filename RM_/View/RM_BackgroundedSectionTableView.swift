@@ -150,6 +150,7 @@ public class RM_BackgroundedSectionTableView : UITableView {
 			if let back = subview as? RM_TableViewSectionBackground {
 				var frame = rectForSection(back.section)
 
+				// Tune up section frame if needed. Depends on delegate.
 				if let insets = sectionDelegate?.tableView?(self, sectionBackgroundEdgeInsets: back.section) {
 					frame.origin.x += insets.left
 					frame.origin.y += insets.top
@@ -157,6 +158,7 @@ public class RM_BackgroundedSectionTableView : UITableView {
 					frame.size.height -= insets.top + insets.bottom
 				}
 
+				// Ignore section header if needed. Depends on delegate.
 				let includeHeader = sectionDelegate?.tableView?(self, sectionBackgroundUnderHeader: back.section) ?? false
 				if !includeHeader {
 					let header = rectForHeaderInSection(back.section)
@@ -164,6 +166,7 @@ public class RM_BackgroundedSectionTableView : UITableView {
 					frame.size.height -= header.height
 				}
 
+				// Ignore section footer if needed. Depends on delegate.
 				let includeFooter = sectionDelegate?.tableView?(self, sectionBackgroundUnderFooter: back.section) ?? false
 				if !includeFooter {
 					let footer = rectForFooterInSection(back.section)
