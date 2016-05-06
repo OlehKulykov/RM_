@@ -15,13 +15,7 @@ Use subclass to make view customization.
 public class RM_TableViewSectionBackground : UIView {
 
 	/**
-	Calculated by the `RM_BackgroundedSectionTableView` section frame.
-	*/
-	private(set) var calculatedFrame: CGRect = CGRectZero
-
-
-	/**
-	Section index of the background.
+	Background section index.
 	*/
 	private(set) var section: Int = -1
 }
@@ -131,93 +125,69 @@ public class RM_BackgroundedSectionTableView : UITableView {
 		}
 	}
 
-	private var numberOfSectionsInDataSource: Int {
-		return self.dataSource?.numberOfSectionsInTableView?(self) ?? 0
-	}
-
 	private func createBackgroundViews() {
-		for section in 0..<numberOfSectionsInDataSource {
+		let count = dataSource?.numberOfSectionsInTableView?(self) ?? 0
+		for section in 0..<count {
 			createBackgroundViewForSection(section)
 		}
 	}
 
-	private func backgroundViewForSection(section: Int) -> RM_TableViewSectionBackground? {
-		for subview in subviews {
-			if let back = subview as? RM_TableViewSectionBackground where back.section == section {
-				return back
-			}
-		}
-		return nil
-	}
-
 	private func createBackgroundViewForSection(section: Int) {
-		if backgroundViewForSection(section) == nil {
-			guard let
-				sectionDelegate = delegate as? RM_BackgroundedSectionTableViewDelegate,
-				view = sectionDelegate.tableView?(self, sectionBackground: section)
+		guard let
+			sectionDelegate = delegate as? RM_BackgroundedSectionTableViewDelegate,
+			view = sectionDelegate.tableView?(self, sectionBackground: section)
 			else {
 				return
-			}
-			view.section = section
-			self.addSubview(view)
-			self.sendSubviewToBack(view)
 		}
+		view.section = section
+		self.addSubview(view)
+		self.sendSubviewToBack(view)
 	}
 
-	private func calculateSectionBackgroundFrames() {
+	private func updateSectionBackgroundFrames() {
 		let sectionDelegate = delegate as? RM_BackgroundedSectionTableViewDelegate
-		for section in 0..<numberOfSectionsInDataSource {
-			if let back = backgroundViewForSection(section) {
-				var frame = rectForSection(section)
+		for subview in subviews {
+			if let back = subview as? RM_TableViewSectionBackground {
+				var frame = rectForSection(back.section)
 
-				if let insets = sectionDelegate?.tableView?(self, sectionBackgroundEdgeInsets: section) {
+				if let insets = sectionDelegate?.tableView?(self, sectionBackgroundEdgeInsets: back.section) {
 					frame.origin.x += insets.left
 					frame.origin.y += insets.top
 					frame.size.width -= insets.left + insets.right
 					frame.size.height -= insets.top + insets.bottom
 				}
 
-				let includeHeader = sectionDelegate?.tableView?(self, sectionBackgroundUnderHeader: section) ?? false
+				let includeHeader = sectionDelegate?.tableView?(self, sectionBackgroundUnderHeader: back.section) ?? false
 				if !includeHeader {
-					let header = rectForHeaderInSection(section)
+					let header = rectForHeaderInSection(back.section)
 					frame.origin.y += header.height
 					frame.size.height -= header.height
 				}
 
-				let includeFooter = sectionDelegate?.tableView?(self, sectionBackgroundUnderFooter: section) ?? false
+				let includeFooter = sectionDelegate?.tableView?(self, sectionBackgroundUnderFooter: back.section) ?? false
 				if !includeFooter {
-					let footer = rectForFooterInSection(section)
+					let footer = rectForFooterInSection(back.section)
 					frame.size.height -= footer.height
 				}
 
 				back.frame = frame
-				back.calculatedFrame = frame
 			}
 		}
 	}
 
-	private func reloadBackgroundViews() {
-		removeBackgroundViews()
-		createBackgroundViews()
-	}
-
 	public func onDidScroll() {
-		calculateSectionBackgroundFrames()
+		updateSectionBackgroundFrames()
 	}
 
 	public override func reloadData() {
 		super.reloadData()
-		reloadBackgroundViews()
+		removeBackgroundViews()
+		createBackgroundViews()
 		setNeedsLayout()
 	}
 
 	public override func layoutSubviews() {
 		super.layoutSubviews()
-		calculateSectionBackgroundFrames()
-		for section in 0..<numberOfSectionsInDataSource {
-			if let back = backgroundViewForSection(section) {
-				back.frame = back.calculatedFrame
-			}
-		}
+		updateSectionBackgroundFrames()
 	}
 }
