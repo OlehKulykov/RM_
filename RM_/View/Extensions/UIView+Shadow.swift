@@ -36,7 +36,7 @@ extension UIView {
 	
 	- Parameter opacity: Shadow opacity. This value applies directly to view `layer`.
 	
-	- Note: It's recommended to do this after view layout was changed.
+	- Warning: Set shadow only after view layout was changed, due to correct view/layer bounds. See example.
 	
 	Example: 
 	
@@ -116,7 +116,7 @@ extension UIView {
 
 	- Parameter opacity: Shadow opacity. This value applies directly to view `layer`.
 
-	- Note: It's recommended to do this after view layout was changed.
+	- Warning: Set shadow only after view layout was changed, due to correct view/layer bounds. See example.
 
 	Example:
 
