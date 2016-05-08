@@ -49,6 +49,7 @@
 		3DCB4EBF1CD1065B00BF6F1D /* RM_NetworkIndicatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB4EBD1CD1065B00BF6F1D /* RM_NetworkIndicatorTests.swift */; };
 		3DCB4EC71CD1072700BF6F1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DCB4EC61CD1072700BF6F1D /* Assets.xcassets */; };
 		3DCB4EC91CD1074700BF6F1D /* RM_AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB4EC81CD1074700BF6F1D /* RM_AppDelegate.swift */; };
+		3DE7A3471CDF456300429A4C /* UIImageView+LoadFromURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE7A3461CDF456300429A4C /* UIImageView+LoadFromURL.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,7 @@
 		3DCB4EC61CD1072700BF6F1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DCB4EC81CD1074700BF6F1D /* RM_AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RM_AppDelegate.swift; sourceTree = "<group>"; };
 		3DCB4ECA1CD1075C00BF6F1D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DE7A3461CDF456300429A4C /* UIImageView+LoadFromURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+LoadFromURL.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -372,6 +374,7 @@
 				3DCAFC881CDBE7610055273C /* UIView+Shadow.swift */,
 				3DCAFC8A1CDBE9770055273C /* UIView+IBInspectable.swift */,
 				3DCAFC8C1CDBEA380055273C /* UIColor+HexString.swift */,
+				3DE7A3461CDF456300429A4C /* UIImageView+LoadFromURL.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -568,6 +571,7 @@
 				3D2101861CCE035E00E1CBFD /* RM_Font.swift in Sources */,
 				3DCAFC8B1CDBE9770055273C /* UIView+IBInspectable.swift in Sources */,
 				3D4976771CCF84E100401EA1 /* RM_DALInternals.swift in Sources */,
+				3DE7A3471CDF456300429A4C /* UIImageView+LoadFromURL.swift in Sources */,
 				3D65F1DD1CCABC98004F8B29 /* RM_CoreDataStack.swift in Sources */,
 				3DCAFC901CDBEE070055273C /* RM_BackgroundedSectionTableViewController.swift in Sources */,
 				3D65F1EF1CCAD3B9004F8B29 /* RM_JSONElement.swift in Sources */,
