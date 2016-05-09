@@ -27,6 +27,7 @@ extension UIImageView {
 	}
 
 
+	/// Actual loading image data using within `NSURLSession` data task.
 	private func loadImageFromURL(url: NSURL) {
 		let task = NSURLSession.sharedSession().dataTaskWithURL(url) { [weak self] (data, response, error) in
 			guard let
@@ -47,13 +48,15 @@ extension UIImageView {
 
 
 	/**
-	Load image from url with placeholder image while loading in progress
-	- Parameter url: Image URL for download
-	- Parameter placeholder: Placeholder image for display during loading
+	Load image from url with placeholder image while loading in progress.
+
+	- Parameter url: Image URL for download.
+
+	- Parameter placeholder: Placeholder image for display during loading.
 	*/
 	public func loadImageFromURL(url: NSURL?, placeholder: UIImage?) {
-		self.image = placeholder
-		self.imageUrl = url
+		image = placeholder
+		imageUrl = url
 
 		guard let url = url else {
 			return
