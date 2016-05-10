@@ -50,19 +50,19 @@ class RM_NetworkIndicatorTests: XCTestCase {
 		let expectation = self.expectationWithDescription("Dummy timeout.")
 
 		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), {
-			NSThread.sleepForTimeInterval(0.1)
+			NSThread.sleepForTimeInterval(0.4)
 			RM_NetworkIndicator.visible = true
 			XCTAssertTrue(RM_NetworkIndicator.visible, "Should be visible")
 		})
 
 		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), {
-			NSThread.sleepForTimeInterval(0.2)
+			NSThread.sleepForTimeInterval(0.8)
 			RM_NetworkIndicator.visible = false
 			XCTAssertTrue(RM_NetworkIndicator.visible, "Should be visible")
 		})
 
 		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), {
-			NSThread.sleepForTimeInterval(0.3)
+			NSThread.sleepForTimeInterval(1.2)
 			RM_NetworkIndicator.visible = false
 			XCTAssertFalse(RM_NetworkIndicator.visible, "Should be invisible")
 			expectation.fulfill()
