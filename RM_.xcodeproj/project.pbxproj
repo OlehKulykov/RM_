@@ -49,9 +49,9 @@
 		3DCB4EBF1CD1065B00BF6F1D /* RM_NetworkIndicatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB4EBD1CD1065B00BF6F1D /* RM_NetworkIndicatorTests.swift */; };
 		3DCB4EC71CD1072700BF6F1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DCB4EC61CD1072700BF6F1D /* Assets.xcassets */; };
 		3DCB4EC91CD1074700BF6F1D /* RM_AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB4EC81CD1074700BF6F1D /* RM_AppDelegate.swift */; };
-		3DDC279A1CE1B99000E36BC9 /* String+AttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDC27991CE1B99000E36BC9 /* String+AttributedString.swift */; };
 		3DDC279C1CE1B9D200E36BC9 /* String+RepeatedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDC279B1CE1B9D200E36BC9 /* String+RepeatedString.swift */; };
 		3DDC279E1CE1BB5000E36BC9 /* UIView+EdgedBorders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDC279D1CE1BB5000E36BC9 /* UIView+EdgedBorders.swift */; };
+		3DDC27D11CE1D49500E36BC9 /* NSAttributedString+ConvenienceInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDC27D01CE1D49500E36BC9 /* NSAttributedString+ConvenienceInit.swift */; };
 		3DE7A3471CDF456300429A4C /* UIImageView+LoadFromURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE7A3461CDF456300429A4C /* UIImageView+LoadFromURL.swift */; };
 /* End PBXBuildFile section */
 
@@ -112,9 +112,9 @@
 		3DCB4EC61CD1072700BF6F1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DCB4EC81CD1074700BF6F1D /* RM_AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RM_AppDelegate.swift; sourceTree = "<group>"; };
 		3DCB4ECA1CD1075C00BF6F1D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3DDC27991CE1B99000E36BC9 /* String+AttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+AttributedString.swift"; sourceTree = "<group>"; };
 		3DDC279B1CE1B9D200E36BC9 /* String+RepeatedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+RepeatedString.swift"; sourceTree = "<group>"; };
 		3DDC279D1CE1BB5000E36BC9 /* UIView+EdgedBorders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+EdgedBorders.swift"; sourceTree = "<group>"; };
+		3DDC27D01CE1D49500E36BC9 /* NSAttributedString+ConvenienceInit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+ConvenienceInit.swift"; sourceTree = "<group>"; };
 		3DE7A3461CDF456300429A4C /* UIImageView+LoadFromURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+LoadFromURL.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -383,6 +383,7 @@
 				3DCAFC8C1CDBEA380055273C /* UIColor+HexString.swift */,
 				3DE7A3461CDF456300429A4C /* UIImageView+LoadFromURL.swift */,
 				3DDC279D1CE1BB5000E36BC9 /* UIView+EdgedBorders.swift */,
+				3DDC27D01CE1D49500E36BC9 /* NSAttributedString+ConvenienceInit.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -466,7 +467,6 @@
 		3DDC27981CE1B98400E36BC9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				3DDC27991CE1B99000E36BC9 /* String+AttributedString.swift */,
 				3DDC279B1CE1B9D200E36BC9 /* String+RepeatedString.swift */,
 			);
 			path = Extensions;
@@ -580,7 +580,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DCB4EB71CD1063A00BF6F1D /* RM_HTTPMethod.swift in Sources */,
-				3DDC279A1CE1B99000E36BC9 /* String+AttributedString.swift in Sources */,
 				3D4976751CCF779600401EA1 /* RM_DALTypes.swift in Sources */,
 				3DB0E7EA1CCD81DC002C23D1 /* RM_Result.swift in Sources */,
 				3DCAFC8D1CDBEA380055273C /* UIColor+HexString.swift in Sources */,
@@ -599,6 +598,7 @@
 				3DCAFC7D1CDBBFFD0055273C /* RM_BackgroundedSectionTableView.swift in Sources */,
 				3D65F1DF1CCABC98004F8B29 /* RM_.xcdatamodeld in Sources */,
 				3D2101701CCDE2C400E1CBFD /* RM_ParsableElementType.swift in Sources */,
+				3DDC27D11CE1D49500E36BC9 /* NSAttributedString+ConvenienceInit.swift in Sources */,
 				3D2101A21CCE2E3F00E1CBFD /* RM_User+CoreDataProperties.swift in Sources */,
 				3D65F1EC1CCAD270004F8B29 /* RM_User.swift in Sources */,
 				3DCB4EB81CD1063A00BF6F1D /* RM_NetworkIndicator.swift in Sources */,
