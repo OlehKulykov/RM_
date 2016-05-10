@@ -15,7 +15,7 @@ extension UIImageView {
 	}
 
 	/**
-	Public getter of the loaded image.
+	Public getter of the image ulr provided to function ```loadImageFromURL```.
 	*/
 	private(set) var imageUrl: NSURL? {
 		get {
@@ -27,7 +27,7 @@ extension UIImageView {
 	}
 
 
-	/// Actual loading image data using within `NSURLSession` data task.
+	/// Actual loading image data using `NSURLSession` data task.
 	private func loadImageFromURL(url: NSURL) {
 		let task = NSURLSession.sharedSession().dataTaskWithURL(url) { [weak self] (data, response, error) in
 			guard let
@@ -48,7 +48,7 @@ extension UIImageView {
 
 
 	/**
-	Load image from url with placeholder image while loading in progress.
+	Load image from url with placeholder.
 
 	- Parameter url: Image URL for download.
 
