@@ -10,6 +10,15 @@ import UIKit
 
 extension String {
 
+	/**
+	Create attributed version of the string with color and font.
+	
+	- Parameter font: The attributed text font.
+	
+	- Parameter color: The attributed text color.
+	
+	- Returns: Immutable attributed version of the string.
+	*/
 	public func attributed(font: UIFont, color: UIColor) -> NSAttributedString {
 		return NSAttributedString(string: self, attributes: [NSFontAttributeName: font, NSForegroundColorAttributeName: color])
 	}
