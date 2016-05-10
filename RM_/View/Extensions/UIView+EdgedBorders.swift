@@ -11,11 +11,22 @@ import UIKit
 
 extension UIView {
 
-	func addBorders(edges: UIRectEdge, colour: UIColor, thickness: CGFloat) -> [UIView] {
+	/**
+	Add borders to the view.
+	
+	- Parameter edges: View adges to that add border.
+ 
+	- Parameter color: Color of the added borders.
+	
+	- Parameter thickness: The thickness of the border views, e.g. border width in a case of vertical or height in case of horizontal.
+	
+	- Returns: Array with added borders.
+	*/
+	func addBorders(edges: UIRectEdge, color: UIColor, thickness: CGFloat) -> [UIView] {
 
 		func border() -> UIView {
 			let border = UIView(frame: CGRectZero)
-			border.backgroundColor = colour
+			border.backgroundColor = color
 			border.translatesAutoresizingMaskIntoConstraints = false
 			return border
 		}
