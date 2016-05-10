@@ -49,6 +49,8 @@
 		3DCB4EBF1CD1065B00BF6F1D /* RM_NetworkIndicatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB4EBD1CD1065B00BF6F1D /* RM_NetworkIndicatorTests.swift */; };
 		3DCB4EC71CD1072700BF6F1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DCB4EC61CD1072700BF6F1D /* Assets.xcassets */; };
 		3DCB4EC91CD1074700BF6F1D /* RM_AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB4EC81CD1074700BF6F1D /* RM_AppDelegate.swift */; };
+		3DDC279A1CE1B99000E36BC9 /* String+AttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDC27991CE1B99000E36BC9 /* String+AttributedString.swift */; };
+		3DDC279C1CE1B9D200E36BC9 /* String+RepeatedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDC279B1CE1B9D200E36BC9 /* String+RepeatedString.swift */; };
 		3DE7A3471CDF456300429A4C /* UIImageView+LoadFromURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE7A3461CDF456300429A4C /* UIImageView+LoadFromURL.swift */; };
 /* End PBXBuildFile section */
 
@@ -109,6 +111,8 @@
 		3DCB4EC61CD1072700BF6F1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DCB4EC81CD1074700BF6F1D /* RM_AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RM_AppDelegate.swift; sourceTree = "<group>"; };
 		3DCB4ECA1CD1075C00BF6F1D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DDC27991CE1B99000E36BC9 /* String+AttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+AttributedString.swift"; sourceTree = "<group>"; };
+		3DDC279B1CE1B9D200E36BC9 /* String+RepeatedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+RepeatedString.swift"; sourceTree = "<group>"; };
 		3DE7A3461CDF456300429A4C /* UIImageView+LoadFromURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+LoadFromURL.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -277,6 +281,7 @@
 		3D65F1D61CCABC98004F8B29 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3DDC27981CE1B98400E36BC9 /* Extensions */,
 				3DCB4EB01CD1063A00BF6F1D /* API */,
 				3DB0E7E81CCD81D2002C23D1 /* Misc */,
 				3D65F1ED1CCAD3AE004F8B29 /* Parser */,
@@ -455,6 +460,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		3DDC27981CE1B98400E36BC9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3DDC27991CE1B99000E36BC9 /* String+AttributedString.swift */,
+				3DDC279B1CE1B9D200E36BC9 /* String+RepeatedString.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -563,6 +577,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DCB4EB71CD1063A00BF6F1D /* RM_HTTPMethod.swift in Sources */,
+				3DDC279A1CE1B99000E36BC9 /* String+AttributedString.swift in Sources */,
 				3D4976751CCF779600401EA1 /* RM_DALTypes.swift in Sources */,
 				3DB0E7EA1CCD81DC002C23D1 /* RM_Result.swift in Sources */,
 				3DCAFC8D1CDBEA380055273C /* UIColor+HexString.swift in Sources */,
@@ -584,6 +599,7 @@
 				3D65F1EC1CCAD270004F8B29 /* RM_User.swift in Sources */,
 				3DCB4EB81CD1063A00BF6F1D /* RM_NetworkIndicator.swift in Sources */,
 				3DCB4EC91CD1074700BF6F1D /* RM_AppDelegate.swift in Sources */,
+				3DDC279C1CE1B9D200E36BC9 /* String+RepeatedString.swift in Sources */,
 				3D2101A01CCE2E3A00E1CBFD /* RM_Entity+CoreDataProperties.swift in Sources */,
 				3D4976791CCF894700401EA1 /* RM_DALs.swift in Sources */,
 				3DCAFC891CDBE7610055273C /* UIView+Shadow.swift in Sources */,
