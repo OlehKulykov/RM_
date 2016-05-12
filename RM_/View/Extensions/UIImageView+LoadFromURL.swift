@@ -10,7 +10,9 @@ import UIKit
 
 extension UIImageView {
 
+	/// Private struct with lazy static url key.
 	private struct AssociatedKey {
+		/// Lazy static key, that used for the associated image url object.
 		static var imageUrlKey = "imageUrl"
 	}
 
