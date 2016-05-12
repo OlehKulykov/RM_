@@ -11,7 +11,19 @@ import UIKit
 extension NSAttributedString {
 
 	/**
+	Initialize attributed string with font, color, line spacing, text aligment and optionally kerning.
+	
+	- Parameter string: The string for the new attributed string.
+	
+	- Parameter font: The attributed string text font.
+	
+	- Parameter color: The attributed string text color.
+
 	- Parameter lineSpacing: The distance in points between the bottom of one line fragment and the top of the next.
+	
+	- Parameter textAlignment: The attributed string text alignment.
+	
+	- Parameter kerning: The number of points by which to adjust kern-pair characters, e.g. characters spacing.
 	*/
 	public convenience init(string: String, font: UIFont, color: UIColor, lineSpacing: CGFloat, textAlignment: NSTextAlignment, kerning: CGFloat = 0) {
 		var attributes = [NSFontAttributeName: font, NSForegroundColorAttributeName: color]
