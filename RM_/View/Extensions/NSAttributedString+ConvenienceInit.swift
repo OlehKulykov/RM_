@@ -24,7 +24,7 @@ extension NSAttributedString {
 	- Parameter textAlignment: The attributed string text alignment.
 	
 	- Parameter kerning: The optional number of points by which to adjust kern-pair characters, e.g. characters spacing. 
-	By default this parameter ```0``` and ingnored.
+	By default this parameter is ```0``` and ingnored.
 	*/
 	public convenience init(string: String, font: UIFont, color: UIColor, lineSpacing: CGFloat, textAlignment: NSTextAlignment, kerning: CGFloat = 0) {
 		var attributes = [NSFontAttributeName: font, NSForegroundColorAttributeName: color]
@@ -52,7 +52,7 @@ extension NSAttributedString {
 	- Parameter color: The attributed string text color.
 
 	- Parameter kerning: The optional number of points by which to adjust kern-pair characters, e.g. characters spacing.
-	By default this parameter ```0``` and ingnored.
+	By default this parameter is ```0``` and ingnored.
 	*/
 	public convenience init(string: String, font: UIFont, color: UIColor, kerning: CGFloat = 0) {
 		var attributes = [NSFontAttributeName: font, NSForegroundColorAttributeName: color]
