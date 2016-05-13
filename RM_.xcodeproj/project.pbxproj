@@ -32,6 +32,7 @@
 		3D65F1EC1CCAD270004F8B29 /* RM_User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D65F1EA1CCAD270004F8B29 /* RM_User.swift */; };
 		3D65F1EF1CCAD3B9004F8B29 /* RM_JSONElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D65F1EE1CCAD3B9004F8B29 /* RM_JSONElement.swift */; };
 		3D72778A1CE5C9A000E045BA /* UIImage+ColorizedCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7277891CE5C9A000E045BA /* UIImage+ColorizedCreation.swift */; };
+		3D72778E1CE5CC9600E045BA /* RM_UIImage_ColorizedCreationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D72778D1CE5CC9600E045BA /* RM_UIImage_ColorizedCreationTests.swift */; };
 		3DB0E7EA1CCD81DC002C23D1 /* RM_Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB0E7E91CCD81DC002C23D1 /* RM_Result.swift */; };
 		3DB3985F1CCAF08500A387E0 /* RM_JSONElementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB3985E1CCAF08500A387E0 /* RM_JSONElementTests.swift */; };
 		3DB398631CCAF13800A387E0 /* api_public_products_GET.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DB398621CCAF13800A387E0 /* api_public_products_GET.json */; };
@@ -95,6 +96,7 @@
 		3D65F1EA1CCAD270004F8B29 /* RM_User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RM_User.swift; sourceTree = "<group>"; };
 		3D65F1EE1CCAD3B9004F8B29 /* RM_JSONElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RM_JSONElement.swift; sourceTree = "<group>"; };
 		3D7277891CE5C9A000E045BA /* UIImage+ColorizedCreation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+ColorizedCreation.swift"; sourceTree = "<group>"; };
+		3D72778D1CE5CC9600E045BA /* RM_UIImage_ColorizedCreationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RM_UIImage_ColorizedCreationTests.swift; sourceTree = "<group>"; };
 		3DB0E7E91CCD81DC002C23D1 /* RM_Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RM_Result.swift; sourceTree = "<group>"; };
 		3DB3985E1CCAF08500A387E0 /* RM_JSONElementTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RM_JSONElementTests.swift; sourceTree = "<group>"; };
 		3DB398621CCAF13800A387E0 /* api_public_products_GET.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = api_public_products_GET.json; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 			children = (
 				3DB398601CCAF0C800A387E0 /* Resources */,
 				3D65F1D11CCABC8A004F8B29 /* Model */,
+				3D72778B1CE5CC7200E045BA /* View */,
 				3D65F1C81CCAB9A8004F8B29 /* Info.plist */,
 				3DB398641CCAF17A00A387E0 /* XCTestCase+BundleResources.swift */,
 			);
@@ -332,6 +335,22 @@
 				3D65F1EE1CCAD3B9004F8B29 /* RM_JSONElement.swift */,
 			);
 			path = Parser;
+			sourceTree = "<group>";
+		};
+		3D72778B1CE5CC7200E045BA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3D72778C1CE5CC7200E045BA /* Extensions */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3D72778C1CE5CC7200E045BA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3D72778D1CE5CC9600E045BA /* RM_UIImage_ColorizedCreationTests.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		3DB0E7E81CCD81D2002C23D1 /* Misc */ = {
@@ -618,6 +637,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D72778E1CE5CC9600E045BA /* RM_UIImage_ColorizedCreationTests.swift in Sources */,
 				3D4976861CCFA96000401EA1 /* RM_DAL+UserTests.swift in Sources */,
 				3D21017B1CCDF1AF00E1CBFD /* RM_LocalizationTest.swift in Sources */,
 				3D2101881CCE041C00E1CBFD /* RM_FontTests.swift in Sources */,
