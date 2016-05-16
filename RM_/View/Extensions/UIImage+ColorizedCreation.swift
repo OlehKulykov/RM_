@@ -18,7 +18,7 @@ extension UIImage {
 	
 	- Parameter color: The image color.
 	
-	- Parameter size: The image size in points. Defaults is [1; 1].
+	- Parameter size: The image size in points. Default size is [1; 1].
 	*/
 	public convenience init(color: UIColor, size: CGSize = CGSizeMake(1, 1)) {
 		let screenScale = UIScreen.mainScreen().scale
