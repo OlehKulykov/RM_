@@ -28,7 +28,7 @@ Example: pseudo code for the basic GET request.
 	api.request { result in
 		// process result as RM_Result<RM_JSONElement> in a session thread.
 	}
-````
+```
 */
 class RM_APIRequest<Parser: RM_ParsableElementType> {
 
