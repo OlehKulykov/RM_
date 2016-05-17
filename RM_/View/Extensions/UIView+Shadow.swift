@@ -28,15 +28,15 @@ extension UIView {
 	Set shadow for some or all view sides. 
  
 	- Parameter insets: Shadow insets in points for each view side.
-	Provide `0` to ignore or positive value in points to define thickness of the shadow part.
+	Provide ```0``` to ignore or positive value in points to define thickness of the shadow part.
 	
-	- Parameter color: The color of the shadow. This value applies directly to view `layer`.
+	- Parameter color: The color of the shadow. This value applies directly to view ```layer```.
 	
-	- Parameter radius: Shadow radius. This value applies directly to view `layer`.
+	- Parameter radius: Shadow radius. This value applies directly to view ```layer```.
 	
-	- Parameter opacity: Shadow opacity. This value applies directly to view `layer`.
+	- Parameter opacity: Shadow opacity. This value applies directly to view ```layer```.
 	
-	- Warning: Set shadow only after view layout was changed, due to correct view/layer bounds. See example.
+	- Warning: Set shadow only after view layout was changed, due to correct view/layer ```bounds```. See example.
 	
 	Example: 
 	
@@ -108,15 +108,15 @@ extension UIView {
 	/**
 	Set rounded shadow for all view sides.
 
-	- Parameter color: The color of the shadow. This value applies directly to view `layer`.
+	- Parameter color: The color of the shadow. This value applies directly to view ```layer```.
 
 	- Parameter offset: Offset of the shadow layer.
 
-	- Parameter radius: Shadow radius. This value applies directly to view `layer`.
+	- Parameter radius: Shadow radius. This value applies directly to view ```layer```.
 
-	- Parameter opacity: Shadow opacity. This value applies directly to view `layer`.
+	- Parameter opacity: Shadow opacity. This value applies directly to view ```layer```.
 
-	- Warning: Set shadow only after view layout was changed, due to correct view/layer bounds. See example.
+	- Warning: Set shadow only after view layout was changed, due to correct view/layer ```bounds```. See example.
 
 	Example:
 
