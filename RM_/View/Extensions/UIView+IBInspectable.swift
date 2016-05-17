@@ -11,7 +11,7 @@ import UIKit
 
 /**
 Interface Builder inspectable properties. 
-All this properties/variables interacts dirrectly with view or it's layer.
+All this properties/variables interacts dirrectly with view or it's ```layer```.
 No need to hardcode this parameters.
 */
 extension UIView {
@@ -69,7 +69,7 @@ extension UIView {
 
 
 	/**
-	A Boolean indicating whether sublayers are clipped to the layer’s bounds
+	A Boolean indicating whether sublayers are clipped to the layer’s bounds.
 	*/
 	@IBInspectable public var masksToBounds_: Bool {
 		get {
