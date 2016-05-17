@@ -12,7 +12,7 @@ import Foundation
 
 /**
 Parsable element object protocol which could be initialized with data(JSON, XML, etc)
-and casted to an internal, primitive values. Like dictionaries, arrays, numers etc.
+and casted to an internal, primitive values. Like dictionaries, arrays, numbers etc.
 */
 protocol RM_ParsableElementType {
 

@@ -13,7 +13,7 @@ import Foundation
 /**
 Type of operation result, which are success or failure with additional object.
 
-`T` - type of object provided with `Success` case.
+`T` - Associated value type of object provided with ```Success``` case.
 */
 enum RM_Result<T> {
 
@@ -24,7 +24,7 @@ enum RM_Result<T> {
 
 
 	/**
-	Operation was failed with error. Use `NSLocalizedDescriptionKey` of the error to get human readable description.
+	Operation was failed with error. Use ```NSLocalizedDescriptionKey``` of the error to get human readable description.
 	*/
 	case Failure(NSError)
 }

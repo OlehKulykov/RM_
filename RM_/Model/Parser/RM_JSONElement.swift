@@ -14,8 +14,8 @@ import Foundation
 Enumerator which represent JSON element.
 
 For each element, except Null, it's possible to get casted dictionary, array or primitive value object.
-Enumerator type can be any of types supported by the `NSJSONSerialization` like:
-`NSArray`, `NSDictionary`, `NSString`, `NSNumber` or `NSNull`.
+Enumerator type can be any of types supported by the ```NSJSONSerialization``` like:
+```NSArray```, ```NSDictionary```, ```NSString```, ```NSNumber``` or ```NSNull```.
 
 That's why it's possible to get/cast to this type or initialize element from this type.
 */
@@ -23,22 +23,22 @@ enum RM_JSONElement: RM_ParsableElementType {
 
 	//MARK: JSON element types.
 
-	/// Element is NSDictionary.
+	/// Element is ```NSDictionary```.
 	case Dictionary(NSDictionary)
 
 
-	/// Element is NSArray.
-	/// Use `.array` dynamic variable to get/cast stored object to an array of `AnyObject`'s.
+	/// Element is ```NSArray```.
+	/// Use ```.array``` dynamic variable to get/cast stored object to an array of ```AnyObject```'s.
 	case Array([AnyObject])
 
 
 	/// Element is NSString or NSNumber.
-	/// Use `.decimal`, `.number`, `.integer`, `.double`, `.bool` dynamic variables.
+	/// Use ```.decimal```, ```.number```, ```.integer```, ```.double```, ```.bool``` dynamic variables.
 	/// to get/cast to an appropriate type.
 	case Object(AnyObject)
 
 
-	/// Element is NSNull or any other unsupported type.
+	/// Element is ```NSNull``` or any other unsupported type.
 	case Null
 
 
@@ -62,7 +62,7 @@ enum RM_JSONElement: RM_ParsableElementType {
 	/**
 	Initialize JSON element from any supported object.
 	
-	- Parameter object: Any of next objects: NSArray, NSDictionary, NSString, NSNumber.
+	- Parameter object: Any of next objects: ```NSArray```, ```NSDictionary```, ```NSString```, ```NSNumber```.
 	*/
 	init(object: AnyObject) {
 		if let dictionary = object as? NSDictionary {
@@ -178,10 +178,10 @@ enum RM_JSONElement: RM_ParsableElementType {
 
 
 	/**
-	Obtain `NSDecimalNumber` object of the element if possible.
-	Object should be one of the next types: `NSNumber`, `NSDecimalNumber` or string.
+	Obtain ```NSDecimalNumber``` object of the element if possible.
+	Object should be one of the next types: ```NSNumber```, ```NSDecimalNumber``` or string.
 	
-	- Returns: `NSDecimalNumber` object or nil.
+	- Returns: ```NSDecimalNumber``` object or nil.
 	*/
 	var decimal: NSDecimalNumber? {
 		switch self {
@@ -201,10 +201,10 @@ enum RM_JSONElement: RM_ParsableElementType {
 
 
 	/**
-	Obtain `NSNumber` object of the element if possible.
-	Object should be one of the next types: `NSNumber`, `NSDecimalNumber` or string.
+	Obtain ```NSNumber``` object of the element if possible.
+	Object should be one of the next types: ```NSNumber```, ```NSDecimalNumber``` or string.
 	
-	- Returns: `NSNumber` object or nil.
+	- Returns: ```NSNumber``` object or nil.
 	*/
 	var number: NSNumber? {
 		switch self {
