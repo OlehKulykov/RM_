@@ -21,8 +21,10 @@ extension String {
 	*/
 	public init(count: Int, repeatedValue repeated: String) {
 		var s = ""
-		for _ in 0..<count {
-			s += repeated
+		if count > 0 {
+			for _ in 0..<count {
+				s += repeated
+			}
 		}
 		self.init(s)
 	}
