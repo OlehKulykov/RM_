@@ -11,81 +11,100 @@ import UIKit
 
 extension UIView {
 
+	/// Creates border view with border color.
+	/// - Parameter color: The border view color.
+	private static func createBorderView(color: UIColor) -> UIView {
+		let border = UIView(frame: CGRectZero)
+		border.backgroundColor = color
+		border.translatesAutoresizingMaskIntoConstraints = false
+		return border
+	}
+
+	public func addTopBorder(color: UIColor, height: CGFloat, insets: UIEdgeInsets = UIEdgeInsetsZero) -> UIView {
+		let border = UIView.createBorderView(color)
+		addSubview(border)
+		addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-(top)-[border(==height)]",
+			options: [],
+			metrics: ["height" : height, "top" : insets.top],
+			views: ["border" : border]))
+		addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-(left)-[border]-(right)-|",
+			options: [],
+			metrics: ["left" : insets.left, "right" : insets.right],
+			views: ["border" : border]))
+		return border
+	}
+
+	public func addLeftBorder(color: UIColor, width: CGFloat, insets: UIEdgeInsets = UIEdgeInsetsZero) -> UIView {
+		let border = UIView.createBorderView(color)
+		addSubview(border)
+		addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-(left)-[border(==width)]",
+			options: [],
+			metrics: ["width" : width, "left" : insets.left],
+			views: ["border" : border]))
+		addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-(top)-[border]-(bottom)-|",
+			options: [],
+			metrics: ["top" : insets.top, "bottom" : insets.bottom],
+			views: ["border" : border]))
+		return border
+	}
+
+	public func addRightBorder(color: UIColor, width: CGFloat, insets: UIEdgeInsets = UIEdgeInsetsZero) -> UIView {
+		let border = UIView.createBorderView(color)
+		addSubview(border)
+		addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:[border(==width)]-(right)-|",
+			options: [],
+			metrics: ["width" : width, "right" : insets.right],
+			views: ["border" : border]))
+		addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-(top)-[border]-(bottom)-|",
+			options: [],
+			metrics: ["top" : insets.top, "bottom" : insets.bottom],
+			views: ["border" : border]))
+		return border
+	}
+
+	public func addBottomBorder(color: UIColor, height: CGFloat, insets: UIEdgeInsets = UIEdgeInsetsZero) -> UIView {
+		let border = UIView.createBorderView(color)
+		addSubview(border)
+		addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[border(==height)]-(bottom)-|",
+			options: [],
+			metrics: ["height" : height, "bottom" : insets.bottom],
+			views: ["border" : border]))
+		addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-(left)-[border]-(right)-|",
+			options: [],
+			metrics: ["left" : insets.left, "right" : insets.right],
+			views: ["border" : border]))
+		return border
+	}
+
 	/**
 	Add borders to the view.
 	
-	- Parameter edges: View adges to that add border.
- 
+	- Note: The adding borders sequence is same as on `UIEdgeInsets`: `top`, `left`, `bottom`, `right`.
+
+	- Parameter edges: View edges to that add borders.
+
 	- Parameter color: Color of the added borders.
-	
+
 	- Parameter thickness: The thickness of the border views, e.g. border width in a case of vertical or height in case of horizontal.
-	
+
 	- Returns: Array with added borders.
 	*/
-	func addBorders(edges: UIRectEdge, color: UIColor, thickness: CGFloat) -> [UIView] {
-
-		func border() -> UIView {
-			let border = UIView(frame: CGRectZero)
-			border.backgroundColor = color
-			border.translatesAutoresizingMaskIntoConstraints = false
-			return border
-		}
-
+	public func addBorders(edges: UIRectEdge, color: UIColor, thickness: CGFloat) -> [UIView] {
 		var borders = [UIView]()
 		if edges.contains(.Top) || edges.contains(.All) {
-			let top = border()
-			self.addSubview(top)
-			self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-(0)-[top(==thickness)]",
-				options: [],
-				metrics: ["thickness": thickness],
-				views: ["top": top]))
-			self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-(0)-[top]-(0)-|",
-				options: [],
-				metrics: nil,
-				views: ["top": top]))
-			borders.append(top)
+			borders.append(addTopBorder(color, height: thickness))
 		}
 
 		if edges.contains(.Left) || edges.contains(.All) {
-			let left = border()
-			self.addSubview(left)
-			self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-(0)-[left(==thickness)]",
-				options: [],
-				metrics: ["thickness": thickness],
-				views: ["left": left]))
-			self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-(0)-[left]-(0)-|",
-				options: [],
-				metrics: nil,
-				views: ["left": left]))
-			borders.append(left)
-		}
-
-		if edges.contains(.Right) || edges.contains(.All) {
-			let right = border()
-			self.addSubview(right)
-			self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:[right(==thickness)]-(0)-|",
-				options: [],
-				metrics: ["thickness": thickness],
-				views: ["right": right]))
-			self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-(0)-[right]-(0)-|",
-				options: [],
-				metrics: nil,
-				views: ["right": right]))
-			borders.append(right)
+			borders.append(addLeftBorder(color, width: thickness))
 		}
 
 		if edges.contains(.Bottom) || edges.contains(.All) {
-			let bottom = border()
-			self.addSubview(bottom)
-			self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[bottom(==thickness)]-(0)-|",
-				options: [],
-				metrics: ["thickness": thickness],
-				views: ["bottom": bottom]))
-			self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-(0)-[bottom]-(0)-|",
-				options: [],
-				metrics: nil,
-				views: ["bottom": bottom]))
-			borders.append(bottom)
+			borders.append(addBottomBorder(color, height: thickness))
+		}
+
+		if edges.contains(.Right) || edges.contains(.All) {
+			borders.append(addRightBorder(color, width: thickness))
 		}
 		return borders
 	}
