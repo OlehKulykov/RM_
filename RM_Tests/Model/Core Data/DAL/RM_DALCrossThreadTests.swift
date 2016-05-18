@@ -97,7 +97,4 @@ class RM_DALCrossThreadTests: XCTestCase {
 		}
 	}
 
-	func testEditInBackground() {
-
-	}
 }

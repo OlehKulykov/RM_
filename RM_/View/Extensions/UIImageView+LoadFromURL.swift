@@ -60,13 +60,12 @@ extension UIImageView {
 		image = placeholder
 		imageUrl = url
 
-		guard let url = url else {
-			return
+		if let url = url {
+			// Create and start data task within background
+			dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), { [weak self] in
+				self?.loadImageFromURL(url)
+				})
 		}
-
-		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), { [weak self] in
-			self?.loadImageFromURL(url)
-			})
 	}
 	
 }
