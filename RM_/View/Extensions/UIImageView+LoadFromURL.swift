@@ -17,7 +17,7 @@ extension UIImageView {
 	}
 
 	/**
-	Public getter of the image url, provided to function ```loadImageFromURL```.
+	Public getter of the image url, provided to function `loadImageFromURL`.
 	*/
 	private(set) var imageUrl: NSURL? {
 		get {

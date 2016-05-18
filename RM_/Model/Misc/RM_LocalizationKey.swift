@@ -11,7 +11,7 @@ import Foundation
 
 
 /**
-Application localizable keys. This enum contains string keys for ```Localizable.strings``` file and
+Application localizable keys. This enum contains string keys for `Localizable.strings` file and
 should be translated to all available languages.
 */
 enum RM_LocalizationKey: String {

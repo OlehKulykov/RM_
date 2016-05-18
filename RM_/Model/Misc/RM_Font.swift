@@ -13,7 +13,7 @@ import UIKit
 
 /**
 Custom application provided fonts.
-Each case is a string that can be used to initialize ```UIFont``` object.
+Each case is a string that can be used to initialize `UIFont` object.
 
 Example: create one of the provided custom fonts.
 

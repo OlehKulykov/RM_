@@ -11,7 +11,7 @@ import UIKit
 
 /**
 Interface Builder inspectable properties. 
-All this properties/variables interacts dirrectly with view or it's ```layer```.
+All this properties/variables interacts dirrectly with view or it's `layer`.
 No need to hardcode this parameters.
 */
 extension UIView {
