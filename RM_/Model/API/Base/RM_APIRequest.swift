@@ -30,12 +30,12 @@ Example: pseudo code for the basic GET request.
 	}
 ```
 */
-class RM_APIRequest<Parser: RM_ParsableElementType> {
+public class RM_APIRequest<Parser: RM_ParsableElementType> {
 
 	/**
 	API request timeout in seconds for the instance.
 	*/
-	var timeout: NSTimeInterval = 40
+	public var timeout: NSTimeInterval = 40
 
 
 	/**
@@ -65,7 +65,7 @@ class RM_APIRequest<Parser: RM_ParsableElementType> {
 		- url: The request URL.
 		- method: HTTP method of the request. The default value is `GET`.
 	*/
-	init(url: String, HTTPMethod method: RM_HTTPMethod = .GET) {
+	public init(url: String, HTTPMethod method: RM_HTTPMethod = .GET) {
 		self.url = NSURL(string: url)
 		self.method = method
 	}
@@ -80,7 +80,7 @@ class RM_APIRequest<Parser: RM_ParsableElementType> {
 
 	- Returns: Mutable URL request object or nil if no url provided.
 	*/
-	func createURLRequest() -> NSMutableURLRequest? {
+	internal func createURLRequest() -> NSMutableURLRequest? {
 		guard let url = self.url else {
 			return nil
 		}
@@ -96,7 +96,7 @@ class RM_APIRequest<Parser: RM_ParsableElementType> {
 	/**
 	Cancels the API request. After this call you will not be informed with a result via completion handler.
 	*/
-	func cancel() {
+	public func cancel() {
 		completionHandler = nil
 		dataTask?.cancel()
 		dataTask = nil
@@ -127,7 +127,7 @@ class RM_APIRequest<Parser: RM_ParsableElementType> {
 		}
 	```
 	*/
-	func request(completionHandler: RM_Result<Parser> -> Void) {
+	public func request(completionHandler: RM_Result<Parser> -> Void) {
 		cancel()
 		self.completionHandler = completionHandler
 

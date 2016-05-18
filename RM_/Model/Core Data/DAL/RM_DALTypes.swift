@@ -28,7 +28,7 @@ And, `InternalType` will be `RM_User` and `PublicType` is `RM_UserType`.
 - Note: Following OOP encapsulation, all internal functionality use `InternalType` and the result
 provided as `PublicType`.
 */
-protocol RM_DALType {
+public protocol RM_DALType {
 
 	/// Placeholder for the internal entity type as it presented in data model.
 	associatedtype InternalType
@@ -94,7 +94,7 @@ Use this DAL type for update/modify mada model.
 
 - Note: All mutable methods doesn't save changes, thats why developer should call `save()` manualy after all operations/modifications are done.
 */
-protocol RM_MutableDALType: RM_DALType {
+public protocol RM_MutableDALType: RM_DALType {
 
 	/**
 	Create new entity instance with the `InternalType` type.

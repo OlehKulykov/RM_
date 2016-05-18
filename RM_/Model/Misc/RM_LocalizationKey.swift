@@ -14,7 +14,7 @@ import Foundation
 Application localizable keys. This enum contains string keys for `Localizable.strings` file and
 should be translated to all available languages.
 */
-enum RM_LocalizationKey: String {
+public enum RM_LocalizationKey: String {
 
 	//MARK: Localization cases
 
@@ -35,7 +35,7 @@ enum RM_LocalizationKey: String {
 		print("Localized string: \(RM_LocalizationKey.<KEY>.localized)")
 	```
 	*/
-	var localized: String {
+	public var localized: String {
 		return NSLocalizedString(self.rawValue, comment: "")
 	}
 }

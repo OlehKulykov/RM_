@@ -22,7 +22,7 @@ Example: create one of the provided custom fonts.
 	let font = RM_Font.<KEY>.fontWithSize(16.5)
 ```
 */
-enum RM_Font: String {
+public enum RM_Font: String {
 
 	//MARK: Font cases
 
@@ -45,7 +45,7 @@ enum RM_Font: String {
 
 	- Returns: Create custom font with a provided size.
 	*/
-	func fontWithSize(size: CGFloat) -> UIFont {
+	public func fontWithSize(size: CGFloat) -> UIFont {
 		return UIFont(name: self.rawValue, size: size)!
 	}
 }

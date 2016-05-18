@@ -15,7 +15,7 @@ Type of operation result, which are success or failure with additional object.
 
 `T` - Associated value type of object provided with `Success` case.
 */
-enum RM_Result<T> {
+public enum RM_Result<T> {
 
 	/**
 	Operation was successful with provided result type.

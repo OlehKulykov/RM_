@@ -14,6 +14,6 @@ import CoreData
 
 extension RM_Entity {
 
-    @NSManaged var oId: String
+    @NSManaged public var oId: String
 
 }

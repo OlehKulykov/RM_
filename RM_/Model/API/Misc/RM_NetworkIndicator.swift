@@ -27,7 +27,7 @@ Example:
 	RM_NetworkIndicator.visible = false // now it's invisible
 ```
 */
-class RM_NetworkIndicator {
+public class RM_NetworkIndicator {
 
 	//MARK: Private variables and functions
 
@@ -56,7 +56,7 @@ class RM_NetworkIndicator {
 
 	- Note: Based on counter logic, so if you want to change this value you need to set reverse value same times.
 	*/
-	static var visible: Bool {
+	public static var visible: Bool {
 		get {
 			if NSThread.isMainThread() {
 				return visibilityCounter > 0

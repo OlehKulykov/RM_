@@ -45,20 +45,20 @@ Example: Locate and edit entity.
 	print("User name: \(user.name)")
 ```
 */
-final class RM_DAL<Entity: RM_EntityType>: RM_ReadableDAL<Entity, Entity.PublicType>, RM_DALType {
+public final class RM_DAL<Entity: RM_EntityType>: RM_ReadableDAL<Entity, Entity.PublicType>, RM_DALType {
 
 	/// Define internal entity type as it presented in data model.
-	typealias InternalType = Entity
+	public typealias InternalType = Entity
 
 	/// Define public/read only entity type, e.g. result entity type. 
 	/// - Note: Each entity should have public protocol
-	typealias PublicType = Entity.PublicType
+	public typealias PublicType = Entity.PublicType
 
 
 	//MARK: Private DAL vars, functionality
 
 	/// Initialize instance and store Core Data Stack.
-	override private init(dataStack: RM_CoreDataStack) {
+	override internal init(dataStack: RM_CoreDataStack) {
 		super.init(dataStack: dataStack)
 	}
 
@@ -71,7 +71,7 @@ final class RM_DAL<Entity: RM_EntityType>: RM_ReadableDAL<Entity, Entity.PublicT
 	
 	- Returns: Main thread readonly/immutable DAL.
 	*/
-	static func create() -> RM_DAL {
+	public static func create() -> RM_DAL {
 		return RM_DAL(dataStack: RM_CoreDataStack.sharedDataStack)
 	}
 
@@ -84,7 +84,7 @@ final class RM_DAL<Entity: RM_EntityType>: RM_ReadableDAL<Entity, Entity.PublicT
 	
 	- Returns: Background queue readonly/immutable DAL.
 	*/
-	static func createBackgrounded() -> RM_DAL {
+	public static func createBackgrounded() -> RM_DAL {
 		return RM_DAL(dataStack: RM_CoreDataStack.sharedBackgroundDataStack)
 	}
 
@@ -120,19 +120,19 @@ Example: Create and edit new user.
 	user.name = "Some user name"
 ```
 */
-final class RM_MutableDAL<Entity: RM_EntityType>: RM_WritableDAL<Entity, Entity>, RM_MutableDALType {
+public final class RM_MutableDAL<Entity: RM_EntityType>: RM_WritableDAL<Entity, Entity>, RM_MutableDALType {
 
 	/// Define internal entity type as it presented in data model.
-	typealias InternalType = Entity
+	public typealias InternalType = Entity
 
 	/// Define public entity type as internal type to have possibility to edit entities.
-	typealias PublicType = Entity
+	public typealias PublicType = Entity
 
 
 	//MARK: Private DAL vars, functionality
 
 	/// Initialize instance and store Core Data Stack.
-	override private init(dataStack: RM_CoreDataStack) {
+	override internal init(dataStack: RM_CoreDataStack) {
 		super.init(dataStack: dataStack)
 	}
 
@@ -143,7 +143,7 @@ final class RM_MutableDAL<Entity: RM_EntityType>: RM_WritableDAL<Entity, Entity>
 	
 	- Returns: Main thread mutable DAL.
 	*/
-	static func create() -> RM_MutableDAL {
+	public static func create() -> RM_MutableDAL {
 		return RM_MutableDAL(dataStack: RM_CoreDataStack.sharedDataStack)
 	}
 
@@ -156,7 +156,7 @@ final class RM_MutableDAL<Entity: RM_EntityType>: RM_WritableDAL<Entity, Entity>
 	
 	- Returns: Background queue mutable DAL.
 	*/
-	static func createBackgrounded() -> RM_MutableDAL {
+	public static func createBackgrounded() -> RM_MutableDAL {
 		return RM_MutableDAL(dataStack: RM_CoreDataStack.sharedBackgroundDataStack)
 	}
 }

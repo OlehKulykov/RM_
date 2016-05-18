@@ -21,7 +21,7 @@ Generic implementation of the immutable/readonly DAL common functionality.
 
 - Warning: For internal purpose only. Not for direct using.
 */
-internal class RM_ReadableDAL<InternalType, PublicType> {
+public class RM_ReadableDAL<InternalType, PublicType> {
 
 	//MARK: Private DAL vars, functionality
 
@@ -29,7 +29,7 @@ internal class RM_ReadableDAL<InternalType, PublicType> {
 	private let dataStack: RM_CoreDataStack
 
 	/// Initialize instance and store Core Data Stack.
-	init(dataStack: RM_CoreDataStack) {
+	internal init(dataStack: RM_CoreDataStack) {
 		self.dataStack = dataStack
 	}
 
@@ -44,7 +44,7 @@ internal class RM_ReadableDAL<InternalType, PublicType> {
 	- Returns: Array with `PublicType` entity types followed search criterio/predicate, all available entities without predicate
 	or empty array if nothing have beed found.
 	*/
-	func findWithPredicate(predicate: NSPredicate?) -> [PublicType] {
+	public func findWithPredicate(predicate: NSPredicate?) -> [PublicType] {
 		let entities = dataStack.findObjects(objectName: "\(InternalType.self)", withPredicate: predicate)
 		return entities.map { $0 as! PublicType }
 	}
@@ -55,7 +55,7 @@ internal class RM_ReadableDAL<InternalType, PublicType> {
 
 	- Returns: Array with all available `PublicType` entity types or empty array if no entities exists.
 	*/
-	func findAll() -> [PublicType] {
+	public func findAll() -> [PublicType] {
 		return dataStack.findObjects(objectName: "\(InternalType.self)", withPredicate: nil).map { $0 as! PublicType }
 	}
 
@@ -71,12 +71,12 @@ Inherits all readable/immutable functionality and extends with editing functiona
 
 - Warning: For internal purpose only. Not for direct using.
 */
-internal class RM_WritableDAL<InternalType, PublicType>: RM_ReadableDAL<InternalType, PublicType> {
+public class RM_WritableDAL<InternalType, PublicType>: RM_ReadableDAL<InternalType, PublicType> {
 
 	//MARK: Private DAL vars, functionality
 
 	/// Initialize instance and store Core Data Stack to base.
-	override init(dataStack: RM_CoreDataStack) {
+	override internal init(dataStack: RM_CoreDataStack) {
 		super.init(dataStack: dataStack)
 	}
 
@@ -88,7 +88,7 @@ internal class RM_WritableDAL<InternalType, PublicType>: RM_ReadableDAL<Internal
 	
 	- Returns: Newly created entity instance.
 	*/
-	func createEntity() -> PublicType {
+	public func createEntity() -> PublicType {
 		return dataStack.createNewObject(objectName: "\(InternalType.self)") as! PublicType
 	}
 
@@ -96,7 +96,7 @@ internal class RM_WritableDAL<InternalType, PublicType>: RM_ReadableDAL<Internal
 	/**
 	Delete entity instance.
 	*/
-	func deleteEntity(entity: PublicType) {
+	public func deleteEntity(entity: PublicType) {
 		dataStack.deleteObject(entity as! NSManagedObject)
 	}
 
@@ -104,7 +104,7 @@ internal class RM_WritableDAL<InternalType, PublicType>: RM_ReadableDAL<Internal
 	/**
 	Delete all instances of the `InternalType` type.
 	*/
-	func deleteAll() {
+	public func deleteAll() {
 		dataStack.deleteObjects(objectsName: "\(InternalType.self)")
 	}
 
@@ -112,7 +112,7 @@ internal class RM_WritableDAL<InternalType, PublicType>: RM_ReadableDAL<Internal
 	/**
 	Save changes after modifications of the data model, entities, etc.
 	*/
-	func save() {
+	public func save() {
 		dataStack.save()
 	}
 }
