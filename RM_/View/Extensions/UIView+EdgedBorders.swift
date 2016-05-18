@@ -20,6 +20,21 @@ extension UIView {
 		return border
 	}
 
+
+	/**
+	Add top border view to the receiver. 
+	Border is `UIView` and location of the border controls by layout constraints.
+	
+	- Parameter color: The border color.
+	
+	- Parameter height: The border height in points.
+	
+	- Parameter insets: Optional insets for the border. By default insets is `UIEdgeInsetsZero`
+	
+	- Returns: Added border view.
+	
+	- Note: The 'bottom' insets value is ignored.
+	*/
 	public func addTopBorder(color: UIColor, height: CGFloat, insets: UIEdgeInsets = UIEdgeInsetsZero) -> UIView {
 		let border = UIView.createBorderView(color)
 		addSubview(border)
@@ -34,6 +49,21 @@ extension UIView {
 		return border
 	}
 
+
+	/**
+	Add left border view to the receiver. 
+	Border is `UIView` and location of the border controls by layout constraints.
+
+	- Parameter color: The border color.
+
+	- Parameter width: The border width in points.
+
+	- Parameter insets: Optional insets for the border. By default insets is `UIEdgeInsetsZero`
+
+	- Returns: Added border view.
+
+	- Note: The 'right' insets value is ignored.
+	*/
 	public func addLeftBorder(color: UIColor, width: CGFloat, insets: UIEdgeInsets = UIEdgeInsetsZero) -> UIView {
 		let border = UIView.createBorderView(color)
 		addSubview(border)
@@ -48,6 +78,21 @@ extension UIView {
 		return border
 	}
 
+
+	/**
+	Add right border view to the receiver. 
+	Border is `UIView` and location of the border controls by layout constraints.
+
+	- Parameter color: The border color.
+
+	- Parameter width: The border width in points.
+
+	- Parameter insets: Optional insets for the border. By default insets is `UIEdgeInsetsZero`
+
+	- Returns: Added border view.
+
+	- Note: The 'left' insets value is ignored.
+	*/
 	public func addRightBorder(color: UIColor, width: CGFloat, insets: UIEdgeInsets = UIEdgeInsetsZero) -> UIView {
 		let border = UIView.createBorderView(color)
 		addSubview(border)
@@ -62,6 +107,21 @@ extension UIView {
 		return border
 	}
 
+
+	/**
+	Add bottom border view to the receiver. 
+	Border is `UIView` and location of the border controls by layout constraints.
+
+	- Parameter color: The border color.
+
+	- Parameter height: The border height in points.
+
+	- Parameter insets: Optional insets for the border. By default insets is `UIEdgeInsetsZero`
+
+	- Returns: Added border view.
+
+	- Note: The 'top' insets value is ignored.
+	*/
 	public func addBottomBorder(color: UIColor, height: CGFloat, insets: UIEdgeInsets = UIEdgeInsetsZero) -> UIView {
 		let border = UIView.createBorderView(color)
 		addSubview(border)
@@ -76,10 +136,12 @@ extension UIView {
 		return border
 	}
 
+
 	/**
-	Add borders to the view.
+	Add borders to the view. 
+	For each required rectangle edge using appropriate methods, e.g. 'addTopBorder', 'addLeftBorder', etc.
 	
-	- Note: The adding borders sequence is same as on `UIEdgeInsets`: `top`, `left`, `bottom`, `right`.
+	- Note: The adding borders sequence is: `top`, `left`, `bottom`, `right`.
 
 	- Parameter edges: View edges to that add borders.
 
@@ -88,6 +150,15 @@ extension UIView {
 	- Parameter thickness: The thickness of the border views, e.g. border width in a case of vertical or height in case of horizontal.
 
 	- Returns: Array with added borders.
+	
+	Example: 
+	```swift
+		// Add top and left border with the same color and thickness
+		let borders = view.addBorders([.Top, .Left], color: UIColor.redColor(), thickness: 1.5)
+	
+		// Add single bottom border
+		view.addBorders(.Bottom, color: UIColor.redColor(), thickness: 0.5)
+	```
 	*/
 	public func addBorders(edges: UIRectEdge, color: UIColor, thickness: CGFloat) -> [UIView] {
 		var borders = [UIView]()
@@ -108,6 +179,6 @@ extension UIView {
 		}
 		return borders
 	}
-	
+
 }
 
