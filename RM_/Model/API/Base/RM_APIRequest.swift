@@ -61,9 +61,9 @@ public class RM_APIRequest<Parser: RM_ParsableElementType> {
 	/**
 	Initialize API request instance with URL and HTTP method.
 
-	- Parameters:
-		- url: The request URL.
-		- method: HTTP method of the request. The default value is `GET`.
+	- Parameter url: The request URL.
+	
+	- Parameter method: HTTP method of the request. The default value is `GET`.
 	*/
 	public init(url: String, HTTPMethod method: RM_HTTPMethod = .GET) {
 		self.url = NSURL(string: url)

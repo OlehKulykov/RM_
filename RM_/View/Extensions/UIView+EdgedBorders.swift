@@ -151,7 +151,8 @@ extension UIView {
 
 	- Returns: Array with added borders.
 	
-	Example: 
+	Example:
+
 	```swift
 		// Add top and left border with the same color and thickness
 		let borders = view.addBorders([.Top, .Left], color: UIColor.redColor(), thickness: 1.5)

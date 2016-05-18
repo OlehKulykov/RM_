@@ -48,11 +48,10 @@ class RM_CoreDataStack {
 	To find all objects/entities by name just provide predicate as nil, e.g. ignore.
 
 	- Note: It's recommended to use object/entity name same as presentation class without any suffixes and prefixes.
+
+	- Parameter name: The name of the managed objects/entities for locating.
 	
-	- Parameters:
-		- name: Name of the managed objects/entities for locating.
-	
-		- predicate: optional search predicate, can be nil if you want to get all objects/entities by name.
+	- Parameter predicate: Optional search predicate, can be nil if you want to get all objects/entities by name.
 	
 	- Returns: Array with located objects/entities or empty array.
 	*/

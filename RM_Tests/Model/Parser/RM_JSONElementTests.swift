@@ -21,6 +21,14 @@ class RM_JSONElementTests: XCTestCase {
 			XCTFail("Can't initialize JSON from file data.")
 			return
 		}
+
+		switch json {
+		case .Dictionary:
+			break
+		default:
+			XCTFail("JSON data containes unparsable data")
+		}
+
 		self.json = json
 	}
 
@@ -39,6 +47,10 @@ class RM_JSONElementTests: XCTestCase {
 			XCTFail("JSON format is broken.")
 			return
 		}
+
+		
+
+
 
 		XCTAssertNotNil(data["description"].string, "Can't find string for key.")
 		XCTAssertTrue(data["description"].string == "Some text", "Wrong string value.")
