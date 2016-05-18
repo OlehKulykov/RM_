@@ -33,7 +33,7 @@ extension UIView {
 	
 	- Returns: Added border view.
 	
-	- Note: The 'bottom' insets value is ignored.
+	- Note: The `bottom` insets value is ignored.
 	*/
 	public func addTopBorder(color: UIColor, height: CGFloat, insets: UIEdgeInsets = UIEdgeInsetsZero) -> UIView {
 		let border = UIView.createBorderView(color)
@@ -62,7 +62,7 @@ extension UIView {
 
 	- Returns: Added border view.
 
-	- Note: The 'right' insets value is ignored.
+	- Note: The `right` insets value is ignored.
 	*/
 	public func addLeftBorder(color: UIColor, width: CGFloat, insets: UIEdgeInsets = UIEdgeInsetsZero) -> UIView {
 		let border = UIView.createBorderView(color)
@@ -91,7 +91,7 @@ extension UIView {
 
 	- Returns: Added border view.
 
-	- Note: The 'left' insets value is ignored.
+	- Note: The `left` insets value is ignored.
 	*/
 	public func addRightBorder(color: UIColor, width: CGFloat, insets: UIEdgeInsets = UIEdgeInsetsZero) -> UIView {
 		let border = UIView.createBorderView(color)
@@ -120,7 +120,7 @@ extension UIView {
 
 	- Returns: Added border view.
 
-	- Note: The 'top' insets value is ignored.
+	- Note: The `top` insets value is ignored.
 	*/
 	public func addBottomBorder(color: UIColor, height: CGFloat, insets: UIEdgeInsets = UIEdgeInsetsZero) -> UIView {
 		let border = UIView.createBorderView(color)

@@ -146,7 +146,7 @@ public class RM_CoreDataStack {
 	This directory have write permissions for this application.
 	The `.path` property of this URL can be used as a string path.
 	
-	- Returns: The directory which cen be used to store the Core Data file or any other application files.
+	- Returns: The directory which can be used to store the Core Data file or any other application files.
 	*/
 	public static var documentsDirectory: NSURL = {
 		let fileManager = NSFileManager()

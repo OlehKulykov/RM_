@@ -19,7 +19,7 @@ Generic implementation of the immutable/readonly DAL common functionality.
 * `InternalType` - is the class type of the entity presented in a data model, like `RM_User`.
 * `PublicType` - public protocol of the `InternalType`, like `RM_UserType`.
 
-- Warning: For internal purpose only. Not for direct using.
+- Warning: For internal purpose only. Use `RM_DAL` instead.
 */
 public class RM_ReadableDAL<InternalType, PublicType> {
 
@@ -69,7 +69,7 @@ Inherits all readable/immutable functionality and extends with editing functiona
 
 - Note: This functionality should be provided with `InternalType` for both `InternalType` and `PublicType` types.
 
-- Warning: For internal purpose only. Not for direct using.
+- Warning: For internal purpose only. Use `RM_MutableDAL` instead.
 */
 public class RM_WritableDAL<InternalType, PublicType>: RM_ReadableDAL<InternalType, PublicType> {
 
