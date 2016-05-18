@@ -23,32 +23,32 @@ Example: create JSON element from API data, read required array with products an
 for each product get required and optional data.
 
 ```swift
-	// Init JSON element with data. For instance from API
-	guard let json = RM_JSONElement(data: APIData) else {
-		return // Data doesn't contain JSON
+// Init JSON element with data. For instance from API
+guard let json = RM_JSONElement(data: APIData) else {
+	return // Data doesn't contain JSON
+}
+
+// Get products array, each element is `RM_JSONElement`
+guard let products = json["products"].array else {
+	return // no products
+}
+
+// For each JSON element get required and optional data
+for product in products {
+	// Get required product `price` and `quantity`
+	guard let
+		price = product["price"].decimal, // product price
+		quantity = product["quantity"].integer // product quantity
+		else {
+			// There is no required product info
+			continue // with next element
 	}
 
-	// Get products array, each element is `RM_JSONElement`
-	guard let products = json["products"].array else {
-		return // no products
-	}
+	// Get optional product info, like `description`
+	let description = product["description"].string
 
-	// For each JSON element get required and optional data
-	for product in products {
-		// Get required product `price` and `quantity`
-		guard let
-			price = product["price"].decimal, // product price
-			quantity = product["quantity"].integer // product quantity
-			else {
-				// There is no required product info
-				continue // with next element
-		}
-
-		// Get optional product info, like `description`
-		let description = product["description"].string
-
-		// Do something with required and optional product info
-	}
+	// Do something with required and optional product info
+}
 ```
 */
 public enum RM_JSONElement: RM_ParsableElementType {

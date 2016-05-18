@@ -154,11 +154,11 @@ extension UIView {
 	Example:
 
 	```swift
-		// Add top and left border with the same color and thickness
-		let borders = view.addBorders([.Top, .Left], color: UIColor.redColor(), thickness: 1.5)
+	// Add top and left border with the same color and thickness
+	let borders = view.addBorders([.Top, .Left], color: UIColor.redColor(), thickness: 1.5)
 	
-		// Add single bottom border
-		view.addBorders(.Bottom, color: UIColor.redColor(), thickness: 0.5)
+	// Add single bottom border
+	view.addBorders(.Bottom, color: UIColor.redColor(), thickness: 0.5)
 	```
 	*/
 	public func addBorders(edges: UIRectEdge, color: UIColor, thickness: CGFloat) -> [UIView] {

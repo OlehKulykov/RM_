@@ -32,7 +32,7 @@ public enum RM_LocalizationKey: String {
 	Example: get localized string from case.
 
 	```swift
-		print("Localized string: \(RM_LocalizationKey.<KEY>.localized)")
+	print("Localized string: \(RM_LocalizationKey.<KEY>.localized)")
 	```
 	*/
 	public var localized: String {

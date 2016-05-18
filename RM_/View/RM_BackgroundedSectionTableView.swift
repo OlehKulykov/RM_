@@ -112,7 +112,6 @@ extension MyTableViewController: RM_BackgroundedSectionTableViewDelegate {
 		return background
 	}
 }
-
 ```
 */
 public class RM_BackgroundedSectionTableView : UITableView {

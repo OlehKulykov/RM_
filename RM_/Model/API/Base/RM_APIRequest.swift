@@ -21,13 +21,13 @@ into internal, parsable `RM_ParsableElement` presentation.
 Example: pseudo code for the basic GET request.
 
 ```swift
-	// hold strongly api instance.
-	let api = RM_APIRequest<RM_JSONElement>(url: "MyURL.json")
+// hold strongly api instance.
+let api = RM_APIRequest<RM_JSONElement>(url: "MyURL.json")
 
-	// make a request to API.
-	api.request { result in
-		// process result as RM_Result<RM_JSONElement> in a session thread.
-	}
+// make a request to API.
+api.request { result in
+	// process result as RM_Result<RM_JSONElement> in a session thread.
+}
 ```
 */
 public class RM_APIRequest<Parser: RM_ParsableElementType> {
@@ -111,20 +111,20 @@ public class RM_APIRequest<Parser: RM_ParsableElementType> {
 
 	- Note: Before new request with this method, previvous request will be canceled.
 
-	- Example: You could use result from the responce like
+	Example: You could use result from the responce like
 	
 	```swift
-		// hold strongly api instance.
-		let api = RM_APIRequest<RM_JSONElement>(url: "MyURL.json")
-		// make a request to API.
-		api.request { result in
-			switch result {
-			case .Success(let json):
-				print("API json result: \(json)")
-			case .Failure(let error):
-				print("API error: \(error)")
-			}
+	// hold strongly api instance.
+	let api = RM_APIRequest<RM_JSONElement>(url: "MyURL.json")
+	// make a request to API.
+	api.request { result in
+		switch result {
+		case .Success(let json):
+			print("API json result: \(json)")
+		case .Failure(let error):
+			print("API error: \(error)")
 		}
+	}
 	```
 	*/
 	public func request(completionHandler: RM_Result<Parser> -> Void) {

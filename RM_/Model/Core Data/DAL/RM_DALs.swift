@@ -32,17 +32,17 @@ To extend public information you need to update `RM_UserType` protocol.
 Example: Locate and edit entity.
 
 ```swift
-	// Create readonly/immutable DAL for the "RM_User" entity.
-	// Each data model object inherits it's public protocol, like "RM_UserType", and have
-	// typealias with this public protocol.
-	let dal: RM_DAL<RM_User> = RM_DAL.create()
+// Create readonly/immutable DAL for the "RM_User" entity.
+// Each data model object inherits it's public protocol, like "RM_UserType", and have
+// typealias with this public protocol.
+let dal: RM_DAL<RM_User> = RM_DAL.create()
 
-	// Get readonly/immutable "RM_UserType"
-	let user = dal.findUserById(userId)
+// Get readonly/immutable "RM_UserType"
+let user = dal.findUserById(userId)
 
-	// Print "RM_UserType" public name.
-	// Variable name defined in "RM_UserType" protocol as: "var name: String { get }"
-	print("User name: \(user.name)")
+// Print "RM_UserType" public name.
+// Variable name defined in "RM_UserType" protocol as: "var name: String { get }"
+print("User name: \(user.name)")
 ```
 */
 public final class RM_DAL<Entity: RM_EntityType>: RM_ReadableDAL<Entity, Entity.PublicType>, RM_DALType {
@@ -110,14 +110,14 @@ With mutable DAL's you could modify CoreData entity properties, relationships, e
 Example: Create and edit new user.
 
 ```swift
-	// Create mutable DAL for the "RM_User" entity.
-	let dal: RM_MutableDAL<RM_User> = RM_MutableDAL.create()
+// Create mutable DAL for the "RM_User" entity.
+let dal: RM_MutableDAL<RM_User> = RM_MutableDAL.create()
 
-	// Get mutable "RM_User"
-	let user = dal.findUserById(userId)
+// Get mutable "RM_User"
+let user = dal.findUserById(userId)
 
-	// Edit "RM_User" internal "name" variable. "RM_User" have data model variable, defined as as: "@NSManaged var name: String"
-	user.name = "Some user name"
+// Edit "RM_User" internal "name" variable. "RM_User" have data model variable, defined as as: "@NSManaged var name: String"
+user.name = "Some user name"
 ```
 */
 public final class RM_MutableDAL<Entity: RM_EntityType>: RM_WritableDAL<Entity, Entity>, RM_MutableDALType {

@@ -41,10 +41,10 @@ extension UIView {
 	Example: 
 	
 	```swift
-		override func layoutSubviews() {
-			super.layoutSubviews()
-			setShadow(UIEdgeInsetsMake(1, 2.5, 6, 2.5), color: UIColor.blackColor(), radius: 4, opacity: 0.16)
-		}
+	override func layoutSubviews() {
+		super.layoutSubviews()
+		setShadow(UIEdgeInsetsMake(1, 2.5, 6, 2.5), color: UIColor.blackColor(), radius: 4, opacity: 0.16)
+	}
 	```
 	*/
 	public func setShadow(insets: UIEdgeInsets, color: UIColor, radius: CGFloat, opacity: CGFloat) {
@@ -121,10 +121,10 @@ extension UIView {
 	Example:
 
 	```swift
-		override func layoutSubviews() {
-			super.layoutSubviews()
-			setShadow(UIColor.blackColor(), offset: CGSizeMake(0, 1), radius: cornerRadius, opacity: 0.16)
-		}
+	override func layoutSubviews() {
+		super.layoutSubviews()
+		setShadow(UIColor.blackColor(), offset: CGSizeMake(0, 1), radius: cornerRadius, opacity: 0.16)
+	}
 	```
 	*/
 	public func setShadow(color: UIColor, offset: CGSize, radius: CGFloat, opacity: CGFloat) {

@@ -18,8 +18,8 @@ Each case is a string that can be used to initialize `UIFont` object.
 Example: create one of the provided custom fonts.
 
 ```swift
-	// Create 'Lato bold' font with size 16.5
-	let font = RM_Font.<KEY>.fontWithSize(16.5)
+// Create 'Lato bold' font with size 16.5
+let font = RM_Font.<KEY>.fontWithSize(16.5)
 ```
 */
 public enum RM_Font: String {

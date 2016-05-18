@@ -20,11 +20,11 @@ Use `visible` static variable to change visibility.
 Example: 
 
 ```swift
-	RM_NetworkIndicator.visible = true // visible
-	RM_NetworkIndicator.visible = true // visible
-	... 
-	RM_NetworkIndicator.visible = false // still visible
-	RM_NetworkIndicator.visible = false // now it's invisible
+RM_NetworkIndicator.visible = true // visible
+RM_NetworkIndicator.visible = true // visible
+...
+RM_NetworkIndicator.visible = false // still visible
+RM_NetworkIndicator.visible = false // now it's invisible
 ```
 */
 public class RM_NetworkIndicator {
