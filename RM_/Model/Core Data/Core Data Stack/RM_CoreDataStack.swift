@@ -14,7 +14,7 @@ import CoreData
 /**
 CoreData stack holds CoreData properties and provide basic operations with managed objects.
 */
-class RM_CoreDataStack {
+public class RM_CoreDataStack {
 
 
 	//MARK: Public functionality of the stack type RM_CoreDataStackType.
@@ -23,7 +23,7 @@ class RM_CoreDataStack {
 	Returns managed object context concurrency type for the created instance of the Core Data Stack.
 	Available `MainQueueConcurrencyType` and `PrivateQueueConcurrencyType`.
 	*/
-	var concurrencyType: NSManagedObjectContextConcurrencyType {
+	public var concurrencyType: NSManagedObjectContextConcurrencyType {
 		return managedObjectContext.concurrencyType
 	}
 
@@ -37,7 +37,7 @@ class RM_CoreDataStack {
 	
 	- Returns: New instance of the managed object/entity, ready for use, modify, fill with data, etc.
 	*/
-	func createNewObject(objectName name: String) -> NSManagedObject {
+	public func createNewObject(objectName name: String) -> NSManagedObject {
 		return NSEntityDescription.insertNewObjectForEntityForName(name, inManagedObjectContext: managedObjectContext)
 	}
 
@@ -55,7 +55,7 @@ class RM_CoreDataStack {
 	
 	- Returns: Array with located objects/entities or empty array.
 	*/
-	func findObjects(objectName name: String, withPredicate predicate: NSPredicate?) -> [NSManagedObject] {
+	public func findObjects(objectName name: String, withPredicate predicate: NSPredicate?) -> [NSManagedObject] {
 		let fetchRequest = NSFetchRequest(entityName: name)
 		fetchRequest.returnsObjectsAsFaults = false
 		fetchRequest.predicate = predicate
@@ -75,7 +75,7 @@ class RM_CoreDataStack {
 
 	- Parameter object: managed object/entity that should be deleted.
 	*/
-	func deleteObject(object: NSManagedObject) {
+	public func deleteObject(object: NSManagedObject) {
 		managedObjectContext.deleteObject(object)
 	}
 
@@ -89,7 +89,7 @@ class RM_CoreDataStack {
 
 	- Warning: Context is not saved after successful operation.
 	*/
-	func deleteObjects(objectsName name: String) {
+	public func deleteObjects(objectsName name: String) {
 		let fetchRequest = NSFetchRequest(entityName: name)
 		fetchRequest.includesPropertyValues = false
 
@@ -108,7 +108,7 @@ class RM_CoreDataStack {
 	
 	- Returns: nil on success or error object which describes error during operation.
 	*/
-	func save() -> NSError? {
+	public func save() -> NSError? {
 		if managedObjectContext.hasChanges {
 			do {
 				try managedObjectContext.save()
@@ -126,7 +126,7 @@ class RM_CoreDataStack {
 	Shared main thread Core Data Stack type.
 	The context creates and manages a main queue with concurrency `MainQueueConcurrencyType`.
 	*/
-	static var sharedDataStack: RM_CoreDataStack = {
+	public static var sharedDataStack: RM_CoreDataStack = {
 		return RM_CoreDataStack()
 	}()
 
@@ -135,7 +135,7 @@ class RM_CoreDataStack {
 	Shared background thread Core Data Stack type.
 	The context creates and manages a background queue with concurrency: `PrivateQueueConcurrencyType`.
 	*/
-	static var sharedBackgroundDataStack: RM_CoreDataStack = {
+	public static var sharedBackgroundDataStack: RM_CoreDataStack = {
 		return RM_CoreDataStack(concurrency: .PrivateQueueConcurrencyType)
 	}()
 
@@ -148,7 +148,7 @@ class RM_CoreDataStack {
 	
 	- Returns: The directory which cen be used to store the Core Data file or any other application files.
 	*/
-	static var documentsDirectory: NSURL = {
+	public static var documentsDirectory: NSURL = {
 		let fileManager = NSFileManager()
 		for url in fileManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask) {
 
@@ -181,7 +181,7 @@ class RM_CoreDataStack {
 	
 	- Note: You could find in a project tree your data model, like `NAME.xcdatamodeld` where `NAME` part should be used here.
 	*/
-	static var managedObjectModelResourceName: String {
+	public static var managedObjectModelResourceName: String {
 		return "RM_"
 	}
 
