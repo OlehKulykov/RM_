@@ -14,6 +14,9 @@ import CoreData
 
 extension RM_User {
 
+	/**
+	User name Core Data property.
+	*/
     @NSManaged public var name: String
 
 }

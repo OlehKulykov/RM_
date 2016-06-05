@@ -14,6 +14,9 @@ import CoreData
 
 extension RM_Entity {
 
+	/**
+	Core Data entity identifier fileld.
+	*/
     @NSManaged public var oId: String
 
 }
