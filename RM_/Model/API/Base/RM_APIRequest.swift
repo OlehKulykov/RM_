@@ -51,7 +51,7 @@ public class RM_APIRequest<Parser: RM_ParsableElementType> {
 
 
 	/// Current stored completion handler.
-	private var completionHandler: (RM_Result<Parser> -> Void)?
+	internal var completionHandler: (RM_Result<Parser> -> Void)?
 
 
 	/// Current session data task for the requent.
@@ -98,8 +98,11 @@ public class RM_APIRequest<Parser: RM_ParsableElementType> {
 	*/
 	public func cancel() {
 		completionHandler = nil
-		dataTask?.cancel()
-		dataTask = nil
+		if let task = dataTask {
+			dataTask = nil
+			task.cancel()
+			RM_APIRequest.setNetworkIndicatorVisibility(task)
+		}
 	}
 
 
