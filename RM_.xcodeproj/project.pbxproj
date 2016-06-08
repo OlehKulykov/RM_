@@ -41,6 +41,7 @@
 		3DA6CEA01D08998C00B047DF /* RM_APIRequestGETJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA6CE9D1D08998C00B047DF /* RM_APIRequestGETJSON.swift */; };
 		3DA6CEA11D08998C00B047DF /* RM_NetworkIndicatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA6CE9F1D08998C00B047DF /* RM_NetworkIndicatorTests.swift */; };
 		3DA6CEA31D089A1C00B047DF /* NSDecimalNumber+PriceString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA6CEA21D089A1C00B047DF /* NSDecimalNumber+PriceString.swift */; };
+		3DA6CEA51D089CF000B047DF /* NSBundle+ApplicationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA6CEA41D089CF000B047DF /* NSBundle+ApplicationName.swift */; };
 		3DB0E7EA1CCD81DC002C23D1 /* RM_Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB0E7E91CCD81DC002C23D1 /* RM_Result.swift */; };
 		3DB3985F1CCAF08500A387E0 /* RM_JSONElementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB3985E1CCAF08500A387E0 /* RM_JSONElementTests.swift */; };
 		3DB398631CCAF13800A387E0 /* api_public_products_GET.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DB398621CCAF13800A387E0 /* api_public_products_GET.json */; };
@@ -108,6 +109,7 @@
 		3DA6CE9D1D08998C00B047DF /* RM_APIRequestGETJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RM_APIRequestGETJSON.swift; sourceTree = "<group>"; };
 		3DA6CE9F1D08998C00B047DF /* RM_NetworkIndicatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RM_NetworkIndicatorTests.swift; sourceTree = "<group>"; };
 		3DA6CEA21D089A1C00B047DF /* NSDecimalNumber+PriceString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDecimalNumber+PriceString.swift"; sourceTree = "<group>"; };
+		3DA6CEA41D089CF000B047DF /* NSBundle+ApplicationName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSBundle+ApplicationName.swift"; sourceTree = "<group>"; };
 		3DB0E7E91CCD81DC002C23D1 /* RM_Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RM_Result.swift; sourceTree = "<group>"; };
 		3DB3985E1CCAF08500A387E0 /* RM_JSONElementTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RM_JSONElementTests.swift; sourceTree = "<group>"; };
 		3DB398621CCAF13800A387E0 /* api_public_products_GET.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = api_public_products_GET.json; sourceTree = "<group>"; };
@@ -507,6 +509,7 @@
 			children = (
 				3DDC279B1CE1B9D200E36BC9 /* String+RepeatedString.swift */,
 				3DA6CEA21D089A1C00B047DF /* NSDecimalNumber+PriceString.swift */,
+				3DA6CEA41D089CF000B047DF /* NSBundle+ApplicationName.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -638,6 +641,7 @@
 				3D72778A1CE5C9A000E045BA /* UIImage+ColorizedCreation.swift in Sources */,
 				3D2101701CCDE2C400E1CBFD /* RM_ParsableElementType.swift in Sources */,
 				3DDC27D11CE1D49500E36BC9 /* NSAttributedString+ConvenienceInit.swift in Sources */,
+				3DA6CEA51D089CF000B047DF /* NSBundle+ApplicationName.swift in Sources */,
 				3D2101A21CCE2E3F00E1CBFD /* RM_User+CoreDataProperties.swift in Sources */,
 				3D65F1EC1CCAD270004F8B29 /* RM_User.swift in Sources */,
 				3DCB4EC91CD1074700BF6F1D /* RM_AppDelegate.swift in Sources */,
