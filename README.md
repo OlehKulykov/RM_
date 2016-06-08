@@ -10,13 +10,13 @@ Current project directory structure conforms [Model-View-Controller][1] design p
     - **DAL** - _[Core Data] Layer that operates with top level objects, such as User's, Product's, etc._
     - **Managed Objects** - _Top level managed data model objects, such as User's, Product's, etc._
     - **Specific DALs** - _Extra functionality of the standart DAL's._
-  - **API** - _Application network communication layer._
-    - **Base** - _Basic network requests._
-    - **Misc** - _Network common functionality._
   - **Parser** - _Available parsers and converters._
   - **Misc** - _Miscellaneous, common model functionality._
 - **View** - _View object's that displays and allows users to edit, the data from the application’s model._
 - **Controller** - _Intermediary level between the application view objects and its model._
+- **API** - _Application network communication layer._
+    - **Base** - _Basic network requests._
+    - **Misc** - _Network common functionality._
 - **Supporting Files** - _Application resources, settings, image assets, etc._
   - **Fonts** - _Custom application fonts._
 
