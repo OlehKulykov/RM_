@@ -36,6 +36,6 @@ public enum RM_LocalizationKey: String {
 	```
 	*/
 	public var localized: String {
-		return NSLocalizedString(self.rawValue, comment: "")
+		return NSLocalizedString(rawValue, comment: "")
 	}
 }

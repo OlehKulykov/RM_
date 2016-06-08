@@ -19,15 +19,12 @@ extension NSDecimalNumber {
 		currencyFormatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
 		currencyFormatter.locale = NSLocale.currentLocale()
 
-		var symbol = currencySymbol
-		if symbol == nil {
-			symbol = "$"
-		}
+		let symbol = currencySymbol ?? "$"
 
-		if currencySuffix != nil {
-			currencyFormatter.currencySymbol = symbol! + currencySuffix!
+		if let suffix = currencySuffix {
+			currencyFormatter.currencySymbol = symbol + suffix
 		} else {
-			currencyFormatter.currencySymbol = symbol!
+			currencyFormatter.currencySymbol = symbol
 		}
 
 		// no grouping, eg " 12'234.99 "
@@ -37,7 +34,7 @@ extension NSDecimalNumber {
 		// no ".00" at the end
 		//		currencyFormatter.alwaysShowsDecimalSeparator = false
 		//		currencyFormatter.minimumFractionDigits = 0
-		return currencyFormatter;
+		return currencyFormatter
 	}
 
 	/**
