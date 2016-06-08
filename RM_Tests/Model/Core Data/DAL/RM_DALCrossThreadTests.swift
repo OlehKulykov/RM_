@@ -34,7 +34,7 @@ class RM_DALCrossThreadTests: XCTestCase {
 		XCTAssertTrue(dalMT.findAll().count == 1, "Can't save new entity.")
 
 		let expectation = self.expectationWithDescription("Read user in background.")
-		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), {
+		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) {
 
 			// read and compare entity from background.
 			let dalBT: RM_DAL<RM_User> = RM_DAL.createBackgrounded()
@@ -49,7 +49,7 @@ class RM_DALCrossThreadTests: XCTestCase {
 			XCTAssertTrue(userBT.name == userName, "Created and readed user name not same.")
 
 			expectation.fulfill()
-		})
+		}
 
 		self.waitForExpectationsWithTimeout(10) { error in
 			if let error = error {
@@ -65,7 +65,7 @@ class RM_DALCrossThreadTests: XCTestCase {
 		let userId = NSUUID().UUIDString
 		let userName = "Some name"
 
-		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), {
+		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) {
 
 			// create and setup enty in a background.
 			let dal: RM_MutableDAL<RM_User> = RM_MutableDAL.createBackgrounded()
@@ -77,7 +77,7 @@ class RM_DALCrossThreadTests: XCTestCase {
 
 			XCTAssertTrue(dal.findAll().count == 1, "Can't save new entity.")
 			expectation.fulfill()
-		})
+		}
 
 		self.waitForExpectationsWithTimeout(10) { error in
 

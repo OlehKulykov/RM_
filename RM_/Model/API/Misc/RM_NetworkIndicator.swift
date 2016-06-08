@@ -62,9 +62,9 @@ public class RM_NetworkIndicator {
 				return visibilityCounter > 0
 			} else {
 				var value = false
-				dispatch_sync(dispatch_get_main_queue(), {
+				dispatch_sync(dispatch_get_main_queue()) {
 					value = visibilityCounter > 0
-				})
+				}
 				return value
 			}
 		}
@@ -72,9 +72,9 @@ public class RM_NetworkIndicator {
 			if NSThread.isMainThread() {
 				updateVisibilityCounter(newValue)
 			} else {
-				dispatch_async(dispatch_get_main_queue(), {
+				dispatch_async(dispatch_get_main_queue()) {
 					updateVisibilityCounter(newValue)
-				})
+				}
 			}
 		}
 	}

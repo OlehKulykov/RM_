@@ -38,12 +38,12 @@ extension UIImageView {
 				else {
 					return
 			}
-			dispatch_async(dispatch_get_main_queue(), {
+			dispatch_async(dispatch_get_main_queue()) {
 				if let imageUrl = self?.imageUrl where imageUrl == url {
 					self?.image = receivedImage
 				}
 				self?.setNeedsDisplay()
-			})
+			}
 		}
 		task.resume()
 	}
@@ -62,9 +62,9 @@ extension UIImageView {
 
 		if let url = url {
 			// Create and start data task within background
-			dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), { [weak self] in
+			dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) { [weak self] in
 				self?.loadImageFromURL(url)
-				})
+				}
 		}
 	}
 	

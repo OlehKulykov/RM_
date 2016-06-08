@@ -215,9 +215,9 @@ public class RM_CoreDataStack {
 		if NSThread.isMainThread() {
 			managedObjectContext.mergeChangesFromContextDidSaveNotification(notification)
 		} else {
-			dispatch_sync(dispatch_get_main_queue(), { [weak self] in
+			dispatch_sync(dispatch_get_main_queue()) { [weak self] in
 				self?.managedObjectContext.mergeChangesFromContextDidSaveNotification(notification)
-			})
+			}
 		}
 	}
 
