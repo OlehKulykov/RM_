@@ -34,8 +34,7 @@ extension String {
 	*/
 	public subscript(index: Int) -> Character {
 		get {
-			let len = characters.count
-			return (index >= 0 && index < len) ? self[startIndex.advancedBy(index)] : String.NULLCharacter
+			return (index >= 0 && index < characters.count) ? self[startIndex.advancedBy(index)] : String.NULLCharacter
 		}
 		set {
 			if index >= 0 && index < characters.count {
