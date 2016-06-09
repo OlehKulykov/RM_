@@ -19,8 +19,18 @@ extension String {
 	*/
 	public mutating func removeLastCharacter() {
 		if characters.count > 0 {
-			removeAtIndex(endIndex)
+			removeAtIndex(endIndex.predecessor())
 		}
+	}
+
+
+	/**
+	Get last string character if posible.
+	
+	- Returns: Last character or `String.NULLCharacter`
+	*/
+	public var lastCharacter: Character {
+		return characters.count > 0 ? self[endIndex.predecessor()] : String.NULLCharacter
 	}
 
 

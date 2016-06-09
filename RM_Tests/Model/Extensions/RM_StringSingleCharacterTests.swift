@@ -12,6 +12,25 @@ import XCTest
 
 class RM_StringSingleCharacterTests: XCTestCase {
 
+	func testLastCharacter() {
+		XCTAssertEqual("".lastCharacter, String.NULLCharacter, "Wrong null character result")
+		XCTAssertEqual("0".lastCharacter, "0", "Wrong last character")
+		XCTAssertEqual("01".lastCharacter, "1", "Wrong last character")
+	}
+
+	func testRemoveLastCharacter() {
+		var string = "01"
+		string.removeLastCharacter()
+
+		XCTAssertEqual(string, "0", "Wrong remove character result")
+
+		string.removeLastCharacter()
+		XCTAssertEqual(string, "", "Wrong remove character result")
+
+		string.removeLastCharacter()
+		XCTAssertEqual(string, "", "Wrong remove character result")
+	}
+
 	func testGetNull() {
         let string = ""
 		XCTAssertEqual(string[0], String.NULLCharacter, "Wrong null character result")
