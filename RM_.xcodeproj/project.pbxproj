@@ -64,6 +64,8 @@
 		3DE7A3471CDF456300429A4C /* UIImageView+LoadFromURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE7A3461CDF456300429A4C /* UIImageView+LoadFromURL.swift */; };
 		3DFFDF0D1D094B1000BAC4BF /* RM_StringMD5Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFDF0C1D094B1000BAC4BF /* RM_StringMD5Tests.swift */; };
 		3DFFDF0F1D0950BD00BAC4BF /* RM_NSDateCompareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFDF0E1D0950BD00BAC4BF /* RM_NSDateCompareTests.swift */; };
+		3DFFDF131D0978BA00BAC4BF /* String+SingleCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFDF121D0978BA00BAC4BF /* String+SingleCharacter.swift */; };
+		3DFFDF151D0979CE00BAC4BF /* RM_StringSingleCharacterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFDF141D0979CE00BAC4BF /* RM_StringSingleCharacterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +141,8 @@
 		3DE7A3461CDF456300429A4C /* UIImageView+LoadFromURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+LoadFromURL.swift"; sourceTree = "<group>"; };
 		3DFFDF0C1D094B1000BAC4BF /* RM_StringMD5Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RM_StringMD5Tests.swift; sourceTree = "<group>"; };
 		3DFFDF0E1D0950BD00BAC4BF /* RM_NSDateCompareTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RM_NSDateCompareTests.swift; sourceTree = "<group>"; };
+		3DFFDF121D0978BA00BAC4BF /* String+SingleCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+SingleCharacter.swift"; sourceTree = "<group>"; };
+		3DFFDF141D0979CE00BAC4BF /* RM_StringSingleCharacterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RM_StringSingleCharacterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +169,7 @@
 				3D0574431CEAFB0C00855D46 /* RM_StringRepeatedStringTests.swift */,
 				3DFFDF0C1D094B1000BAC4BF /* RM_StringMD5Tests.swift */,
 				3DFFDF0E1D0950BD00BAC4BF /* RM_NSDateCompareTests.swift */,
+				3DFFDF141D0979CE00BAC4BF /* RM_StringSingleCharacterTests.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -523,10 +528,11 @@
 			isa = PBXGroup;
 			children = (
 				3DDC279B1CE1B9D200E36BC9 /* String+RepeatedString.swift */,
+				3D9C2BF81D08EDCB0049D106 /* String+MD5.swift */,
+				3DFFDF121D0978BA00BAC4BF /* String+SingleCharacter.swift */,
 				3DA6CEA21D089A1C00B047DF /* NSDecimalNumber+PriceString.swift */,
 				3DA6CEA41D089CF000B047DF /* NSBundle+ApplicationName.swift */,
 				3D9C2BD41D08E9440049D106 /* NSDate+Compare.swift */,
-				3D9C2BF81D08EDCB0049D106 /* String+MD5.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -662,6 +668,7 @@
 				3DDC27D11CE1D49500E36BC9 /* NSAttributedString+ConvenienceInit.swift in Sources */,
 				3DA6CEA51D089CF000B047DF /* NSBundle+ApplicationName.swift in Sources */,
 				3D2101A21CCE2E3F00E1CBFD /* RM_User+CoreDataProperties.swift in Sources */,
+				3DFFDF131D0978BA00BAC4BF /* String+SingleCharacter.swift in Sources */,
 				3D65F1EC1CCAD270004F8B29 /* RM_User.swift in Sources */,
 				3DCB4EC91CD1074700BF6F1D /* RM_AppDelegate.swift in Sources */,
 				3DA6CE981D08996200B047DF /* RM_APIRequest.swift in Sources */,
@@ -680,6 +687,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DFFDF151D0979CE00BAC4BF /* RM_StringSingleCharacterTests.swift in Sources */,
 				3D72778E1CE5CC9600E045BA /* RM_UIImage_ColorizedCreationTests.swift in Sources */,
 				3D4976861CCFA96000401EA1 /* RM_DAL+UserTests.swift in Sources */,
 				3DFFDF0D1D094B1000BAC4BF /* RM_StringMD5Tests.swift in Sources */,
