@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "C7C4A7D1B97EF1B65DF62692C4B9254A10125738",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "C7C4A7D1B97EF1B65DF62692C4B9254A10125738" : 0,
+    "0880C105DE8D40EFDCF918E816D23E0AFAA0403F" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "D4F54674-E91A-4CB2-A1CD-8446F0B1ED95",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "C7C4A7D1B97EF1B65DF62692C4B9254A10125738" : "RM_\/",
+    "0880C105DE8D40EFDCF918E816D23E0AFAA0403F" : "..\/..\/..\/Users\/residentevil\/Documents\/4"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "RM_",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "RM_.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "bitbucket.org:payworks\/io.payworks.recruiting.ios.oleh.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0880C105DE8D40EFDCF918E816D23E0AFAA0403F"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:OlehKulykov\/RM_.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C7C4A7D1B97EF1B65DF62692C4B9254A10125738"
+    }
+  ]
+}
