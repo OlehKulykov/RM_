@@ -6,14 +6,16 @@
 //  Copyright © 2016 Oleh Kulykov. All rights reserved.
 //
 
+
 import Foundation
+
 
 extension String {
 
 	/**
 	Initialize string with number of repeated string.
 	
-	- Parameter count: Number of repeated parts count.
+	- Parameter count: Number of repeated parts.
 	
 	- Parameter repeated: Repeated string part.
 	

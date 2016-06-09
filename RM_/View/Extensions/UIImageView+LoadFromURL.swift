@@ -6,7 +6,9 @@
 //  Copyright © 2016 Oleh Kulykov. All rights reserved.
 //
 
+
 import UIKit
+
 
 extension UIImageView {
 

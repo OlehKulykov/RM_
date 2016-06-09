@@ -7,7 +7,7 @@
 //
 
 
-import UIKit
+import Foundation
 
 
 /// Get application name from bundle
