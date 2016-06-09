@@ -10,6 +10,7 @@
 import UIKit
 
 
+/// Get application name from bundle
 extension NSBundle {
 
 	/**

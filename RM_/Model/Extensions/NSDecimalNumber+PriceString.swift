@@ -9,6 +9,8 @@
 
 import Foundation
 
+
+/// Price string generation from decimal number
 extension NSDecimalNumber {
 
 	/**
