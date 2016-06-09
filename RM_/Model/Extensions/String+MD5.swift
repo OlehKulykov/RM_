@@ -9,6 +9,7 @@
 
 import Foundation
 
+
 /// MD5 string generation
 extension String {
 
