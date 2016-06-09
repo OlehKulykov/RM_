@@ -35,6 +35,7 @@
 		3D72778A1CE5C9A000E045BA /* UIImage+ColorizedCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7277891CE5C9A000E045BA /* UIImage+ColorizedCreation.swift */; };
 		3D72778E1CE5CC9600E045BA /* RM_UIImage_ColorizedCreationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D72778D1CE5CC9600E045BA /* RM_UIImage_ColorizedCreationTests.swift */; };
 		3D9C2BD51D08E9440049D106 /* NSDate+Compare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9C2BD41D08E9440049D106 /* NSDate+Compare.swift */; };
+		3D9C2BD91D08EBAD0049D106 /* UIAlertController+ShowMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9C2BD81D08EBAD0049D106 /* UIAlertController+ShowMessage.swift */; };
 		3DA6CE911D08981300B047DF /* UIView+FindSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA6CE901D08981300B047DF /* UIView+FindSubview.swift */; };
 		3DA6CE981D08996200B047DF /* RM_APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA6CE941D08996200B047DF /* RM_APIRequest.swift */; };
 		3DA6CE991D08996200B047DF /* RM_HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA6CE951D08996200B047DF /* RM_HTTPMethod.swift */; };
@@ -104,6 +105,7 @@
 		3D7277891CE5C9A000E045BA /* UIImage+ColorizedCreation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+ColorizedCreation.swift"; sourceTree = "<group>"; };
 		3D72778D1CE5CC9600E045BA /* RM_UIImage_ColorizedCreationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RM_UIImage_ColorizedCreationTests.swift; sourceTree = "<group>"; };
 		3D9C2BD41D08E9440049D106 /* NSDate+Compare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Compare.swift"; sourceTree = "<group>"; };
+		3D9C2BD81D08EBAD0049D106 /* UIAlertController+ShowMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+ShowMessage.swift"; sourceTree = "<group>"; };
 		3DA6CE901D08981300B047DF /* UIView+FindSubview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+FindSubview.swift"; sourceTree = "<group>"; };
 		3DA6CE941D08996200B047DF /* RM_APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RM_APIRequest.swift; sourceTree = "<group>"; };
 		3DA6CE951D08996200B047DF /* RM_HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RM_HTTPMethod.swift; sourceTree = "<group>"; };
@@ -477,6 +479,7 @@
 				3DDC27D01CE1D49500E36BC9 /* NSAttributedString+ConvenienceInit.swift */,
 				3D7277891CE5C9A000E045BA /* UIImage+ColorizedCreation.swift */,
 				3DA6CE901D08981300B047DF /* UIView+FindSubview.swift */,
+				3D9C2BD81D08EBAD0049D106 /* UIAlertController+ShowMessage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -653,6 +656,7 @@
 				3DA6CE991D08996200B047DF /* RM_HTTPMethod.swift in Sources */,
 				3DDC279C1CE1B9D200E36BC9 /* String+RepeatedString.swift in Sources */,
 				3D2101A01CCE2E3A00E1CBFD /* RM_Entity+CoreDataProperties.swift in Sources */,
+				3D9C2BD91D08EBAD0049D106 /* UIAlertController+ShowMessage.swift in Sources */,
 				3DA6CE9A1D08996200B047DF /* RM_NetworkIndicator.swift in Sources */,
 				3D4976791CCF894700401EA1 /* RM_DALs.swift in Sources */,
 				3DCAFC891CDBE7610055273C /* UIView+Shadow.swift in Sources */,

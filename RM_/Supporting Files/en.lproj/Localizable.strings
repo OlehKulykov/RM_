@@ -7,3 +7,5 @@
 */
 
 "apiRequestCantHandleResponce" = "Unfortunately, request can't handle the responce.\nPlease let us know and try again later.";
+
+"ok" = "OK";

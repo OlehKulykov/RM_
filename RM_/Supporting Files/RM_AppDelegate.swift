@@ -12,8 +12,11 @@ import CoreData
 @UIApplicationMain
 class RM_AppDelegate: UIResponder, UIApplicationDelegate {
 
-	var window: UIWindow?
+	static var shared: RM_AppDelegate {
+		return UIApplication.sharedApplication().delegate as! RM_AppDelegate
+	}
 
+	var window: UIWindow?
 
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 		// Override point for customization after application launch.

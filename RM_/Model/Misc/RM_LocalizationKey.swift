@@ -24,8 +24,12 @@ public enum RM_LocalizationKey: String {
 	case APIRequestCantHandleResponce = "apiRequestCantHandleResponce"
 
 
-	//MARK: Localized string from case computed variable
+	case OK = "ok"
+}
 
+
+//MARK: Localized string from case computed variable
+extension RM_LocalizationKey {
 	/**
 	Get localized string from main bundle table.
 
