@@ -32,8 +32,8 @@ extension NSDecimalNumber {
 		currencyFormatter.currencyGroupingSeparator = ""
 
 		// no ".00" at the end
-		//		currencyFormatter.alwaysShowsDecimalSeparator = false
-		//		currencyFormatter.minimumFractionDigits = 0
+		//currencyFormatter.alwaysShowsDecimalSeparator = false
+		//currencyFormatter.minimumFractionDigits = 0
 		return currencyFormatter
 	}
 

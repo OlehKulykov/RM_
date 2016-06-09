@@ -34,6 +34,7 @@
 		3D65F1EF1CCAD3B9004F8B29 /* RM_JSONElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D65F1EE1CCAD3B9004F8B29 /* RM_JSONElement.swift */; };
 		3D72778A1CE5C9A000E045BA /* UIImage+ColorizedCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7277891CE5C9A000E045BA /* UIImage+ColorizedCreation.swift */; };
 		3D72778E1CE5CC9600E045BA /* RM_UIImage_ColorizedCreationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D72778D1CE5CC9600E045BA /* RM_UIImage_ColorizedCreationTests.swift */; };
+		3D9C2BD51D08E9440049D106 /* NSDate+Compare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9C2BD41D08E9440049D106 /* NSDate+Compare.swift */; };
 		3DA6CE911D08981300B047DF /* UIView+FindSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA6CE901D08981300B047DF /* UIView+FindSubview.swift */; };
 		3DA6CE981D08996200B047DF /* RM_APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA6CE941D08996200B047DF /* RM_APIRequest.swift */; };
 		3DA6CE991D08996200B047DF /* RM_HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA6CE951D08996200B047DF /* RM_HTTPMethod.swift */; };
@@ -102,6 +103,7 @@
 		3D65F1EE1CCAD3B9004F8B29 /* RM_JSONElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RM_JSONElement.swift; sourceTree = "<group>"; };
 		3D7277891CE5C9A000E045BA /* UIImage+ColorizedCreation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+ColorizedCreation.swift"; sourceTree = "<group>"; };
 		3D72778D1CE5CC9600E045BA /* RM_UIImage_ColorizedCreationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RM_UIImage_ColorizedCreationTests.swift; sourceTree = "<group>"; };
+		3D9C2BD41D08E9440049D106 /* NSDate+Compare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Compare.swift"; sourceTree = "<group>"; };
 		3DA6CE901D08981300B047DF /* UIView+FindSubview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+FindSubview.swift"; sourceTree = "<group>"; };
 		3DA6CE941D08996200B047DF /* RM_APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RM_APIRequest.swift; sourceTree = "<group>"; };
 		3DA6CE951D08996200B047DF /* RM_HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RM_HTTPMethod.swift; sourceTree = "<group>"; };
@@ -510,6 +512,7 @@
 				3DDC279B1CE1B9D200E36BC9 /* String+RepeatedString.swift */,
 				3DA6CEA21D089A1C00B047DF /* NSDecimalNumber+PriceString.swift */,
 				3DA6CEA41D089CF000B047DF /* NSBundle+ApplicationName.swift */,
+				3D9C2BD41D08E9440049D106 /* NSDate+Compare.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -630,6 +633,7 @@
 				3D2101861CCE035E00E1CBFD /* RM_Font.swift in Sources */,
 				3DCAFC8B1CDBE9770055273C /* UIView+IBInspectable.swift in Sources */,
 				3D4976771CCF84E100401EA1 /* RM_DALInternals.swift in Sources */,
+				3D9C2BD51D08E9440049D106 /* NSDate+Compare.swift in Sources */,
 				3DE7A3471CDF456300429A4C /* UIImageView+LoadFromURL.swift in Sources */,
 				3D65F1DD1CCABC98004F8B29 /* RM_CoreDataStack.swift in Sources */,
 				3DCAFC901CDBEE070055273C /* RM_BackgroundedSectionTableViewController.swift in Sources */,
