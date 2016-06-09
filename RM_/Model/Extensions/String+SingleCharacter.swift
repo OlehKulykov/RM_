@@ -27,10 +27,10 @@ extension String {
 	/**
 	Get last string character if posible.
 	
-	- Returns: Last character or `String.NULLCharacter`
+	- Returns: Last character or nil
 	*/
-	public var lastCharacter: Character {
-		return characters.count > 0 ? self[endIndex.predecessor()] : String.NULLCharacter
+	public var lastCharacter: Character? {
+		return characters.count > 0 ? self[endIndex.predecessor()] : nil
 	}
 
 
@@ -38,27 +38,19 @@ extension String {
 	Get/set string character at index.
 	
 	- Parameter index: The character index to get or set. 
-	If `index` out of bounds than do nothing or get null character `String.NULLCharacter`
+	If `index` out of bounds than do nothing or get nil.
 
-	- Returns: String character or `String.NULLCharacter`
+	- Returns: String character or nil.
 	*/
-	public subscript(index: Int) -> Character {
+	public subscript(index: Int) -> Character? {
 		get {
-			return (index >= 0 && index < characters.count) ? self[startIndex.advancedBy(index)] : String.NULLCharacter
+			return (index >= 0 && index < characters.count) ? self[startIndex.advancedBy(index)] : nil
 		}
 		set {
-			if index >= 0 && index < characters.count {
+			if let character = newValue where index >= 0 && index < characters.count {
 				let updateIndex = startIndex.advancedBy(index)
-				replaceRange(updateIndex..<updateIndex.successor(), with: "\(newValue)")
+				replaceRange(updateIndex..<updateIndex.successor(), with: "\(character)")
 			}
 		}
-	}
-
-
-	/**
-	Character initialized with `0` UnicodeScalar value.
-	*/
-	public static var NULLCharacter: Character {
-		return Character(UnicodeScalar(0))
 	}
 }
