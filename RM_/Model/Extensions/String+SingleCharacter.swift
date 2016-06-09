@@ -10,7 +10,7 @@
 import Foundation
 
 
-/// MD5 string generation
+/// Single character modifications
 extension String {
 
 	/**
