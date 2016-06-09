@@ -36,6 +36,7 @@
 		3D72778E1CE5CC9600E045BA /* RM_UIImage_ColorizedCreationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D72778D1CE5CC9600E045BA /* RM_UIImage_ColorizedCreationTests.swift */; };
 		3D9C2BD51D08E9440049D106 /* NSDate+Compare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9C2BD41D08E9440049D106 /* NSDate+Compare.swift */; };
 		3D9C2BD91D08EBAD0049D106 /* UIAlertController+ShowMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9C2BD81D08EBAD0049D106 /* UIAlertController+ShowMessage.swift */; };
+		3D9C2BF91D08EDCB0049D106 /* String+MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9C2BF81D08EDCB0049D106 /* String+MD5.swift */; };
 		3DA6CE911D08981300B047DF /* UIView+FindSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA6CE901D08981300B047DF /* UIView+FindSubview.swift */; };
 		3DA6CE981D08996200B047DF /* RM_APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA6CE941D08996200B047DF /* RM_APIRequest.swift */; };
 		3DA6CE991D08996200B047DF /* RM_HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA6CE951D08996200B047DF /* RM_HTTPMethod.swift */; };
@@ -106,6 +107,8 @@
 		3D72778D1CE5CC9600E045BA /* RM_UIImage_ColorizedCreationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RM_UIImage_ColorizedCreationTests.swift; sourceTree = "<group>"; };
 		3D9C2BD41D08E9440049D106 /* NSDate+Compare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Compare.swift"; sourceTree = "<group>"; };
 		3D9C2BD81D08EBAD0049D106 /* UIAlertController+ShowMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+ShowMessage.swift"; sourceTree = "<group>"; };
+		3D9C2BF71D08ED680049D106 /* RM_-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RM_-Bridging-Header.h"; sourceTree = "<group>"; };
+		3D9C2BF81D08EDCB0049D106 /* String+MD5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+MD5.swift"; sourceTree = "<group>"; };
 		3DA6CE901D08981300B047DF /* UIView+FindSubview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+FindSubview.swift"; sourceTree = "<group>"; };
 		3DA6CE941D08996200B047DF /* RM_APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RM_APIRequest.swift; sourceTree = "<group>"; };
 		3DA6CE951D08996200B047DF /* RM_HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RM_HTTPMethod.swift; sourceTree = "<group>"; };
@@ -167,6 +170,7 @@
 				3DCB4EC81CD1074700BF6F1D /* RM_AppDelegate.swift */,
 				3DCB4EC61CD1072700BF6F1D /* Assets.xcassets */,
 				3D21017E1CCE02BC00E1CBFD /* Fonts */,
+				3D9C2BF71D08ED680049D106 /* RM_-Bridging-Header.h */,
 				3D2101781CCDEE5A00E1CBFD /* Localizable.strings */,
 				3DCB4ECA1CD1075C00BF6F1D /* Info.plist */,
 			);
@@ -516,6 +520,7 @@
 				3DA6CEA21D089A1C00B047DF /* NSDecimalNumber+PriceString.swift */,
 				3DA6CEA41D089CF000B047DF /* NSBundle+ApplicationName.swift */,
 				3D9C2BD41D08E9440049D106 /* NSDate+Compare.swift */,
+				3D9C2BF81D08EDCB0049D106 /* String+MD5.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -629,6 +634,7 @@
 			files = (
 				3D4976751CCF779600401EA1 /* RM_DALTypes.swift in Sources */,
 				3DB0E7EA1CCD81DC002C23D1 /* RM_Result.swift in Sources */,
+				3D9C2BF91D08EDCB0049D106 /* String+MD5.swift in Sources */,
 				3DA6CE911D08981300B047DF /* UIView+FindSubview.swift in Sources */,
 				3DCAFC8D1CDBEA380055273C /* UIColor+HexString.swift in Sources */,
 				3D2101721CCDEDD300E1CBFD /* RM_LocalizationKey.swift in Sources */,
@@ -794,10 +800,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "RM_/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "olehkulykov.RM-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RM_/Supporting Files/RM_-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -805,10 +814,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "RM_/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "olehkulykov.RM-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RM_/Supporting Files/RM_-Bridging-Header.h";
 			};
 			name = Release;
 		};
