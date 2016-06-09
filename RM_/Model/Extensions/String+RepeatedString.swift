@@ -10,6 +10,7 @@
 import Foundation
 
 
+/// Init string with repeated substring
 extension String {
 
 	/**
