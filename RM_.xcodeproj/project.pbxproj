@@ -63,6 +63,7 @@
 		3DDC27D11CE1D49500E36BC9 /* NSAttributedString+ConvenienceInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDC27D01CE1D49500E36BC9 /* NSAttributedString+ConvenienceInit.swift */; };
 		3DE7A3471CDF456300429A4C /* UIImageView+LoadFromURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE7A3461CDF456300429A4C /* UIImageView+LoadFromURL.swift */; };
 		3DFFDF0D1D094B1000BAC4BF /* RM_StringMD5Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFDF0C1D094B1000BAC4BF /* RM_StringMD5Tests.swift */; };
+		3DFFDF0F1D0950BD00BAC4BF /* RM_NSDateCompareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFDF0E1D0950BD00BAC4BF /* RM_NSDateCompareTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +138,7 @@
 		3DDC27D01CE1D49500E36BC9 /* NSAttributedString+ConvenienceInit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+ConvenienceInit.swift"; sourceTree = "<group>"; };
 		3DE7A3461CDF456300429A4C /* UIImageView+LoadFromURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+LoadFromURL.swift"; sourceTree = "<group>"; };
 		3DFFDF0C1D094B1000BAC4BF /* RM_StringMD5Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RM_StringMD5Tests.swift; sourceTree = "<group>"; };
+		3DFFDF0E1D0950BD00BAC4BF /* RM_NSDateCompareTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RM_NSDateCompareTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 			children = (
 				3D0574431CEAFB0C00855D46 /* RM_StringRepeatedStringTests.swift */,
 				3DFFDF0C1D094B1000BAC4BF /* RM_StringMD5Tests.swift */,
+				3DFFDF0E1D0950BD00BAC4BF /* RM_NSDateCompareTests.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -686,6 +689,7 @@
 				3D4976831CCFA6DB00401EA1 /* RM_DALCrossThreadTests.swift in Sources */,
 				3DB398651CCAF17A00A387E0 /* XCTestCase+BundleResources.swift in Sources */,
 				3D0574441CEAFB0C00855D46 /* RM_StringRepeatedStringTests.swift in Sources */,
+				3DFFDF0F1D0950BD00BAC4BF /* RM_NSDateCompareTests.swift in Sources */,
 				3D49767F1CCF9E6600401EA1 /* RM_DALBaseTests.swift in Sources */,
 				3DA6CEA11D08998C00B047DF /* RM_NetworkIndicatorTests.swift in Sources */,
 				3D65F1D51CCABC8A004F8B29 /* RM_CoreDataStackTests.swift in Sources */,
