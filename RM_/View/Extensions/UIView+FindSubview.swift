@@ -19,9 +19,9 @@ extension UIView {
 
 	- Returns: Located subview or nil if not found.
 	*/
-	func findSubView<T where T: UIView>(tag: Int = 0) -> T? {
+	func findSubView<T>(_ tag: Int = 0) -> T? where T: UIView {
 		for subview in subviews {
-			if let result = subview as? T where result.tag == tag {
+			if let result = subview as? T, result.tag == tag {
 				return result
 			} else if let result: T = subview.findSubView(tag) {
 				return result

@@ -47,28 +47,28 @@ class RM_NetworkIndicatorTests: XCTestCase {
 		RM_NetworkIndicator.visible = true
 		XCTAssertTrue(RM_NetworkIndicator.visible, "Should be visible")
 
-		let expectation = self.expectationWithDescription("Dummy timeout.")
+		let expectation = self.expectation(description: "Dummy timeout.")
 
-		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) {
-			NSThread.sleepForTimeInterval(0.4)
+		DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.high).async {
+			Thread.sleep(forTimeInterval: 0.4)
 			RM_NetworkIndicator.visible = true
 			XCTAssertTrue(RM_NetworkIndicator.visible, "Should be visible")
 		}
 
-		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) {
-			NSThread.sleepForTimeInterval(0.8)
+		DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.high).async {
+			Thread.sleep(forTimeInterval: 0.8)
 			RM_NetworkIndicator.visible = false
 			XCTAssertTrue(RM_NetworkIndicator.visible, "Should be visible")
 		}
 
-		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) {
-			NSThread.sleepForTimeInterval(1.2)
+		DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.high).async {
+			Thread.sleep(forTimeInterval: 1.2)
 			RM_NetworkIndicator.visible = false
 			XCTAssertFalse(RM_NetworkIndicator.visible, "Should be invisible")
 			expectation.fulfill()
 		}
 
-		self.waitForExpectationsWithTimeout(10) { error in
+		self.waitForExpectations(timeout: 10) { error in
 			XCTAssertFalse(RM_NetworkIndicator.visible, "Should be invisible")
 			if let error = error {
 				XCTFail("Create user in background: \(error)")

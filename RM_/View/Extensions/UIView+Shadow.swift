@@ -16,10 +16,10 @@ Add shadows to the view.
 extension UIView {
 
 	/// Set shadow path with common parameters.
-	private func setShadowPath(path: CGPath, color: UIColor, offset: CGSize, radius: CGFloat, opacity: CGFloat) {
+	fileprivate func setShadowPath(_ path: CGPath, color: UIColor, offset: CGSize, radius: CGFloat, opacity: CGFloat) {
 		layer.masksToBounds = false
 		layer.shadowRadius = radius
-		layer.shadowColor = color.CGColor
+		layer.shadowColor = color.cgColor
 		layer.shadowOffset = offset
 		layer.shadowOpacity = Float(opacity)
 		layer.shadowPath = path
@@ -49,17 +49,17 @@ extension UIView {
 	}
 	```
 	*/
-	public func setShadow(insets: UIEdgeInsets, color: UIColor, radius: CGFloat, opacity: CGFloat) {
-		let screenPixel = 1.0 / UIScreen.mainScreen().scale
+	public func setShadow(_ insets: UIEdgeInsets, color: UIColor, radius: CGFloat, opacity: CGFloat) {
+		let screenPixel = 1.0 / UIScreen.main.scale
 		let offset = radius + screenPixel
 		let path = UIBezierPath()
 		path.lineWidth = 1
-		path.lineJoinStyle = .Round
+		path.lineJoinStyle = .round
 
 		let bounds = self.bounds
 
 		// Top left
-		var topLeft = CGPointZero
+		var topLeft = CGPoint.zero
 		if insets.top > 0 {
 			topLeft.y = -insets.top / 2 + screenPixel
 		} else {
@@ -73,7 +73,7 @@ extension UIView {
 		}
 
 		// Top right
-		var topRight = CGPointZero
+		var topRight = CGPoint.zero
 		topRight.y = topLeft.y
 		if insets.right > 0 {
 			topRight.x = bounds.width + insets.right / 2 - screenPixel
@@ -82,7 +82,7 @@ extension UIView {
 		}
 
 		// Bottom right
-		var bottomRight = CGPointZero
+		var bottomRight = CGPoint.zero
 		bottomRight.x = topRight.x
 		if insets.bottom > 0 {
 			bottomRight.y = bounds.height + insets.bottom / 2 - screenPixel
@@ -91,19 +91,19 @@ extension UIView {
 		}
 
 		// Bottom left
-		var bottomLeft = CGPointZero
+		var bottomLeft = CGPoint.zero
 		bottomLeft.y = bottomRight.y
 		bottomLeft.x = topLeft.x
 
 		// Create path
-		path.moveToPoint(topLeft)
-		path.addLineToPoint(topRight)
-		path.addLineToPoint(bottomRight)
-		path.addLineToPoint(bottomLeft)
+		path.move(to: topLeft)
+		path.addLine(to: topRight)
+		path.addLine(to: bottomRight)
+		path.addLine(to: bottomLeft)
 
-		path.closePath()
+		path.close()
 
-		setShadowPath(path.CGPath, color: color, offset: CGSizeZero, radius: radius, opacity: opacity)
+		setShadowPath(path.cgPath, color: color, offset: CGSize.zero, radius: radius, opacity: opacity)
 	}
 
 
@@ -129,9 +129,9 @@ extension UIView {
 	}
 	```
 	*/
-	public func setShadow(color: UIColor, offset: CGSize, radius: CGFloat, opacity: CGFloat) {
+	public func setShadow(_ color: UIColor, offset: CGSize, radius: CGFloat, opacity: CGFloat) {
 		let shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: radius)
-		setShadowPath(shadowPath.CGPath, color: color, offset: offset, radius: radius, opacity: opacity)
+		setShadowPath(shadowPath.cgPath, color: color, offset: offset, radius: radius, opacity: opacity)
 	}
 
 }

@@ -30,32 +30,32 @@ api.request { result in
 }
 ```
 */
-public class RM_APIRequest<Parser: RM_ParsableElementType> {
+open class RM_APIRequest<Parser: RM_ParsableElementType> {
 
 	/**
 	API request timeout in seconds for the instance.
 	*/
-	public var timeout: NSTimeInterval = 40
+	open var timeout: TimeInterval = 40
 
 
 	/**
 	The API request URL.
 	*/
-	private(set) var url: NSURL!
+	fileprivate(set) var url: URL!
 
 
 	/**
 	Request HTTP method. For available types look at `RM_HTTPMethod` enumerator.
 	*/
-	private(set) var method: RM_HTTPMethod!
+	fileprivate(set) var method: RM_HTTPMethod!
 
 
 	/// Current stored completion handler.
-	internal var completionHandler: (RM_Result<Parser> -> Void)?
+	internal var completionHandler: ((RM_Result<Parser>) -> Void)?
 
 
 	/// Current session data task for the requent.
-	private var dataTask: NSURLSessionTask?
+	fileprivate var dataTask: URLSessionTask?
 
 
 	/**
@@ -66,7 +66,7 @@ public class RM_APIRequest<Parser: RM_ParsableElementType> {
 	- Parameter method: HTTP method of the request. The default value is `GET`.
 	*/
 	public init(url: String, HTTPMethod method: RM_HTTPMethod = .GET) {
-		self.url = NSURL(string: url)
+		self.url = URL(string: url)
 		self.method = method
 	}
 
@@ -80,15 +80,13 @@ public class RM_APIRequest<Parser: RM_ParsableElementType> {
 
 	- Returns: Mutable URL request object or nil if no url provided.
 	*/
-	internal func createURLRequest() -> NSMutableURLRequest? {
+	internal func createURLRequest() -> URLRequest? {
 		guard let url = self.url else {
 			return nil
 		}
-
-		let request = NSMutableURLRequest(URL: url,
-		                                  cachePolicy: .ReloadIgnoringLocalCacheData,
-		                                  timeoutInterval: timeout > 0 ? timeout : DBL_MAX)
-		request.HTTPMethod = method.rawValue
+        
+		var request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: timeout > 0 ? timeout : DBL_MAX)
+		request.httpMethod = method.rawValue
 		return request
 	}
 
@@ -96,7 +94,7 @@ public class RM_APIRequest<Parser: RM_ParsableElementType> {
 	/**
 	Cancels the API request. After this call you will not be informed with a result via completion handler.
 	*/
-	public func cancel() {
+	open func cancel() {
 		completionHandler = nil
 		if let task = dataTask {
 			dataTask = nil
@@ -130,50 +128,50 @@ public class RM_APIRequest<Parser: RM_ParsableElementType> {
 	}
 	```
 	*/
-	public func request(completionHandler: RM_Result<Parser> -> Void) {
+	open func request(_ completionHandler: @escaping (RM_Result<Parser>) -> Void) {
 		cancel()
 		self.completionHandler = completionHandler
-
+        
 		guard let request = createURLRequest() else {
 			//TODO: we can't create required request data.
-			completionHandler(.Failure(NSError(domain: "", code: 0, userInfo: nil)))
+			completionHandler(.failure(NSError(domain: "", code: 0, userInfo: nil)))
 			return
 		}
-
-		dataTask = NSURLSession.sharedSession().dataTaskWithRequest(request) { [weak self] (data, response, error) in
-			self?.processTaskResult(data, response: response, error: error)
-		}
+        
+        dataTask = URLSession.shared.dataTask(with: request) { [weak self] (data, responce, error) in
+            self?.processTaskResult(data: data, response: responce, error: error)
+        }
 		dataTask!.resume()
 		RM_APIRequest.setNetworkIndicatorVisibility(dataTask!)
 	}
 
 
 	/// Process received information from the task. At the end need to call `informResult`.
-	private func processTaskResult(data: NSData?, response: NSURLResponse?, error: NSError?) {
+	fileprivate func processTaskResult(data: Data?, response: URLResponse?, error: Error?) {
 		if let error = error {
-			informResult(.Failure(error))
+			informResult(.failure(error))
 			return
 		}
 
 		guard let
 			data = data,
-			parser = RM_JSONElement(data: data) as? Parser
+			let parser = RM_JSONElement(data: data) as? Parser
 		else {
 			let error = NSError(domain: "\(self)", code: 0, userInfo: [NSLocalizedDescriptionKey : RM_LocalizationKey.APIRequestCantHandleResponce.localized])
-			informResult(.Failure(error))
+			informResult(.failure(error))
 			return
 		}
 
-		informResult(.Success(parser))
+		informResult(.success(parser))
 	}
 
 
 	/// Call the completion handler(if not canceled) with an operation result
 	/// and clean up request specific data, like task and handler.
-	private func informResult(result: RM_Result<Parser>) {
+	fileprivate func informResult(_ result: RM_Result<Parser>) {
 		guard let
 			handler = completionHandler,
-			task = dataTask
+			let task = dataTask
 		else {
 			return
 		}
@@ -188,9 +186,9 @@ public class RM_APIRequest<Parser: RM_ParsableElementType> {
 
 	/// Set `RM_NetworkIndicator` visibility based on task status.
 	/// - Parameter task: The network session task.
-	private static func setNetworkIndicatorVisibility(task: NSURLSessionTask) {
+	fileprivate static func setNetworkIndicatorVisibility(_ task: URLSessionTask) {
 		switch task.state {
-		case .Running, .Suspended:
+		case .running, .suspended:
 			RM_NetworkIndicator.visible = true
 		default:
 			RM_NetworkIndicator.visible = false

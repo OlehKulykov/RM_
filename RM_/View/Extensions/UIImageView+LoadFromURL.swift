@@ -13,7 +13,7 @@ import UIKit
 extension UIImageView {
 
 	/// Private struct with lazy static url key.
-	private struct AssociatedKey {
+	fileprivate struct AssociatedKey {
 		/// Lazy static key, that used for the associated image url object.
 		static var imageUrlKey = "imageUrl"
 	}
@@ -21,9 +21,9 @@ extension UIImageView {
 	/**
 	Public getter of the image url, provided to function `loadImageFromURL`.
 	*/
-	private(set) var imageUrl: NSURL? {
+	fileprivate(set) var imageUrl: URL? {
 		get {
-			return objc_getAssociatedObject(self, &AssociatedKey.imageUrlKey) as? NSURL
+			return objc_getAssociatedObject(self, &AssociatedKey.imageUrlKey) as? URL
 		}
 		set {
 			objc_setAssociatedObject(self, &AssociatedKey.imageUrlKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
@@ -32,21 +32,21 @@ extension UIImageView {
 
 
 	/// Actual loading image data using `NSURLSession` data task.
-	private func loadImageFromURL(url: NSURL) {
-		let task = NSURLSession.sharedSession().dataTaskWithURL(url) { [weak self] (data, response, error) in
+	fileprivate func loadImageFromURL(_ url: URL) {
+		let task = URLSession.shared.dataTask(with: url, completionHandler: { [weak self] (data, response, error) in
 			guard let
 				receivedData = data,
-				receivedImage = UIImage(data: receivedData)
+				let receivedImage = UIImage(data: receivedData)
 				else {
 					return
 			}
-			dispatch_async(dispatch_get_main_queue()) {
-				if let imageUrl = self?.imageUrl where imageUrl == url {
+			DispatchQueue.main.async {
+				if let imageUrl = self?.imageUrl, imageUrl == url {
 					self?.image = receivedImage
 				}
 				self?.setNeedsDisplay()
 			}
-		}
+		}) 
 		task.resume()
 	}
 
@@ -58,13 +58,13 @@ extension UIImageView {
 
 	- Parameter placeholder: Placeholder image for display during loading.
 	*/
-	public func loadImageFromURL(url: NSURL?, placeholder: UIImage?) {
+	public func loadImageFromURL(_ url: URL?, placeholder: UIImage?) {
 		image = placeholder
 		imageUrl = url
 
 		if let url = url {
 			// Create and start data task within background
-			dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) { [weak self] in
+			DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.high).async { [weak self] in
 				self?.loadImageFromURL(url)
 				}
 		}

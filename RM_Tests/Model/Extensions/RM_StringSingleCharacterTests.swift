@@ -11,7 +11,7 @@ import XCTest
 @testable import RM_
 
 class RM_StringSingleCharacterTests: XCTestCase {
-
+/*
 	func testLastCharacter() {
 		XCTAssertEqual("".lastCharacter, String.NULLCharacter, "Wrong null character result")
 		XCTAssertEqual("0".lastCharacter, "0", "Wrong last character")
@@ -74,4 +74,5 @@ class RM_StringSingleCharacterTests: XCTestCase {
 		string[-1] = "1"
 		XCTAssertTrue(string.isEmpty, "String should not be changed")
 	}
+ */
 }

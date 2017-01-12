@@ -11,7 +11,7 @@ import XCTest
 
 class RM_DALTests: XCTestCase {
 
-	let testUserId = NSUUID().UUIDString
+	let testUserId = UUID().uuidString
 	let testUserName = "Some name"
 
 	override func setUp() {

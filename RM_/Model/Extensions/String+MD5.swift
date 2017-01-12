@@ -19,9 +19,9 @@ extension String {
 	- Returns: MD5 lowercase string.
 	*/
 	var md5: String {
-		var digest = [UInt8](count: Int(CC_MD5_DIGEST_LENGTH), repeatedValue: 0)
-		if let str = cStringUsingEncoding(NSUTF8StringEncoding) {
-			CC_MD5(str, CC_LONG(lengthOfBytesUsingEncoding(NSUTF8StringEncoding)), &digest)
+		var digest = [UInt8](repeating: 0, count: Int(CC_MD5_DIGEST_LENGTH))
+		if let str = cString(using: String.Encoding.utf8) {
+			CC_MD5(str, CC_LONG(lengthOfBytes(using: String.Encoding.utf8)), &digest)
 		}
 
 		return digest.reduce("") { result, byte in

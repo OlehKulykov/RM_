@@ -29,7 +29,7 @@ extension UIColor {
 			return
 		}
 
-		let digits = hex[hex.startIndex.successor()..<hex.endIndex]
+		let digits = hex[hex.characters.index(after: hex.startIndex)..<hex.endIndex]
 
 		guard let number = UInt32(digits, radix: 16) else {
 			self.init(red: 1, green: 0, blue: 0, alpha: 1)

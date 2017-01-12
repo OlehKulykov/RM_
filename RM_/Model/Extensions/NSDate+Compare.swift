@@ -27,8 +27,8 @@ if x < y {
 }
 ```
 */
-public func <(x: NSDate, y: NSDate) -> Bool {
-	return x.compare(y) == NSComparisonResult.OrderedAscending
+public func <(x: Date, y: Date) -> Bool {
+	return x.compare(y) == ComparisonResult.orderedAscending
 }
 
 
@@ -49,9 +49,9 @@ if x <= y {
 }
 ```
 */
-public func <=(x: NSDate, y: NSDate) -> Bool {
+public func <=(x: Date, y: Date) -> Bool {
 	let result = x.compare(y)
-	return (result == NSComparisonResult.OrderedAscending) || (result == NSComparisonResult.OrderedSame)
+	return (result == ComparisonResult.orderedAscending) || (result == ComparisonResult.orderedSame)
 }
 
 
@@ -72,8 +72,8 @@ if x > y {
 }
 ```
 */
-public func >(x: NSDate, y: NSDate) -> Bool {
-	return x.compare(y) == NSComparisonResult.OrderedDescending
+public func >(x: Date, y: Date) -> Bool {
+	return x.compare(y) == ComparisonResult.orderedDescending
 }
 
 
@@ -94,9 +94,9 @@ if x > y {
 }
 ```
 */
-public func >=(x: NSDate, y: NSDate) -> Bool {
+public func >=(x: Date, y: Date) -> Bool {
 	let result = x.compare(y)
-	return (result == NSComparisonResult.OrderedDescending) || (result == NSComparisonResult.OrderedSame)
+	return (result == ComparisonResult.orderedDescending) || (result == ComparisonResult.orderedSame)
 }
 
 
@@ -117,8 +117,8 @@ if x == y {
 }
 ```
 */
-public func ==(x: NSDate, y: NSDate) -> Bool {
-	return x.compare(y) == NSComparisonResult.OrderedSame
+public func ==(x: Date, y: Date) -> Bool {
+	return x.compare(y) == ComparisonResult.orderedSame
 }
 
 
@@ -139,8 +139,8 @@ if x != y {
 }
 ```
 */
-public func !=(x: NSDate, y: NSDate) -> Bool {
-	return x.compare(y) != NSComparisonResult.OrderedSame
+public func !=(x: Date, y: Date) -> Bool {
+	return x.compare(y) != ComparisonResult.orderedSame
 }
 
 
@@ -160,19 +160,19 @@ min(now, now.dateByAddingTimeInterval(1), now.dateByAddingTimeInterval(2)) // no
 min(now, now.dateByAddingTimeInterval(1), now.dateByAddingTimeInterval(-2)) // now.dateByAddingTimeInterval(-2)
 ```
 */
-public func min<T : NSDate>(dates: T...) -> T {
-	var minimum: T? = nil
-	for date in dates {
-		guard let minDate = minimum else {
-			minimum = date
-			continue
-		}
-		if minDate.compare(date) == NSComparisonResult.OrderedDescending {
-			minimum = date
-		}
-	}
-	return minimum ?? T()
-}
+//public func min<T : Date>(_ dates: T...) -> T {
+//	var minimum: T? = nil
+//	for date in dates {
+//		guard let minDate = minimum else {
+//			minimum = date
+//			continue
+//		}
+//		if minDate.compare(date) == ComparisonResult.orderedDescending {
+//			minimum = date
+//		}
+//	}
+//	return minimum ?? T()
+//}
 
 
 /**
@@ -190,17 +190,17 @@ max(now, now.dateByAddingTimeInterval(1)) // now.dateByAddingTimeInterval(1)
 max(now, now.dateByAddingTimeInterval(1), now.dateByAddingTimeInterval(2)) // now.dateByAddingTimeInterval(2)
 ```
 */
-public func max<T : NSDate>(dates: T...) -> T {
-	var maximum: T? = nil
-	for date in dates {
-		guard let maxDate = maximum else {
-			maximum = date
-			continue
-		}
-		if maxDate.compare(date) == NSComparisonResult.OrderedAscending {
-			maximum = date
-		}
-	}
-	return maximum ?? T()
-}
+//public func max<T : Date>(_ dates: T...) -> T {
+//	var maximum: T? = nil
+//	for date in dates {
+//		guard let maxDate = maximum else {
+//			maximum = date
+//			continue
+//		}
+//		if maxDate.compare(date) == ComparisonResult.orderedAscending {
+//			maximum = date
+//		}
+//	}
+//	return maximum ?? T()
+//}
 

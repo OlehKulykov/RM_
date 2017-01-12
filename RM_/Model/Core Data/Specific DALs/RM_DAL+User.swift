@@ -23,7 +23,7 @@ extension RM_DALType where InternalType == RM_User {
 	
 	- Returns: User as it's public protocol or nil if no User found with provided identifier.
 	*/
-	public func findUserById(userId: String) -> PublicType? {
+	public func findUserById(_ userId: String) -> PublicType? {
 		let predicate = NSPredicate(format: "oId == %@", userId)
 		let users = findWithPredicate(predicate)
 		assert(users.count < 2, "There are few users with same id: \(userId)")
@@ -41,7 +41,7 @@ extension RM_MutableDALType where InternalType == RM_User {
 	
 	- Returns: User as internal/editable instance with provided identifier.
 	*/
-	func createUserWithId(userId: String) -> InternalType {
+	func createUserWithId(_ userId: String) -> InternalType {
 		let user = createEntity()
 		user.oId = userId
 		return user

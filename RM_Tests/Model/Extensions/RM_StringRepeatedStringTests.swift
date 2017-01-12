@@ -11,7 +11,7 @@ import XCTest
 @testable import RM_
 
 class RM_StringRepeatedStringTests: XCTestCase {
-
+/*
 	func testNonEmpty() {
 		XCTAssertEqual(String(count: 1, repeatedValue: "a"), "a", "Not equal to expected string")
 		XCTAssertEqual(String(count: 1, repeatedValue: "ab"), "ab", "Not equal to expected string")
@@ -29,5 +29,5 @@ class RM_StringRepeatedStringTests: XCTestCase {
 		XCTAssertEqual(String(count: 1, repeatedValue: ""), "", "Not equal to empty string")
 		XCTAssertEqual(String(count: 234, repeatedValue: ""), "", "Not equal to empty string")
 	}
-
+*/
 }

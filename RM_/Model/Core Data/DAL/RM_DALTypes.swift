@@ -47,7 +47,7 @@ public protocol RM_DALType {
 	- Returns: Array with `PublicType` entity types followed search criterio/predicate, all available entities without predicate
 	or empty array if nothing have beed found.
 	*/
-	func findWithPredicate(predicate: NSPredicate?) -> [PublicType]
+	func findWithPredicate(_ predicate: NSPredicate?) -> [PublicType]
 
 
 	/**
@@ -107,7 +107,7 @@ public protocol RM_MutableDALType: RM_DALType {
 	/**
 	Delete entity instance.
 	*/
-	func deleteEntity(entity: InternalType)
+	func deleteEntity(_ entity: InternalType)
 
 
 	/**

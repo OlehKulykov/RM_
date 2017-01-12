@@ -11,27 +11,27 @@ import XCTest
 
 extension XCTestCase {
 
-	func bundleFileData(fileName: String) -> NSData {
-		let bundle = NSBundle(forClass: self.dynamicType)
+	func bundleFileData(_ fileName: String) -> Data {
+		let bundle = Bundle(for: type(of: self))
 		XCTAssertNotNil(bundle)
 
-		let path = bundle.pathForResource(fileName, ofType: "")
+		let path = bundle.path(forResource: fileName, ofType: "")
 		XCTAssertNotNil(path)
 
-		let data = NSData(contentsOfFile: path!)
+		let data = try? Data(contentsOf: URL(fileURLWithPath: path!))
 		XCTAssertNotNil(data)
 
 		return data!
 	}
 
-	func jsonElement(fileName: String) -> RM_JSONElement? {
-		let bundle = NSBundle(forClass: self.dynamicType)
+	func jsonElement(_ fileName: String) -> RM_JSONElement? {
+		let bundle = Bundle(for: type(of: self))
 		XCTAssertNotNil(bundle)
 
-		let path = bundle.pathForResource(fileName, ofType: "json")
+		let path = bundle.path(forResource: fileName, ofType: "json")
 		XCTAssertNotNil(path)
 
-		let data = NSData(contentsOfFile: path!)
+		let data = try? Data(contentsOf: URL(fileURLWithPath: path!))
 		XCTAssertNotNil(data)
 
 		return RM_JSONElement(data: data!)

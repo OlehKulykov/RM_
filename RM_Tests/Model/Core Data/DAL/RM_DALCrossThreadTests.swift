@@ -25,7 +25,7 @@ class RM_DALCrossThreadTests: XCTestCase {
 
 		// create entity in a main thread.
 		let userMT = dalMT.createEntity()
-		let userId = NSUUID().UUIDString
+		let userId = UUID().uuidString
 		userMT.oId = userId
 		let userName = "Some name"
 		userMT.name = userName
@@ -33,8 +33,8 @@ class RM_DALCrossThreadTests: XCTestCase {
 
 		XCTAssertTrue(dalMT.findAll().count == 1, "Can't save new entity.")
 
-		let expectation = self.expectationWithDescription("Read user in background.")
-		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) {
+		let expectation = self.expectation(description: "Read user in background.")
+		DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.high).async {
 
 			// read and compare entity from background.
 			let dalBT: RM_DAL<RM_User> = RM_DAL.createBackgrounded()
@@ -51,7 +51,7 @@ class RM_DALCrossThreadTests: XCTestCase {
 			expectation.fulfill()
 		}
 
-		self.waitForExpectationsWithTimeout(10) { error in
+		self.waitForExpectations(timeout: 10) { error in
 			if let error = error {
 				XCTFail("Create user in background: \(error)")
 			}
@@ -61,11 +61,11 @@ class RM_DALCrossThreadTests: XCTestCase {
 	func testCreateBackgroundReadMain() {
 		cleanup()
 
-		let expectation = self.expectationWithDescription("Write user in background.")
-		let userId = NSUUID().UUIDString
+		let expectation = self.expectation(description: "Write user in background.")
+		let userId = UUID().uuidString
 		let userName = "Some name"
 
-		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) {
+		DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.high).async {
 
 			// create and setup enty in a background.
 			let dal: RM_MutableDAL<RM_User> = RM_MutableDAL.createBackgrounded()
@@ -79,7 +79,7 @@ class RM_DALCrossThreadTests: XCTestCase {
 			expectation.fulfill()
 		}
 
-		self.waitForExpectationsWithTimeout(10) { error in
+		self.waitForExpectations(timeout: 10) { error in
 
 			let dal: RM_DAL<RM_User> = RM_DAL.create()
 

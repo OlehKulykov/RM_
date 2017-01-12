@@ -17,14 +17,14 @@ class RM_SectionBackground: RM_TableViewSectionBackground {
 	override func didMoveToSuperview() {
 		super.didMoveToSuperview()
 		cornerRadius = 4
-		borderColor = UIColor.lightGrayColor()
+		borderColor = UIColor.lightGray
 		borderWidth = 0.5
 	}
 
 	/// Layout was changed and need to update shadow.
 	override func layoutSubviews() {
 		super.layoutSubviews()
-		setShadow(UIEdgeInsetsMake(1, 2.5, 6, 2.5), color: UIColor.blackColor(), radius: 4, opacity: 0.16)
+		setShadow(UIEdgeInsetsMake(1, 2.5, 6, 2.5), color: UIColor.black, radius: 4, opacity: 0.16)
 	}
 }
 
@@ -43,7 +43,7 @@ class RM_BackgroundedSectionTableViewController: UIViewController {
 extension RM_BackgroundedSectionTableViewController: UITableViewDelegate {
 
 	//MARK: UIScrollViewDelegate, inform tableview that the table view did scrolled
-	func scrollViewDidScroll(scrollView: UIScrollView) {
+	func scrollViewDidScroll(_ scrollView: UIScrollView) {
 		tableView.onDidScroll()
 	}
 	
@@ -53,16 +53,16 @@ extension RM_BackgroundedSectionTableViewController: UITableViewDelegate {
 //MARK: TableView DataSource. Nothing special, just example
 extension RM_BackgroundedSectionTableViewController: UITableViewDataSource {
 
-	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return 3
 	}
 
-	func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+	func numberOfSections(in tableView: UITableView) -> Int {
 		return 3
 	}
 
-	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
 		// Setup the cell with data
 		if let textLabel = cell.textLabel {
@@ -80,14 +80,14 @@ extension RM_BackgroundedSectionTableViewController: RM_BackgroundedSectionTable
 	//MARK: RM_BackgroundedSectionTableViewDelegate, manage table view section backgrounds
 
 	/// Create and return custom section background view with white color.
-	func tableView(tableView: RM_BackgroundedSectionTableView, sectionBackground section: Int) -> RM_TableViewSectionBackground? {
+	func tableView(_ tableView: RM_BackgroundedSectionTableView, sectionBackground section: Int) -> RM_TableViewSectionBackground? {
 		let background = RM_SectionBackground()
-		background.backgroundColor = UIColor.whiteColor()
+		background.backgroundColor = UIColor.white
 		return background
 	}
 
 	/// Insets for the background section. 8 px. from left and right.
-	func tableView(tableView: RM_BackgroundedSectionTableView, sectionBackgroundEdgeInsets section: Int) -> UIEdgeInsets {
+	func tableView(_ tableView: RM_BackgroundedSectionTableView, sectionBackgroundEdgeInsets section: Int) -> UIEdgeInsets {
 		return UIEdgeInsetsMake(0, 8, 0, 8)
 	}
 

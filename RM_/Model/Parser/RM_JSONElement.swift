@@ -15,7 +15,7 @@ Enumerator which represent JSON element.
 
 For each element, except Null, it's possible to get casted dictionary, array or primitive value object.
 Enumerator type can be any of types supported by the `NSJSONSerialization` like:
-`NSArray`, `NSDictionary`, `NSString`, `NSNumber` or `NSNull`.
+`Array`, `Dictionary`, `String`, `NSNumber` or `NSNull`.
 
 That's why it's possible to get/cast to this type or initialize element from this type.
 
@@ -35,7 +35,7 @@ guard let products = json["products"].array else {
 
 // For each JSON element get required and optional data
 for product in products {
-	// Get required product `price` and `quantity`
+	// Get required product `price` and `qu antity`
 	guard let
 		price = product["price"].decimal, // product price
 		quantity = product["quantity"].integer // product quantity
@@ -55,23 +55,27 @@ public enum RM_JSONElement: RM_ParsableElementType {
 
 	//MARK: JSON element types.
 
+    public typealias AnyType = Any
+    public typealias DictionaryType = [String:RM_JSONElement.AnyType]
+    public typealias ArrayType = [RM_JSONElement.AnyType]
+    
 	/// Element is `NSDictionary`.
-	case Dictionary(NSDictionary)
+    case dictionary(RM_JSONElement.DictionaryType)
 
 
 	/// Element is `NSArray`.
-	/// Use `.array` dynamic variable to get/cast stored object to an array of `AnyObject`'s.
-	case Array([AnyObject])
+	/// Use `.array` dynamic variable to get/cast stored object to an array of `Any`'s.
+	case array(RM_JSONElement.ArrayType)
 
 
-	/// Element is NSString or NSNumber.
+	/// Element is String or Number.
 	/// Use `.decimal`, `.number`, `.integer`, `.double`, `.bool` dynamic variables.
 	/// to get/cast to an appropriate type.
-	case Object(AnyObject)
+	case object(RM_JSONElement.AnyType)
 
 
 	/// Element is `NSNull` or any other unsupported type.
-	case Null
+	case null
 
 
 	//MARK: Initializers
@@ -83,8 +87,8 @@ public enum RM_JSONElement: RM_ParsableElementType {
 	
 	- Returns: Initialized element or nil if data is not JSON or an error occurs.
 	*/
-	public init?(data: NSData) {
-		guard let object = try? NSJSONSerialization.JSONObjectWithData(data, options: []) else {
+	public init?(data: Data) {
+		guard let object = try? JSONSerialization.jsonObject(with: data, options: []) else {
 			return nil
 		}
 		self.init(object: object)
@@ -94,15 +98,15 @@ public enum RM_JSONElement: RM_ParsableElementType {
 	/**
 	Initialize JSON element from any supported object.
 	
-	- Parameter object: Any of next objects: `NSArray`, `NSDictionary`, `NSString`, `NSNumber`.
+	- Parameter object: Any of next objects: `Array`, `Dictionary`, `String`, `Number`.
 	*/
-	public init(object: AnyObject) {
-		if let dictionary = object as? NSDictionary {
-			self = .Dictionary(dictionary)
-		} else if let array = object as? [AnyObject] {
-			self = .Array(array)
+	public init(object: RM_JSONElement.AnyType) {
+        if let dictionary = object as? RM_JSONElement.DictionaryType {
+			self = .dictionary(dictionary)
+		} else if let array = object as? RM_JSONElement.ArrayType {
+			self = .array(array)
 		} else {
-			self = .Object(object)
+			self = .object(object)
 		}
 	}
 
@@ -117,14 +121,14 @@ public enum RM_JSONElement: RM_ParsableElementType {
 	*/
 	public subscript(arrayIndex: Int) -> RM_JSONElement {
 		switch self {
-		case .Array(let data):
+		case .array(let data):
 			if data.startIndex <= arrayIndex && arrayIndex < data.endIndex {
 				return RM_JSONElement(object: data[arrayIndex])
 			}
 		default:
 			break
 		}
-		return .Null
+		return .null
 	}
 
 
@@ -137,14 +141,14 @@ public enum RM_JSONElement: RM_ParsableElementType {
 	*/
 	public subscript(key: String) -> RM_JSONElement {
 		switch self {
-		case .Dictionary(let data):
+		case .dictionary(let data):
 			if let value = data[key] {
-				return RM_JSONElement(object: value)
+				return RM_JSONElement(object: value as RM_JSONElement.AnyType)
 			}
 		default:
 			break
 		}
-		return .Null
+		return .null
 	}
 
 
@@ -156,7 +160,7 @@ public enum RM_JSONElement: RM_ParsableElementType {
 	*/
 	public var array: [RM_JSONElement]? {
 		switch self {
-		case .Array(let data):
+		case .array(let data):
 			return data.map { RM_JSONElement(object: $0) }
 		default:
 			return nil
@@ -171,7 +175,7 @@ public enum RM_JSONElement: RM_ParsableElementType {
 	*/
 	public var string: String? {
 		switch self {
-		case .Object(let data):
+		case .object(let data):
 			return data as? String
 		default:
 			return nil
@@ -185,7 +189,7 @@ public enum RM_JSONElement: RM_ParsableElementType {
 	- Returns: Integer value or nil.
 	*/
 	public var integer: Int? {
-		return self.number?.integerValue
+		return self.number?.intValue
 	}
 
 
@@ -217,13 +221,13 @@ public enum RM_JSONElement: RM_ParsableElementType {
 	*/
 	public var decimal: NSDecimalNumber? {
 		switch self {
-		case .Object(let data):
+		case .object(let data):
 			if let number = data as? NSDecimalNumber {
 				return number
 			} else if let number = data as? NSNumber {
 				return NSDecimalNumber(decimal: number.decimalValue)
 			} else if let string = self.string {
-				return RM_JSONElement.decimalNumberFormatter.numberFromString(string) as? NSDecimalNumber
+				return RM_JSONElement.decimalNumberFormatter.number(from: string) as? NSDecimalNumber
 			}
 		default:
 			break
@@ -240,12 +244,12 @@ public enum RM_JSONElement: RM_ParsableElementType {
 	*/
 	public var number: NSNumber? {
 		switch self {
-		case .Object(let data):
+		case .object(let data):
 			if let number = data as? NSNumber {
 				return number
 			}
 			if let string = self.string {
-				return RM_JSONElement.numberFormatter.numberFromString(string)
+				return RM_JSONElement.numberFormatter.number(from: string)
 			}
 		default:
 			break
@@ -254,21 +258,24 @@ public enum RM_JSONElement: RM_ParsableElementType {
 	}
 
 
-	//MARK: Private number formatters
+	//MARK: Predefined number formatters
 
 	/// Decimal number formatter from string to `NSDecimalNumber`.
-	private static var decimalNumberFormatter: NSNumberFormatter = {
-		let formatter = NSNumberFormatter()
-		formatter.numberStyle = .DecimalStyle
+	public static var decimalNumberFormatter: NumberFormatter = {
+		let formatter = NumberFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+		formatter.numberStyle = .decimal
 		formatter.generatesDecimalNumbers = true
 		return formatter
 	}()
 
 
 	/// Number formatter from string to `NSNumber`.
-	private static var numberFormatter: NSNumberFormatter = {
-		let formatter = NSNumberFormatter()
-		formatter.numberStyle = .DecimalStyle
+	public static var numberFormatter: NumberFormatter = {
+		let formatter = NumberFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+		formatter.numberStyle = .decimal
+        formatter.generatesDecimalNumbers = false
 		return formatter
 	}()
 

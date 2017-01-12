@@ -45,7 +45,7 @@ public enum RM_Font: String {
 
 	- Returns: Create custom font with a provided size.
 	*/
-	public func fontWithSize(size: CGFloat) -> UIFont {
+	public func fontWithSize(_ size: CGFloat) -> UIFont {
 		return UIFont(name: rawValue, size: size)!
 	}
 }

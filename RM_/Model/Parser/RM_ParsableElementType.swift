@@ -23,7 +23,7 @@ public protocol RM_ParsableElementType {
 	
 	- Returns: Initialized element or nil if data is not in a supported format for the implementation.
 	*/
-	init?(data: NSData)
+	init?(data: Data)
 
 
 	/**

@@ -13,9 +13,9 @@ import XCTest
 class RM_UIImage_ColorizedCreationTests: XCTestCase {
 
 	func testCreation() {
-		let image = UIImage(color: UIColor.redColor())
+		let image = UIImage(color: UIColor.red)
 		XCTAssertTrue(image.size == CGSize(width: 1, height: 1), "Created image size [\(image.size)] doesn't conform expected size [1; 1]")
-		XCTAssertTrue(image.imageOrientation == UIImageOrientation.Up, "Created image have unexpected orientation \(image.imageOrientation)")
+		XCTAssertTrue(image.imageOrientation == UIImageOrientation.up, "Created image have unexpected orientation \(image.imageOrientation)")
 	}
 
     func testSizedCreation() {
@@ -32,12 +32,12 @@ class RM_UIImage_ColorizedCreationTests: XCTestCase {
 		]
 
 		for size in sizes {
-			let expectedSize = CGSizeMake(max(1, size.width), max(1, size.height))
-
-			let image = UIImage(color: UIColor.redColor(), size: size)
+			let expectedSize = CGSize(width: max(1, size.width), height: max(1, size.height))
+            
+			let image = UIImage(color: UIColor.red, size: size)
 
 			XCTAssertTrue(image.size == expectedSize, "Created image size [\(image.size)] doesn't conform expected size \(expectedSize)")
-			XCTAssertTrue(image.imageOrientation == UIImageOrientation.Up, "Created image have unexpected orientation \(image.imageOrientation)")
+			XCTAssertTrue(image.imageOrientation == UIImageOrientation.up, "Created image have unexpected orientation \(image.imageOrientation)")
 		}
 
     }

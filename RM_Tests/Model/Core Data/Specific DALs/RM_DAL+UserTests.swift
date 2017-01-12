@@ -11,7 +11,7 @@ import XCTest
 
 class RM_DAL_UserTests: XCTestCase {
 
-	let testUserId = NSUUID().UUIDString
+	let testUserId = UUID().uuidString
 
 	func testCreateAndRead() {
 		let mutableDAL: RM_MutableDAL<RM_User> = RM_MutableDAL.create()

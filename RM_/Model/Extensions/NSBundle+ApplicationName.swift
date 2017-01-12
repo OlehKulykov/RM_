@@ -11,15 +11,15 @@ import Foundation
 
 
 /// Get application name from bundle
-extension NSBundle {
+extension Bundle {
 
 	/**
 	Get application name. Check `Info.plist`
 	*/
 	public var appName: String {
-		let bundle = NSBundle.mainBundle()
+		let bundle = Bundle.main
 		for key in ["CFBundleDisplayName", "CFBundleName"] {
-			if let name = bundle.objectForInfoDictionaryKey(key) as? String {
+			if let name = bundle.object(forInfoDictionaryKey: key) as? String {
 				return name
 			}
 		}

@@ -12,9 +12,10 @@ import XCTest
 
 class RM_NSDateCompareTests: XCTestCase {
 
+    /*
 	func testCompare() {
-		let now = NSDate()
-		let next = now.dateByAddingTimeInterval(1)
+		let now = Date()
+		let next = now.addingTimeInterval(1)
 
 		XCTAssertTrue(now == now)
 		XCTAssertFalse(now != now)
@@ -32,9 +33,9 @@ class RM_NSDateCompareTests: XCTestCase {
 	}
 
 	func testMin() {
-		let now = NSDate()
-		let next = now.dateByAddingTimeInterval(1)
-		let prev = now.dateByAddingTimeInterval(-1)
+		let now = Date()
+		let next = now.addingTimeInterval(1)
+		let prev = now.addingTimeInterval(-1)
 
 		var minimum = min(next, now)
 		XCTAssertTrue(minimum == now)
@@ -45,11 +46,11 @@ class RM_NSDateCompareTests: XCTestCase {
 		minimum = min(now, next)
 		XCTAssertTrue(minimum == now)
 
-		minimum = min(now, next, now.dateByAddingTimeInterval(2))
+		minimum = min(now, next, now.addingTimeInterval(2))
 		XCTAssertTrue(minimum == now)
 
-		minimum = min(now, next, now.dateByAddingTimeInterval(2), now.dateByAddingTimeInterval(-2))
-		XCTAssertTrue(minimum == now.dateByAddingTimeInterval(-2))
+		minimum = min(now, next, now.addingTimeInterval(2), now.addingTimeInterval(-2))
+		XCTAssertTrue(minimum == now.addingTimeInterval(-2))
 
 		minimum = min(now, now)
 		XCTAssertTrue(minimum == now)
@@ -59,8 +60,8 @@ class RM_NSDateCompareTests: XCTestCase {
 	}
 
 	func testMax() {
-		let now = NSDate()
-		let next = now.dateByAddingTimeInterval(1)
+		let now = Date()
+		let next = now.addingTimeInterval(1)
 
 		var maximim = max(next, now)
 		XCTAssertTrue(maximim == next)
@@ -71,10 +72,11 @@ class RM_NSDateCompareTests: XCTestCase {
 		maximim = max(now, next)
 		XCTAssertTrue(maximim == next)
 
-		maximim = max(now, next, now.dateByAddingTimeInterval(2))
-		XCTAssertTrue(maximim == now.dateByAddingTimeInterval(2))
+		maximim = max(now, next, now.addingTimeInterval(2))
+		XCTAssertTrue(maximim == now.addingTimeInterval(2))
 
 		maximim = max(now, now)
 		XCTAssertTrue(maximim == now)
 	}
+ */
 }

@@ -14,12 +14,12 @@ import UIKit
 Base table view section background view.
 Use subclass to make view customization.
 */
-public class RM_TableViewSectionBackground : UIView {
+open class RM_TableViewSectionBackground : UIView {
 
 	/**
 	Background section index.
 	*/
-	private(set) var section: Int = -1
+	fileprivate(set) var section: Int = -1
 }
 
 
@@ -39,7 +39,7 @@ public protocol RM_BackgroundedSectionTableViewDelegate {
 	
 	- Returns: Initialized section background view or nil if no background needed. 
 	*/
-	optional func tableView(tableView: RM_BackgroundedSectionTableView, sectionBackground section: Int) -> RM_TableViewSectionBackground?
+	@objc optional func tableView(_ tableView: RM_BackgroundedSectionTableView, sectionBackground section: Int) -> RM_TableViewSectionBackground?
 
 
 	/**
@@ -52,7 +52,7 @@ public protocol RM_BackgroundedSectionTableViewDelegate {
 	
 	- Returns: Section background edge insets.
 	*/
-	optional func tableView(tableView: RM_BackgroundedSectionTableView, sectionBackgroundEdgeInsets section: Int) -> UIEdgeInsets
+	@objc optional func tableView(_ tableView: RM_BackgroundedSectionTableView, sectionBackgroundEdgeInsets section: Int) -> UIEdgeInsets
 
 
 	/**
@@ -65,7 +65,7 @@ public protocol RM_BackgroundedSectionTableViewDelegate {
 	
 	- Returns: `true` - section background also locates under footer, `false` - ignore section footer.
 	*/
-	optional func tableView(tableView: RM_BackgroundedSectionTableView, sectionBackgroundUnderFooter section: Int) -> Bool
+	@objc optional func tableView(_ tableView: RM_BackgroundedSectionTableView, sectionBackgroundUnderFooter section: Int) -> Bool
 
 
 	/**
@@ -78,7 +78,7 @@ public protocol RM_BackgroundedSectionTableViewDelegate {
 
 	- Returns: `true` - section background also locates under header, `false` - ignore section header.
 	*/
-	optional func tableView(tableView: RM_BackgroundedSectionTableView, sectionBackgroundUnderHeader section: Int) -> Bool
+	@objc optional func tableView(_ tableView: RM_BackgroundedSectionTableView, sectionBackgroundUnderHeader section: Int) -> Bool
 }
 
 
@@ -116,10 +116,10 @@ extension MyTableViewController: RM_BackgroundedSectionTableViewDelegate {
 }
 ```
 */
-public class RM_BackgroundedSectionTableView : UITableView {
+open class RM_BackgroundedSectionTableView : UITableView {
 
 	/// Removed all section background views from table view.
-	private func removeBackgroundViews() {
+	fileprivate func removeBackgroundViews() {
 		for subview in subviews {
 			if let back = subview as? RM_TableViewSectionBackground {
 				back.removeFromSuperview()
@@ -128,32 +128,32 @@ public class RM_BackgroundedSectionTableView : UITableView {
 	}
 
 	/// Create new section background view for each data source section.
-	private func createBackgroundViews() {
-		let count = dataSource?.numberOfSectionsInTableView?(self) ?? 0
+	fileprivate func createBackgroundViews() {
+		let count = dataSource?.numberOfSections?(in: self) ?? 0
 		for section in 0..<count {
 			createBackgroundViewForSection(section)
 		}
 	}
 
 	/// Create single section background by it's index.
-	private func createBackgroundViewForSection(section: Int) {
+	fileprivate func createBackgroundViewForSection(_ section: Int) {
 		guard let
 			sectionDelegate = delegate as? RM_BackgroundedSectionTableViewDelegate,
-			view = sectionDelegate.tableView?(self, sectionBackground: section)
+			let view = sectionDelegate.tableView?(self, sectionBackground: section)
 			else {
 				return
 		}
 		view.section = section
 		self.addSubview(view)
-		self.sendSubviewToBack(view)
+		self.sendSubview(toBack: view)
 	}
 
 	/// Read all available background and update it's frames.
-	private func updateSectionBackgroundFrames() {
+	fileprivate func updateSectionBackgroundFrames() {
 		let sectionDelegate = delegate as? RM_BackgroundedSectionTableViewDelegate
 		for subview in subviews {
 			if let back = subview as? RM_TableViewSectionBackground {
-				var frame = rectForSection(back.section)
+				var frame = rect(forSection: back.section)
 
 				// Tune up section frame if needed. Depends on delegate.
 				if let insets = sectionDelegate?.tableView?(self, sectionBackgroundEdgeInsets: back.section) {
@@ -166,7 +166,7 @@ public class RM_BackgroundedSectionTableView : UITableView {
 				// Ignore section header if needed. Depends on delegate.
 				let includeHeader = sectionDelegate?.tableView?(self, sectionBackgroundUnderHeader: back.section) ?? false
 				if !includeHeader {
-					let header = rectForHeaderInSection(back.section)
+					let header = rectForHeader(inSection: back.section)
 					frame.origin.y += header.height
 					frame.size.height -= header.height
 				}
@@ -174,7 +174,7 @@ public class RM_BackgroundedSectionTableView : UITableView {
 				// Ignore section footer if needed. Depends on delegate.
 				let includeFooter = sectionDelegate?.tableView?(self, sectionBackgroundUnderFooter: back.section) ?? false
 				if !includeFooter {
-					let footer = rectForFooterInSection(back.section)
+					let footer = rectForFooter(inSection: back.section)
 					frame.size.height -= footer.height
 				}
 
@@ -189,7 +189,7 @@ public class RM_BackgroundedSectionTableView : UITableView {
 	
 	- Warning: Call this function within `scrollViewDidScroll(:)` delegate function of the `UITableViewDelegate`
 	*/
-	public func onDidScroll() {
+	open func onDidScroll() {
 		updateSectionBackgroundFrames()
 	}
 
@@ -197,7 +197,7 @@ public class RM_BackgroundedSectionTableView : UITableView {
 	/**
 	Reload table view data and section backgrounds.
 	*/
-	public override func reloadData() {
+	open override func reloadData() {
 		super.reloadData()
 		removeBackgroundViews()
 		createBackgroundViews()
@@ -208,7 +208,7 @@ public class RM_BackgroundedSectionTableView : UITableView {
 	/**
 	Table view layout was changed and need to update section backgrounds frames.
 	*/
-	public override func layoutSubviews() {
+	open override func layoutSubviews() {
 		super.layoutSubviews()
 		updateSectionBackgroundFrames()
 	}

@@ -14,7 +14,7 @@ import CoreData
 /**
 CoreData stack holds CoreData properties and provide basic operations with managed objects.
 */
-public class RM_CoreDataStack {
+open class RM_CoreDataStack {
 
 
 	//MARK: Public functionality of the stack type RM_CoreDataStackType.
@@ -23,7 +23,7 @@ public class RM_CoreDataStack {
 	Returns managed object context concurrency type for the created instance of the Core Data Stack.
 	Available `MainQueueConcurrencyType` and `PrivateQueueConcurrencyType`.
 	*/
-	public var concurrencyType: NSManagedObjectContextConcurrencyType {
+	open var concurrencyType: NSManagedObjectContextConcurrencyType {
 		return managedObjectContext.concurrencyType
 	}
 
@@ -37,8 +37,8 @@ public class RM_CoreDataStack {
 	
 	- Returns: New instance of the managed object/entity, ready for use, modify, fill with data, etc.
 	*/
-	public func createNewObject(objectName name: String) -> NSManagedObject {
-		return NSEntityDescription.insertNewObjectForEntityForName(name, inManagedObjectContext: managedObjectContext)
+	open func createNewObject(objectName name: String) -> NSManagedObject {
+		return NSEntityDescription.insertNewObject(forEntityName: name, into: managedObjectContext)
 	}
 
 
@@ -55,12 +55,12 @@ public class RM_CoreDataStack {
 	
 	- Returns: Array with located objects/entities or empty array.
 	*/
-	public func findObjects(objectName name: String, withPredicate predicate: NSPredicate?) -> [NSManagedObject] {
-		let fetchRequest = NSFetchRequest(entityName: name)
+	open func findObjects(objectName name: String, withPredicate predicate: NSPredicate?) -> [NSManagedObject] {
+		let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: name)
 		fetchRequest.returnsObjectsAsFaults = false
 		fetchRequest.predicate = predicate
 
-		guard let results = try? managedObjectContext.executeFetchRequest(fetchRequest) else {
+		guard let results = try? managedObjectContext.fetch(fetchRequest) else {
 			return []
 		}
 
@@ -75,8 +75,8 @@ public class RM_CoreDataStack {
 
 	- Parameter object: managed object/entity that should be deleted.
 	*/
-	public func deleteObject(object: NSManagedObject) {
-		managedObjectContext.deleteObject(object)
+	open func deleteObject(_ object: NSManagedObject) {
+		managedObjectContext.delete(object)
 	}
 
 
@@ -89,16 +89,16 @@ public class RM_CoreDataStack {
 
 	- Warning: Context is not saved after successful operation.
 	*/
-	public func deleteObjects(objectsName name: String) {
-		let fetchRequest = NSFetchRequest(entityName: name)
+	open func deleteObjects(objectsName name: String) {
+		let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: name)
 		fetchRequest.includesPropertyValues = false
 
-		guard let objects = try? managedObjectContext.executeFetchRequest(fetchRequest) else {
+		guard let objects = try? managedObjectContext.fetch(fetchRequest) else {
 			return
 		}
 
 		for object in objects {
-			managedObjectContext.deleteObject(object as! NSManagedObject)
+			managedObjectContext.delete(object as! NSManagedObject)
 		}
 	}
 
@@ -108,11 +108,11 @@ public class RM_CoreDataStack {
 	
 	- Returns: nil on success or error object which describes error during operation.
 	*/
-	public func save() -> NSError? {
+	open func save() -> Error? {
 		if managedObjectContext.hasChanges {
 			do {
 				try managedObjectContext.save()
-			} catch let error as NSError {
+			} catch let error {
 				return error
 			}
 		}
@@ -126,7 +126,7 @@ public class RM_CoreDataStack {
 	Shared main thread Core Data Stack type.
 	The context creates and manages a main queue with concurrency `MainQueueConcurrencyType`.
 	*/
-	public static var sharedDataStack: RM_CoreDataStack = {
+	open static var sharedDataStack: RM_CoreDataStack = {
 		return RM_CoreDataStack()
 	}()
 
@@ -135,8 +135,8 @@ public class RM_CoreDataStack {
 	Shared background thread Core Data Stack type.
 	The context creates and manages a background queue with concurrency: `PrivateQueueConcurrencyType`.
 	*/
-	public static var sharedBackgroundDataStack: RM_CoreDataStack = {
-		return RM_CoreDataStack(concurrency: .PrivateQueueConcurrencyType)
+	open static var sharedBackgroundDataStack: RM_CoreDataStack = {
+		return RM_CoreDataStack(concurrency: .privateQueueConcurrencyType)
 	}()
 
 
@@ -148,19 +148,20 @@ public class RM_CoreDataStack {
 	
 	- Returns: The directory which can be used to store the Core Data file or any other application files.
 	*/
-	public static var documentsDirectory: NSURL = {
-		let fileManager = NSFileManager()
-		for url in fileManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask) {
-
+	open static var documentsDirectory: URL = {
+		let fileManager = FileManager()
+		for url in fileManager.urls(for: .documentDirectory, in: .userDomainMask) {
+            
 			// this value is suitable for input into methods of NSFileManager
-			if let urlPath = url.path {
-				if fileManager.isWritableFileAtPath(urlPath) { // check for existance and write permission
-					return url
-				}
-			}
+            //TODO: ...
+//			if let urlPath = url.path {
+//				if fileManager.isWritableFile(atPath: urlPath) { // check for existance and write permission
+//					return url
+//				}
+//			}
 
 			do {
-				try fileManager.createDirectoryAtURL(url, withIntermediateDirectories: true, attributes: [:])
+				try fileManager.createDirectory(at: url, withIntermediateDirectories: true, attributes: [:])
 			} catch {
 				continue // check next url
 			}
@@ -181,7 +182,7 @@ public class RM_CoreDataStack {
 	
 	- Note: You could find in a project tree your data model, like `NAME.xcdatamodeld` where `NAME` part should be used here.
 	*/
-	public static var managedObjectModelResourceName: String {
+	open static var managedObjectModelResourceName: String {
 		return "RM_"
 	}
 
@@ -189,56 +190,56 @@ public class RM_CoreDataStack {
 	//MARK: Private implementation.
 
 	/// Hold Core Data managed object context.
-	private var managedObjectContext: NSManagedObjectContext
+	fileprivate var managedObjectContext: NSManagedObjectContext
 
 
 	/// Initialize Core Data Stack with concurrency type.
 	/// - Parameter concurrency: The concurrency pattern with which you will use created and stored managed object context.
 	/// Available `MainQueueConcurrencyType` and `PrivateQueueConcurrencyType`.
-	private init(concurrency: NSManagedObjectContextConcurrencyType) {
+	fileprivate init(concurrency: NSManagedObjectContextConcurrencyType) {
 		let objectContext = NSManagedObjectContext(concurrencyType: concurrency)
 		objectContext.persistentStoreCoordinator = RM_CoreDataStack.SQLitePersistentStoreCoordinator
 		self.managedObjectContext = objectContext
 
 		// Add managed object context observer to receive completes a save operation notification.
 		// Need to merge changes in a main thread.
-		NSNotificationCenter.defaultCenter().addObserver(self,
+		NotificationCenter.default.addObserver(self,
 		                                                 selector: #selector(RM_CoreDataStack.contextDidSave(_:)),
-		                                                 name: NSManagedObjectContextDidSaveNotification,
+		                                                 name: NSNotification.Name.NSManagedObjectContextDidSave,
 		                                                 object: objectContext)
 	}
 
 
 	/// Posted whenever a managed object context completes a save operation.
 	/// - Note: Need to synchronous merge changes within main thread.
-	@objc func contextDidSave(notification: NSNotification) {
-		if NSThread.isMainThread() {
-			managedObjectContext.mergeChangesFromContextDidSaveNotification(notification)
+	@objc func contextDidSave(_ notification: Notification) {
+		if Thread.isMainThread {
+			managedObjectContext.mergeChanges(fromContextDidSave: notification)
 		} else {
-			dispatch_sync(dispatch_get_main_queue()) { [weak self] in
-				self?.managedObjectContext.mergeChangesFromContextDidSaveNotification(notification)
+			DispatchQueue.main.sync { [weak self] in
+				self?.managedObjectContext.mergeChanges(fromContextDidSave: notification)
 			}
 		}
 	}
 
 	/// Default initializer of the Core Data Stack with main queue concurrency.
-	convenience private init() {
-		self.init(concurrency: .MainQueueConcurrencyType)
+	convenience fileprivate init() {
+		self.init(concurrency: .mainQueueConcurrencyType)
 	}
 
 	/// Deinitialize and remove observer.
 	deinit {
-		NSNotificationCenter.defaultCenter().removeObserver(self)
+		NotificationCenter.default.removeObserver(self)
 	}
 
 	//MARK: Private static lazy variables.
 
 	/// Holds managed object model for the application.
 	/// It is a fatal error for the application not to be able to find and load it's model.
-	private static var managedObjectModel: NSManagedObjectModel = {
+	fileprivate static var managedObjectModel: NSManagedObjectModel = {
 		guard let
-			modelURL = NSBundle.mainBundle().URLForResource(managedObjectModelResourceName, withExtension: "momd"),
-			model = NSManagedObjectModel(contentsOfURL: modelURL)
+			modelURL = Bundle.main.url(forResource: managedObjectModelResourceName, withExtension: "momd"),
+			let model = NSManagedObjectModel(contentsOf: modelURL)
 			else {
 				fatalError("Can't get and load application \(managedObjectModelResourceName). Check name and existanse.")
 		}
@@ -250,11 +251,11 @@ public class RM_CoreDataStack {
 	/// Can be nil if initialization operation can't be done.
 	/// This implementation creates a `SQLite` coordinator.
 	/// This is optional since there are legitimate error conditions that could cause the creation of the store to fail.
-	private static var SQLitePersistentStoreCoordinator: NSPersistentStoreCoordinator? = {
+	fileprivate static var SQLitePersistentStoreCoordinator: NSPersistentStoreCoordinator? = {
 		let coordinator = NSPersistentStoreCoordinator(managedObjectModel: RM_CoreDataStack.managedObjectModel)
-		let url = RM_CoreDataStack.documentsDirectory.URLByAppendingPathComponent("\(managedObjectModelResourceName).sqlite")
+		let url = RM_CoreDataStack.documentsDirectory.appendingPathComponent("\(managedObjectModelResourceName).sqlite")
 		do {
-			try coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil)
+			try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: url, options: nil)
 		} catch {
 			return nil // optional
 		}

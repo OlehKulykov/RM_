@@ -16,10 +16,10 @@ extension NSDecimalNumber {
 	/**
 	Default number formatter.
 	*/
-	private static func currencyFormatter(currencySymbol: String?, currencySuffix: String?) -> NSNumberFormatter {
-		let currencyFormatter = NSNumberFormatter()
-		currencyFormatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
-		currencyFormatter.locale = NSLocale.currentLocale()
+	fileprivate static func currencyFormatter(_ currencySymbol: String?, currencySuffix: String?) -> NumberFormatter {
+		let currencyFormatter = NumberFormatter()
+		currencyFormatter.numberStyle = NumberFormatter.Style.currency
+		currencyFormatter.locale = Locale.current
 
 		let symbol = currencySymbol ?? "$"
 
@@ -43,8 +43,8 @@ extension NSDecimalNumber {
 	Generate price string with currency symbol and separated currency suffix
 	Example: <currencySymbol><currencySuffix><44.99>
 	*/
-	internal func priceString(currencySymbol: String? = nil, currencySuffix: String? = nil) -> String {
-		return NSDecimalNumber.currencyFormatter(currencySymbol, currencySuffix: currencySuffix).stringFromNumber(self)!
+	internal func priceString(_ currencySymbol: String? = nil, currencySuffix: String? = nil) -> String {
+		return NSDecimalNumber.currencyFormatter(currencySymbol, currencySuffix: currencySuffix).string(from: self)!
 	}
 	
 }

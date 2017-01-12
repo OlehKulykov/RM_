@@ -31,7 +31,7 @@ extension NSAttributedString {
 	public convenience init(string: String, font: UIFont, color: UIColor, lineSpacing: CGFloat, textAlignment: NSTextAlignment, kerning: CGFloat = 0) {
 		var attributes = [NSFontAttributeName: font, NSForegroundColorAttributeName: color]
 		if kerning != 0 {
-			attributes[NSKernAttributeName] = NSNumber(float: Float(kerning))
+			attributes[NSKernAttributeName] = NSNumber(value: Float(kerning) as Float)
 		}
 
 		if lineSpacing != 0 {
@@ -59,7 +59,7 @@ extension NSAttributedString {
 	public convenience init(string: String, font: UIFont, color: UIColor, kerning: CGFloat = 0) {
 		var attributes = [NSFontAttributeName: font, NSForegroundColorAttributeName: color]
 		if kerning != 0 {
-			attributes[NSKernAttributeName] = NSNumber(float: Float(kerning))
+			attributes[NSKernAttributeName] = NSNumber(value: Float(kerning) as Float)
 		}
 		self.init(string: string, attributes: attributes)
 	}

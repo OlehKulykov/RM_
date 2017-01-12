@@ -6,7 +6,6 @@
 //  Copyright © 2016 Oleh Kulykov. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 /**
@@ -27,22 +26,22 @@ RM_NetworkIndicator.visible = false // still visible
 RM_NetworkIndicator.visible = false // now it's invisible
 ```
 */
-public class RM_NetworkIndicator {
+open class RM_NetworkIndicator {
 
 	//MARK: Private variables and functions
 
 	/// Counts number of visible calls. Positive value is visible, otherwice invisible.
 	/// - Warning: Get/set value from main thread. Min value is zero - invisible.
-	private static var visibilityCounter: Int = 0 {
+	fileprivate static var visibilityCounter: Int = 0 {
 		didSet {
-			UIApplication.sharedApplication().networkActivityIndicatorVisible = visibilityCounter > 0
+			UIApplication.shared.isNetworkActivityIndicatorVisible = visibilityCounter > 0
 		}
 	}
 
 
 	/// Increment or decrement visibility counter
 	/// - Parameter visible: Required visibility. `true` - increment, `false` - decrement to min, zero value.
-	private static func updateVisibilityCounter(visible: Bool) {
+	fileprivate static func updateVisibilityCounter(_ visible: Bool) {
 		let newValue = visible ? visibilityCounter + 1 : visibilityCounter - 1
 		visibilityCounter = max(newValue, 0)
 	}
@@ -56,23 +55,23 @@ public class RM_NetworkIndicator {
 
 	- Note: Based on counter logic, so if you want to change this value you need to set reverse value same times.
 	*/
-	public static var visible: Bool {
+	open static var visible: Bool {
 		get {
-			if NSThread.isMainThread() {
+			if Thread.isMainThread {
 				return visibilityCounter > 0
 			} else {
 				var value = false
-				dispatch_sync(dispatch_get_main_queue()) {
+				DispatchQueue.main.sync {
 					value = visibilityCounter > 0
 				}
 				return value
 			}
 		}
 		set {
-			if NSThread.isMainThread() {
+			if Thread.isMainThread {
 				updateVisibilityCounter(newValue)
 			} else {
-				dispatch_async(dispatch_get_main_queue()) {
+				DispatchQueue.main.async {
 					updateVisibilityCounter(newValue)
 				}
 			}

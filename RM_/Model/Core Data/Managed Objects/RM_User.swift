@@ -55,7 +55,7 @@ extension RM_User: RM_UserType, RM_EntityType {
 	Upper case version of the name.
 	*/
 	public var upperCaseName: String {
-		return name.uppercaseString
+		return name.uppercased()
 	}
 
 }

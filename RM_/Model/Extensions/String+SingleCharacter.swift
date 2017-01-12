@@ -17,11 +17,11 @@ extension String {
 	Remove last string character if posible.
 	If no characters available than do nothing.
 	*/
-	public mutating func removeLastCharacter() {
-		if characters.count > 0 {
-			removeAtIndex(endIndex.predecessor())
-		}
-	}
+//	public mutating func removeLastCharacter() {
+//		if characters.count > 0 {
+//			remove(at: index.index(before: endIndex))
+//		}
+//	}
 
 
 	/**
@@ -30,7 +30,7 @@ extension String {
 	- Returns: Last character or `String.NULLCharacter`
 	*/
 	public var lastCharacter: Character {
-		return characters.count > 0 ? self[endIndex.predecessor()] : String.NULLCharacter
+		return characters.count > 0 ? self[characters.index(before: endIndex)] : String.NULLCharacter
 	}
 
 
@@ -42,17 +42,17 @@ extension String {
 
 	- Returns: String character or `String.NULLCharacter`
 	*/
-	public subscript(index: Int) -> Character {
-		get {
-			return (index >= 0 && index < characters.count) ? self[startIndex.advancedBy(index)] : String.NULLCharacter
-		}
-		set {
-			if index >= 0 && index < characters.count {
-				let updateIndex = startIndex.advancedBy(index)
-				replaceRange(updateIndex..<updateIndex.successor(), with: "\(newValue)")
-			}
-		}
-	}
+//	public subscript(index: Int) -> Character {
+//		get {
+//			return (index >= 0 && index < characters.count) ? self[characters.index(startIndex, offsetBy: index)] : String.NULLCharacter
+//		}
+//		set {
+//			if index >= 0 && index < characters.count {
+//				let updateIndex = startIndex.advancedBy(index)
+//				replaceRange(updateIndex..<updateIndex.successor(), with: "\(newValue)")
+//			}
+//		}
+//	}
 
 
 	/**

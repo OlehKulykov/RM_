@@ -17,19 +17,19 @@ class RM_APIRequestGETJSON: XCTestCase {
 	func testGETJSON() {
 		XCTAssertNotNil(api.url, "URL should not be nil.")
 
-		let expectation = self.expectationWithDescription("API json result.")
+		let expectation = self.expectation(description: "API json result.")
 
 		api.request { result in
 			switch result {
-			case .Success(let json):
+			case .success(let json):
 				XCTAssertNotNil(json.array, "Here should be an array.")
 				expectation.fulfill()
-			case .Failure(let error):
+			case .failure(let error):
 				XCTFail("API error: \(error)")
 			}
 		}
 
-		self.waitForExpectationsWithTimeout(api.timeout) { error in
+		self.waitForExpectations(timeout: api.timeout) { error in
 			if let error = error {
 				XCTFail("API Time out error: \(error)")
 			}

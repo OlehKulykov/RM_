@@ -20,11 +20,11 @@ public enum RM_Result<T> {
 	/**
 	Operation was successful with provided result type.
 	*/
-	case Success(T)
+	case success(T)
 
 
 	/**
 	Operation was failed with error. Use `NSLocalizedDescriptionKey` of the error to get human readable description.
 	*/
-	case Failure(NSError)
+	case failure(Error)
 }

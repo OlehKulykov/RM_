@@ -22,13 +22,13 @@ extension String {
 	
 	- Returns: String with the number of repeated parts count or empty string.
 	*/
-	public init(count: Int, repeatedValue repeated: String) {
-		var s = ""
-		if count > 0 {
-			for _ in 0..<count {
-				s += repeated
-			}
-		}
-		self.init(s)
-	}
+//	public init(count: Int, repeatedValue repeated: String) {
+//		var s = ""
+//		if count > 0 {
+//			for _ in 0..<count {
+//				s += repeated
+//			}
+//		}
+//		self.init(s)
+//	}
 }

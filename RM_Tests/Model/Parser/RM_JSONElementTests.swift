@@ -23,7 +23,7 @@ class RM_JSONElementTests: XCTestCase {
 		}
 
 		switch json {
-		case .Dictionary:
+		case .dictionary:
 			break
 		default:
 			XCTFail("JSON data containes unparsable data")
@@ -34,22 +34,19 @@ class RM_JSONElementTests: XCTestCase {
 
 	func  testSimple() {
 		let JSONString = "{\"data\":[{\"description\":\"Some text\",\"price\":148.85,\"quantity\":2}]}"
-		let JSONData = NSData(bytes: JSONString.cStringUsingEncoding(NSUTF8StringEncoding)!, length: JSONString.characters.count)
-		guard let json = RM_JSONElement(data: JSONData) else {
+		let JSONData = JSONString.data(using: .utf8)
+		guard let json = RM_JSONElement(data: JSONData!) else {
 			XCTFail("Can't initialize JSON from data object.")
 			return
 		}
 
 		guard let
 			datas = json["data"].array,
-			data = datas.first
+			let data = datas.first
 		else {
 			XCTFail("JSON format is broken.")
 			return
 		}
-
-		
-
 
 
 		XCTAssertNotNil(data["description"].string, "Can't find string for key.")
@@ -70,7 +67,7 @@ class RM_JSONElementTests: XCTestCase {
 
 		guard let
 			datas = json["data"].array,
-			data = datas.first
+			let data = datas.first
 		else {
 			XCTFail("Can't find data section")
 			return

@@ -13,7 +13,7 @@ import XCTest
 class RM_FontTests: XCTestCase {
 
 	func testAllFonts() {
-		for fontKey in iterateEnum(RM_Font).generate() {
+		for fontKey in iterateEnum(RM_Font).makeIterator() {
 			for fontSize in 5...55 {
 				// Should be initialized without any errors and optionals.
 				let _ = fontKey.fontWithSize(CGFloat(fontSize))
