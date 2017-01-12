@@ -10,9 +10,6 @@ script:
 - xcrun swift -version
 - open -b com.apple.iphonesimulator
 - set -o pipefail && xcodebuild test -project RM_.xcodeproj -scheme RM_ -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.3' | xcpretty -c
-- set -o pipefail && xcodebuild test -project RM_.xcodeproj -scheme RM_ -destination 'platform=iOS Simulator,name=iPhone 6,OS=10.2' | xcpretty -c
-- set -o pipefail && xcodebuild test -project RM_.xcodeproj -scheme RM_ -destination 'platform=iOS Simulator,name=iPhone 7 Plus,OS=9.3' | xcpretty -c
-- set -o pipefail && xcodebuild test -project RM_.xcodeproj -scheme RM_ -destination 'platform=iOS Simulator,name=iPhone 7 Plus,OS=10.2' | xcpretty -c
 - ./generate_docs.sh
 
 env:
