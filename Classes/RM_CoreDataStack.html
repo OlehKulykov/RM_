@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>RM_CoreDataStack Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/RM_CoreDataStack" class="dashAnchor"></a>
+    <a title="RM_CoreDataStack Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">RM_ Docs</a> (99% documented)</p>
+        <p class="header-right"><a href="https://github.com/OlehKulykov/RM_"><img src="../img/gh.png"/>View on GitHub</a></p>
+        <p class="header-right"><a href="dash-feed://http%3A%2F%2Folehkulykov%2Egithub%2Eio%2Fdocsets%2FRM_%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">RM_ Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        RM_CoreDataStack Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/RM_APIRequest.html">RM_APIRequest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RM_BackgroundedSectionTableView.html">RM_BackgroundedSectionTableView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RM_CoreDataStack.html">RM_CoreDataStack</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RM_DAL.html">RM_DAL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RM_Entity.html">RM_Entity</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RM_MutableDAL.html">RM_MutableDAL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RM_NetworkIndicator.html">RM_NetworkIndicator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RM_ReadableDAL.html">RM_ReadableDAL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:C3RM_29RM_TableViewSectionBackground">RM_TableViewSectionBackground</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RM_User.html">RM_User</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RM_WritableDAL.html">RM_WritableDAL</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/RM_Font.html">RM_Font</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RM_HTTPMethod.html">RM_HTTPMethod</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RM_JSONElement.html">RM_JSONElement</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RM_LocalizationKey.html">RM_LocalizationKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RM_Result.html">RM_Result</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Bundle.html">Bundle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NSAttributedString.html">NSAttributedString</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/String.html">String</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIColor.html">UIColor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIImage.html">UIImage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIImageView.html">UIImageView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIView.html">UIView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F3RM_oi2neFTV10Foundation4DateS1__Sb">!=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F3RM_oi1lFTV10Foundation4DateS1__Sb">&lt;(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F3RM_oi2leFTV10Foundation4DateS1__Sb">&lt;=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F3RM_oi2eeFTV10Foundation4DateS1__Sb">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F3RM_oi1gFTV10Foundation4DateS1__Sb">&gt;(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F3RM_oi2geFTV10Foundation4DateS1__Sb">&gt;=(_:_:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/RM_BackgroundedSectionTableViewDelegate.html">RM_BackgroundedSectionTableViewDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RM_DALType.html">RM_DALType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:P3RM_13RM_EntityType">RM_EntityType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RM_MutableDALType.html">RM_MutableDALType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RM_ParsableElementType.html">RM_ParsableElementType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RM_UserType.html">RM_UserType</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>RM_CoreDataStack</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">RM_CoreDataStack</span></code></pre>
+
+                </div>
+              </div>
+            <p>CoreData stack holds CoreData properties and provide basic operations with managed objects.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Public%20functionality%20of%20the%20stack%20type%20RM_CoreDataStackType."></a>
+                <a name="//apple_ref/swift/Section/Public functionality of the stack type RM_CoreDataStackType." class="dashAnchor"></a>
+                <a href="#/Public%20functionality%20of%20the%20stack%20type%20RM_CoreDataStackType.">
+                  <h3 class="section-name">Public functionality of the stack type RM_CoreDataStackType.</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC3RM_16RM_CoreDataStack15concurrencyTypeOSC37NSManagedObjectContextConcurrencyType"></a>
+                    <a name="//apple_ref/swift/Property/concurrencyType" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC3RM_16RM_CoreDataStack15concurrencyTypeOSC37NSManagedObjectContextConcurrencyType">concurrencyType</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns managed object context concurrency type for the created instance of the Core Data Stack.
+Available <code>MainQueueConcurrencyType</code> and <code>PrivateQueueConcurrencyType</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="k">var</span> <span class="nv">concurrencyType</span><span class="p">:</span> <span class="kt">NSManagedObjectContextConcurrencyType</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC3RM_16RM_CoreDataStack15createNewObjectFT10objectNameSS_CSo15NSManagedObject"></a>
+                    <a name="//apple_ref/swift/Method/createNewObject(objectName:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC3RM_16RM_CoreDataStack15createNewObjectFT10objectNameSS_CSo15NSManagedObject">createNewObject(objectName:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates, configures, inserts and returns an instance with a given managed object/entity name.</p>
+
+<p>It&rsquo;s recommended to use object/entity name same as presentation class without any suffixes and prefixes.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">createNewObject</span><span class="p">(</span><span class="n">objectName</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">NSManagedObject</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Name of the managed object/entity that should be created, configured and inserted.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>New instance of the managed object/entity, ready for use, modify, fill with data, etc.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC3RM_16RM_CoreDataStack11findObjectsFT10objectNameSS13withPredicateGSqCSo11NSPredicate__GSaCSo15NSManagedObject_"></a>
+                    <a name="//apple_ref/swift/Method/findObjects(objectName:withPredicate:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC3RM_16RM_CoreDataStack11findObjectsFT10objectNameSS13withPredicateGSqCSo11NSPredicate__GSaCSo15NSManagedObject_">findObjects(objectName:withPredicate:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Find all objects with a given object/entity name and optional predicate.</p>
+
+<p>To find all objects/entities by name just provide predicate as nil, e.g. ignore.</p>
+
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>It&rsquo;s recommended to use object/entity name same as presentation class without any suffixes and prefixes.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">findObjects</span><span class="p">(</span><span class="n">objectName</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">withPredicate</span> <span class="nv">predicate</span><span class="p">:</span> <span class="kt">NSPredicate</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">NSManagedObject</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name of the managed objects/entities for locating.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>predicate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Optional search predicate, can be nil if you want to get all objects/entities by name.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Array with located objects/entities or empty array.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC3RM_16RM_CoreDataStack12deleteObjectFCSo15NSManagedObjectT_"></a>
+                    <a name="//apple_ref/swift/Method/deleteObject(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC3RM_16RM_CoreDataStack12deleteObjectFCSo15NSManagedObjectT_">deleteObject(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Delete managed object/entity.</p>
+
+<p>Context is not saved after successful operation.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">deleteObject</span><span class="p">(</span><span class="n">_</span> <span class="nv">object</span><span class="p">:</span> <span class="kt">NSManagedObject</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>object</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>managed object/entity that should be deleted.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC3RM_16RM_CoreDataStack13deleteObjectsFT11objectsNameSS_T_"></a>
+                    <a name="//apple_ref/swift/Method/deleteObjects(objectsName:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC3RM_16RM_CoreDataStack13deleteObjectsFT11objectsNameSS_T_">deleteObjects(objectsName:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Delete all objects/entities with a given name.</p>
+
+<p>It&rsquo;s recommended to use object/entity name same as presentation class without any suffixes and prefixes.</p>
+
+<div class="aside aside-warning">
+    <p class="aside-title">Warning</p>
+    <p>Context is not saved after successful operation.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">deleteObjects</span><span class="p">(</span><span class="n">objectsName</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Name of the managed object/entity to delete.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC3RM_16RM_CoreDataStack4saveFT_GSqPs5Error__"></a>
+                    <a name="//apple_ref/swift/Method/save()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC3RM_16RM_CoreDataStack4saveFT_GSqPs5Error__">save()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Commit unsaved changes to the context.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">save</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Error</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>nil on success or error object which describes error during operation.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Public%20singletons%20and%20static%20variables."></a>
+                <a name="//apple_ref/swift/Section/Public singletons and static variables." class="dashAnchor"></a>
+                <a href="#/Public%20singletons%20and%20static%20variables.">
+                  <h3 class="section-name">Public singletons and static variables.</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvC3RM_16RM_CoreDataStack15sharedDataStackS0_"></a>
+                    <a name="//apple_ref/swift/Variable/sharedDataStack" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvC3RM_16RM_CoreDataStack15sharedDataStackS0_">sharedDataStack</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Shared main thread Core Data Stack type.
+The context creates and manages a main queue with concurrency <code>MainQueueConcurrencyType</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">sharedDataStack</span><span class="p">:</span> <span class="kt">RM_CoreDataStack</span> <span class="o">=</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvC3RM_16RM_CoreDataStack25sharedBackgroundDataStackS0_"></a>
+                    <a name="//apple_ref/swift/Variable/sharedBackgroundDataStack" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvC3RM_16RM_CoreDataStack25sharedBackgroundDataStackS0_">sharedBackgroundDataStack</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Shared background thread Core Data Stack type.
+The context creates and manages a background queue with concurrency: <code>PrivateQueueConcurrencyType</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">sharedBackgroundDataStack</span><span class="p">:</span> <span class="kt">RM_CoreDataStack</span> <span class="o">=</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvC3RM_16RM_CoreDataStack18documentsDirectoryV10Foundation3URL"></a>
+                    <a name="//apple_ref/swift/Variable/documentsDirectory" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvC3RM_16RM_CoreDataStack18documentsDirectoryV10Foundation3URL">documentsDirectory</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This code uses a directory in the application&rsquo;s documents <em>Application Support</em> directory.</p>
+
+<p>This directory have write permissions for this application.
+The <code>.path</code> property of this URL can be used as a string path.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">documentsDirectory</span><span class="p">:</span> <span class="kt">URL</span> <span class="o">=</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The directory which can be used to store the Core Data file or any other application files.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvC3RM_16RM_CoreDataStack30managedObjectModelResourceNameSS"></a>
+                    <a name="//apple_ref/swift/Variable/managedObjectModelResourceName" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvC3RM_16RM_CoreDataStack30managedObjectModelResourceNameSS">managedObjectModelResourceName</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The model resource name.</p>
+
+<p>Resource with this name plus <code>momd</code> extension should be present in a main bundle.
+Assign this name before using Core Data stuff.
+Also with this name will be created <code>SQLite</code> persistent coordinator in a <code><a href="../Classes/RM_CoreDataStack.html#/s:ZvC3RM_16RM_CoreDataStack18documentsDirectoryV10Foundation3URL">documentsDirectory</a></code> and
+full path will be: <code>documentsDirectory/managedObjectModelResourceName.sqlite</code></p>
+
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    You could find in a project tree your data model, like <code>NAME.xcdatamodeld</code> where <code>NAME</code> part should be used here.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">managedObjectModelResourceName</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="http://www.resident.name" target="_blank" rel="external">Oleh Kulykov</a>. All rights reserved. (Last updated: 2017-03-29)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.5</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

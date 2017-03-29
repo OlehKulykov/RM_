@@ -1,0 +1,12 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/travis/build/OlehKulykov/RM_/RM_/Model/Misc/RM_LocalizationKey.swift",
+      "line": 27,
+      "symbol": "RM_LocalizationKey.OK",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/travis/build/OlehKulykov/RM_"
+}

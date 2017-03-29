@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>UIView Extension Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Extension/UIView" class="dashAnchor"></a>
+    <a title="UIView Extension Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">RM_ Docs</a> (99% documented)</p>
+        <p class="header-right"><a href="https://github.com/OlehKulykov/RM_"><img src="../img/gh.png"/>View on GitHub</a></p>
+        <p class="header-right"><a href="dash-feed://http%3A%2F%2Folehkulykov%2Egithub%2Eio%2Fdocsets%2FRM_%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">RM_ Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        UIView Extension Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/RM_APIRequest.html">RM_APIRequest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RM_BackgroundedSectionTableView.html">RM_BackgroundedSectionTableView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RM_CoreDataStack.html">RM_CoreDataStack</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RM_DAL.html">RM_DAL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RM_Entity.html">RM_Entity</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RM_MutableDAL.html">RM_MutableDAL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RM_NetworkIndicator.html">RM_NetworkIndicator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RM_ReadableDAL.html">RM_ReadableDAL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:C3RM_29RM_TableViewSectionBackground">RM_TableViewSectionBackground</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RM_User.html">RM_User</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RM_WritableDAL.html">RM_WritableDAL</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/RM_Font.html">RM_Font</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RM_HTTPMethod.html">RM_HTTPMethod</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RM_JSONElement.html">RM_JSONElement</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RM_LocalizationKey.html">RM_LocalizationKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RM_Result.html">RM_Result</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Bundle.html">Bundle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NSAttributedString.html">NSAttributedString</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/String.html">String</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIColor.html">UIColor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIImage.html">UIImage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIImageView.html">UIImageView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIView.html">UIView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F3RM_oi2neFTV10Foundation4DateS1__Sb">!=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F3RM_oi1lFTV10Foundation4DateS1__Sb">&lt;(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F3RM_oi2leFTV10Foundation4DateS1__Sb">&lt;=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F3RM_oi2eeFTV10Foundation4DateS1__Sb">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F3RM_oi1gFTV10Foundation4DateS1__Sb">&gt;(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F3RM_oi2geFTV10Foundation4DateS1__Sb">&gt;=(_:_:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/RM_BackgroundedSectionTableViewDelegate.html">RM_BackgroundedSectionTableViewDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RM_DALType.html">RM_DALType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:P3RM_13RM_EntityType">RM_EntityType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RM_MutableDALType.html">RM_MutableDALType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RM_ParsableElementType.html">RM_ParsableElementType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RM_UserType.html">RM_UserType</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>UIView</h1>
+            <p>Undocumented</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FE3RM_CSo6UIView12addTopBorderFTCSo7UIColor6heightV12CoreGraphics7CGFloat6insetsVSC12UIEdgeInsets_S0_"></a>
+                    <a name="//apple_ref/swift/Method/addTopBorder(_:height:insets:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FE3RM_CSo6UIView12addTopBorderFTCSo7UIColor6heightV12CoreGraphics7CGFloat6insetsVSC12UIEdgeInsets_S0_">addTopBorder(_:height:insets:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Add top border view to the receiver. 
+Border is <code>UIView</code> and location of the border controls by layout constraints.</p>
+
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>The <code>bottom</code> insets value is ignored.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">addTopBorder</span><span class="p">(</span><span class="n">_</span> <span class="nv">color</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">insets</span><span class="p">:</span> <span class="kt">UIEdgeInsets</span> <span class="o">=</span> <span class="kt">UIEdgeInsets</span><span class="o">.</span><span class="n">zero</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIView</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>color</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The border color.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>height</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The border height in points.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>insets</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Optional insets for the border. By default insets is <code>UIEdgeInsetsZero</code></p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Added border view.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FE3RM_CSo6UIView13addLeftBorderFTCSo7UIColor5widthV12CoreGraphics7CGFloat6insetsVSC12UIEdgeInsets_S0_"></a>
+                    <a name="//apple_ref/swift/Method/addLeftBorder(_:width:insets:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FE3RM_CSo6UIView13addLeftBorderFTCSo7UIColor5widthV12CoreGraphics7CGFloat6insetsVSC12UIEdgeInsets_S0_">addLeftBorder(_:width:insets:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Add left border view to the receiver. 
+Border is <code>UIView</code> and location of the border controls by layout constraints.</p>
+
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>The <code>right</code> insets value is ignored.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">addLeftBorder</span><span class="p">(</span><span class="n">_</span> <span class="nv">color</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">insets</span><span class="p">:</span> <span class="kt">UIEdgeInsets</span> <span class="o">=</span> <span class="kt">UIEdgeInsets</span><span class="o">.</span><span class="n">zero</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIView</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>color</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The border color.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>width</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The border width in points.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>insets</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Optional insets for the border. By default insets is <code>UIEdgeInsetsZero</code></p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Added border view.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FE3RM_CSo6UIView14addRightBorderFTCSo7UIColor5widthV12CoreGraphics7CGFloat6insetsVSC12UIEdgeInsets_S0_"></a>
+                    <a name="//apple_ref/swift/Method/addRightBorder(_:width:insets:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FE3RM_CSo6UIView14addRightBorderFTCSo7UIColor5widthV12CoreGraphics7CGFloat6insetsVSC12UIEdgeInsets_S0_">addRightBorder(_:width:insets:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Add right border view to the receiver. 
+Border is <code>UIView</code> and location of the border controls by layout constraints.</p>
+
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>The <code>left</code> insets value is ignored.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">addRightBorder</span><span class="p">(</span><span class="n">_</span> <span class="nv">color</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">insets</span><span class="p">:</span> <span class="kt">UIEdgeInsets</span> <span class="o">=</span> <span class="kt">UIEdgeInsets</span><span class="o">.</span><span class="n">zero</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIView</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>color</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The border color.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>width</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The border width in points.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>insets</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Optional insets for the border. By default insets is <code>UIEdgeInsetsZero</code></p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Added border view.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FE3RM_CSo6UIView15addBottomBorderFTCSo7UIColor6heightV12CoreGraphics7CGFloat6insetsVSC12UIEdgeInsets_S0_"></a>
+                    <a name="//apple_ref/swift/Method/addBottomBorder(_:height:insets:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FE3RM_CSo6UIView15addBottomBorderFTCSo7UIColor6heightV12CoreGraphics7CGFloat6insetsVSC12UIEdgeInsets_S0_">addBottomBorder(_:height:insets:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Add bottom border view to the receiver. 
+Border is <code>UIView</code> and location of the border controls by layout constraints.</p>
+
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>The <code>top</code> insets value is ignored.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">addBottomBorder</span><span class="p">(</span><span class="n">_</span> <span class="nv">color</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">insets</span><span class="p">:</span> <span class="kt">UIEdgeInsets</span> <span class="o">=</span> <span class="kt">UIEdgeInsets</span><span class="o">.</span><span class="n">zero</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIView</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>color</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The border color.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>height</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The border height in points.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>insets</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Optional insets for the border. By default insets is <code>UIEdgeInsetsZero</code></p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Added border view.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FE3RM_CSo6UIView10addBordersFTVSC10UIRectEdge5colorCSo7UIColor9thicknessV12CoreGraphics7CGFloat_GSaS0__"></a>
+                    <a name="//apple_ref/swift/Method/addBorders(_:color:thickness:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FE3RM_CSo6UIView10addBordersFTVSC10UIRectEdge5colorCSo7UIColor9thicknessV12CoreGraphics7CGFloat_GSaS0__">addBorders(_:color:thickness:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Add borders to the view. 
+For each required rectangle edge using appropriate methods, e.g. &lsquo;addTopBorder&rsquo;, &lsquo;addLeftBorder&rsquo;, etc.</p>
+
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>The adding borders sequence is: <code>top</code>, <code>left</code>, <code>bottom</code>, <code>right</code>.</p>
+
+</div>
+
+<p>Example:</p>
+
+<pre class="highlight swift"><code><span class="c1">// Add top and left border with the same color and thickness</span>
+<span class="k">let</span> <span class="nv">borders</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="nf">addBorders</span><span class="p">([</span><span class="o">.</span><span class="kt">Top</span><span class="p">,</span> <span class="o">.</span><span class="kt">Left</span><span class="p">],</span> <span class="nv">color</span><span class="p">:</span> <span class="kt">UIColor</span><span class="o">.</span><span class="nf">redColor</span><span class="p">(),</span> <span class="nv">thickness</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">)</span>
+
+<span class="c1">// Add single bottom border</span>
+<span class="n">view</span><span class="o">.</span><span class="nf">addBorders</span><span class="p">(</span><span class="o">.</span><span class="kt">Bottom</span><span class="p">,</span> <span class="nv">color</span><span class="p">:</span> <span class="kt">UIColor</span><span class="o">.</span><span class="nf">redColor</span><span class="p">(),</span> <span class="nv">thickness</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">)</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">addBorders</span><span class="p">(</span><span class="n">_</span> <span class="nv">edges</span><span class="p">:</span> <span class="kt">UIRectEdge</span><span class="p">,</span> <span class="nv">color</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">,</span> <span class="nv">thickness</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">UIView</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>edges</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>View edges to that add borders.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>color</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Color of the added borders.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>thickness</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The thickness of the border views, e.g. border width in a case of vertical or height in case of horizontal.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Array with added borders.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vE3RM_CSo6UIView12cornerRadiusV12CoreGraphics7CGFloat"></a>
+                    <a name="//apple_ref/swift/Property/cornerRadius" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vE3RM_CSo6UIView12cornerRadiusV12CoreGraphics7CGFloat">cornerRadius</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The radius to use when drawing rounded corners for the layer’s background.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@IBInspectable</span> <span class="kd">public</span> <span class="k">var</span> <span class="nv">cornerRadius</span><span class="p">:</span> <span class="kt">CGFloat</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vE3RM_CSo6UIView11borderColorCSo7UIColor"></a>
+                    <a name="//apple_ref/swift/Property/borderColor" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vE3RM_CSo6UIView11borderColorCSo7UIColor">borderColor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The color of the layer’s border.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@IBInspectable</span> <span class="kd">public</span> <span class="k">var</span> <span class="nv">borderColor</span><span class="p">:</span> <span class="kt">UIColor</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vE3RM_CSo6UIView11borderWidthV12CoreGraphics7CGFloat"></a>
+                    <a name="//apple_ref/swift/Property/borderWidth" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vE3RM_CSo6UIView11borderWidthV12CoreGraphics7CGFloat">borderWidth</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The width of the layer’s border.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@IBInspectable</span> <span class="kd">public</span> <span class="k">var</span> <span class="nv">borderWidth</span><span class="p">:</span> <span class="kt">CGFloat</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vE3RM_CSo6UIView14clipsToBounds_Sb"></a>
+                    <a name="//apple_ref/swift/Property/clipsToBounds_" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vE3RM_CSo6UIView14clipsToBounds_Sb">clipsToBounds_</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A Boolean value that determines whether subviews are confined to the bounds of the view.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@IBInspectable</span> <span class="kd">public</span> <span class="k">var</span> <span class="nv">clipsToBounds_</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vE3RM_CSo6UIView14masksToBounds_Sb"></a>
+                    <a name="//apple_ref/swift/Property/masksToBounds_" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vE3RM_CSo6UIView14masksToBounds_Sb">masksToBounds_</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A Boolean indicating whether sublayers are clipped to the layer’s bounds.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@IBInspectable</span> <span class="kd">public</span> <span class="k">var</span> <span class="nv">masksToBounds_</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FE3RM_CSo6UIView9setShadowFTVSC12UIEdgeInsets5colorCSo7UIColor6radiusV12CoreGraphics7CGFloat7opacityS4__T_"></a>
+                    <a name="//apple_ref/swift/Method/setShadow(_:color:radius:opacity:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FE3RM_CSo6UIView9setShadowFTVSC12UIEdgeInsets5colorCSo7UIColor6radiusV12CoreGraphics7CGFloat7opacityS4__T_">setShadow(_:color:radius:opacity:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set shadow for some or all view sides. </p>
+
+<div class="aside aside-warning">
+    <p class="aside-title">Warning</p>
+    <p>Set shadow only after view layout was changed, due to correct view/layer <code>bounds</code>. See example.</p>
+
+</div>
+
+<p>Example: </p>
+
+<pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">layoutSubviews</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">super</span><span class="o">.</span><span class="nf">layoutSubviews</span><span class="p">()</span>
+    <span class="nf">setShadow</span><span class="p">(</span><span class="kt">UIEdgeInsetsMake</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">),</span> <span class="nv">color</span><span class="p">:</span> <span class="kt">UIColor</span><span class="o">.</span><span class="nf">blackColor</span><span class="p">(),</span> <span class="nv">radius</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="nv">opacity</span><span class="p">:</span> <span class="mf">0.16</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setShadow</span><span class="p">(</span><span class="n">_</span> <span class="nv">insets</span><span class="p">:</span> <span class="kt">UIEdgeInsets</span><span class="p">,</span> <span class="nv">color</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">,</span> <span class="nv">radius</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">opacity</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>insets</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Shadow insets in points for each view side. Provide <code>0</code> to ignore or positive value in points to define thickness of the shadow part.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>color</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The color of the shadow. This value applies directly to view <code>layer</code>.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>radius</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Shadow radius. This value applies directly to view <code>layer</code>.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>opacity</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Shadow opacity. This value applies directly to view <code>layer</code>.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FE3RM_CSo6UIView9setShadowFTCSo7UIColor6offsetVSC6CGSize6radiusV12CoreGraphics7CGFloat7opacityS4__T_"></a>
+                    <a name="//apple_ref/swift/Method/setShadow(_:offset:radius:opacity:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FE3RM_CSo6UIView9setShadowFTCSo7UIColor6offsetVSC6CGSize6radiusV12CoreGraphics7CGFloat7opacityS4__T_">setShadow(_:offset:radius:opacity:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set rounded shadow for all view sides.</p>
+
+<div class="aside aside-warning">
+    <p class="aside-title">Warning</p>
+    <p>Set shadow only after view layout was changed, due to correct view/layer <code>bounds</code>. See example.</p>
+
+</div>
+
+<p>Example:</p>
+
+<pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">layoutSubviews</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">super</span><span class="o">.</span><span class="nf">layoutSubviews</span><span class="p">()</span>
+    <span class="nf">setShadow</span><span class="p">(</span><span class="kt">UIColor</span><span class="o">.</span><span class="nf">blackColor</span><span class="p">(),</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">CGSizeMake</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="nv">radius</span><span class="p">:</span> <span class="n">cornerRadius</span><span class="p">,</span> <span class="nv">opacity</span><span class="p">:</span> <span class="mf">0.16</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setShadow</span><span class="p">(</span><span class="n">_</span> <span class="nv">color</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">CGSize</span><span class="p">,</span> <span class="nv">radius</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">opacity</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>color</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The color of the shadow. This value applies directly to view <code>layer</code>.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>offset</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Offset of the shadow layer.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>radius</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Shadow radius. This value applies directly to view <code>layer</code>.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>opacity</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Shadow opacity. This value applies directly to view <code>layer</code>.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="http://www.resident.name" target="_blank" rel="external">Oleh Kulykov</a>. All rights reserved. (Last updated: 2017-03-29)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.5</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

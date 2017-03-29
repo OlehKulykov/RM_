@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>RM_ParsableElementType Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Protocol/RM_ParsableElementType" class="dashAnchor"></a>
+    <a title="RM_ParsableElementType Protocol Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">RM_ Docs</a> (99% documented)</p>
+        <p class="header-right"><a href="https://github.com/OlehKulykov/RM_"><img src="../img/gh.png"/>View on GitHub</a></p>
+        <p class="header-right"><a href="dash-feed://http%3A%2F%2Folehkulykov%2Egithub%2Eio%2Fdocsets%2FRM_%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">RM_ Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        RM_ParsableElementType Protocol Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/RM_APIRequest.html">RM_APIRequest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RM_BackgroundedSectionTableView.html">RM_BackgroundedSectionTableView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RM_CoreDataStack.html">RM_CoreDataStack</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RM_DAL.html">RM_DAL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RM_Entity.html">RM_Entity</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RM_MutableDAL.html">RM_MutableDAL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RM_NetworkIndicator.html">RM_NetworkIndicator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RM_ReadableDAL.html">RM_ReadableDAL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:C3RM_29RM_TableViewSectionBackground">RM_TableViewSectionBackground</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RM_User.html">RM_User</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RM_WritableDAL.html">RM_WritableDAL</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/RM_Font.html">RM_Font</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RM_HTTPMethod.html">RM_HTTPMethod</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RM_JSONElement.html">RM_JSONElement</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RM_LocalizationKey.html">RM_LocalizationKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RM_Result.html">RM_Result</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Bundle.html">Bundle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NSAttributedString.html">NSAttributedString</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/String.html">String</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIColor.html">UIColor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIImage.html">UIImage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIImageView.html">UIImageView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIView.html">UIView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F3RM_oi2neFTV10Foundation4DateS1__Sb">!=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F3RM_oi1lFTV10Foundation4DateS1__Sb">&lt;(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F3RM_oi2leFTV10Foundation4DateS1__Sb">&lt;=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F3RM_oi2eeFTV10Foundation4DateS1__Sb">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F3RM_oi1gFTV10Foundation4DateS1__Sb">&gt;(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F3RM_oi2geFTV10Foundation4DateS1__Sb">&gt;=(_:_:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/RM_BackgroundedSectionTableViewDelegate.html">RM_BackgroundedSectionTableViewDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RM_DALType.html">RM_DALType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:P3RM_13RM_EntityType">RM_EntityType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RM_MutableDALType.html">RM_MutableDALType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RM_ParsableElementType.html">RM_ParsableElementType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RM_UserType.html">RM_UserType</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>RM_ParsableElementType</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">RM_ParsableElementType</span></code></pre>
+
+                </div>
+              </div>
+            <p>Parsable element object protocol which could be initialized with data(JSON, XML, etc)
+and casted to an internal, primitive values. Like dictionaries, arrays, numbers etc.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP3RM_22RM_ParsableElementTypecFT4dataV10Foundation4Data_GSqx_"></a>
+                    <a name="//apple_ref/swift/Method/init(data:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP3RM_22RM_ParsableElementTypecFT4dataV10Foundation4Data_GSqx_">init(data:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initialize element from data.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="nf">init</span><span class="p">?(</span><span class="nv">data</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>data</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The data object to parse.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Initialized element or nil if data is not in a supported format for the implementation.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:iP3RM_22RM_ParsableElementType9subscriptFSSx"></a>
+                    <a name="//apple_ref/swift/Method/subscript(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:iP3RM_22RM_ParsableElementType9subscriptFSSx">subscript(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Key-based subscription to get element by it&rsquo;s key in a case of dictionary element type.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="nf">subscript</span><span class="p">(</span><span class="nv">key</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>key</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Object string key.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Element for key or Null if no such value for key present or element is not dictionary.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:iP3RM_22RM_ParsableElementType9subscriptFSix"></a>
+                    <a name="//apple_ref/swift/Method/subscript(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:iP3RM_22RM_ParsableElementType9subscriptFSix">subscript(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Index based subscription to get element by it&rsquo;s array index in a case of array type element.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="nf">subscript</span><span class="p">(</span><span class="nv">arrayIndex</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arrayIndex</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Array index of the element, could be out on bounds.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Element by array index.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vP3RM_22RM_ParsableElementType5arrayGSqGSax__"></a>
+                    <a name="//apple_ref/swift/Property/array" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vP3RM_22RM_ParsableElementType5arrayGSqGSax__">array</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Get/cast element value as array of maped elements.
+Could be used to check is this object is array or not.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">array</span><span class="p">:</span> <span class="p">[</span><span class="k">Self</span><span class="p">]?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Array or nil.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vP3RM_22RM_ParsableElementType6stringGSqSS_"></a>
+                    <a name="//apple_ref/swift/Property/string" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vP3RM_22RM_ParsableElementType6stringGSqSS_">string</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Obtain string value of the object if element is string or could be casted to string.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">string</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>String or nil.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vP3RM_22RM_ParsableElementType7integerGSqSi_"></a>
+                    <a name="//apple_ref/swift/Property/integer" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vP3RM_22RM_ParsableElementType7integerGSqSi_">integer</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Obtain integer value of the object if possible(can be converted from number or string).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">integer</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Integer value or nil.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vP3RM_22RM_ParsableElementType6doubleGSqSd_"></a>
+                    <a name="//apple_ref/swift/Property/double" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vP3RM_22RM_ParsableElementType6doubleGSqSd_">double</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Obtain double value of the object if possible(can be converted from number or string).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">double</span><span class="p">:</span> <span class="kt">Double</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Double value or nil.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vP3RM_22RM_ParsableElementType4boolGSqSb_"></a>
+                    <a name="//apple_ref/swift/Property/bool" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vP3RM_22RM_ParsableElementType4boolGSqSb_">bool</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Obtain boolean value of the object if possible(can be converted from number or string).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">bool</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Boolean value or nil.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vP3RM_22RM_ParsableElementType7decimalGSqCSo15NSDecimalNumber_"></a>
+                    <a name="//apple_ref/swift/Property/decimal" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vP3RM_22RM_ParsableElementType7decimalGSqCSo15NSDecimalNumber_">decimal</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Obtain <code>NSDecimalNumber</code> object of the element if possible.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">decimal</span><span class="p">:</span> <span class="kt">NSDecimalNumber</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>NSDecimalNumber</code> object or nil.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vP3RM_22RM_ParsableElementType6numberGSqCSo8NSNumber_"></a>
+                    <a name="//apple_ref/swift/Property/number" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vP3RM_22RM_ParsableElementType6numberGSqCSo8NSNumber_">number</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Obtain <code>NSNumber</code> object of the element if possible.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">number</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>NSNumber</code> object or nil.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="http://www.resident.name" target="_blank" rel="external">Oleh Kulykov</a>. All rights reserved. (Last updated: 2017-03-29)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.5</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

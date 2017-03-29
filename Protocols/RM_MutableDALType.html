@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>RM_MutableDALType Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Protocol/RM_MutableDALType" class="dashAnchor"></a>
+    <a title="RM_MutableDALType Protocol Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">RM_ Docs</a> (99% documented)</p>
+        <p class="header-right"><a href="https://github.com/OlehKulykov/RM_"><img src="../img/gh.png"/>View on GitHub</a></p>
+        <p class="header-right"><a href="dash-feed://http%3A%2F%2Folehkulykov%2Egithub%2Eio%2Fdocsets%2FRM_%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">RM_ Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        RM_MutableDALType Protocol Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/RM_APIRequest.html">RM_APIRequest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RM_BackgroundedSectionTableView.html">RM_BackgroundedSectionTableView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RM_CoreDataStack.html">RM_CoreDataStack</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RM_DAL.html">RM_DAL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RM_Entity.html">RM_Entity</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RM_MutableDAL.html">RM_MutableDAL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RM_NetworkIndicator.html">RM_NetworkIndicator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RM_ReadableDAL.html">RM_ReadableDAL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:C3RM_29RM_TableViewSectionBackground">RM_TableViewSectionBackground</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RM_User.html">RM_User</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RM_WritableDAL.html">RM_WritableDAL</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/RM_Font.html">RM_Font</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RM_HTTPMethod.html">RM_HTTPMethod</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RM_JSONElement.html">RM_JSONElement</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RM_LocalizationKey.html">RM_LocalizationKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RM_Result.html">RM_Result</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Bundle.html">Bundle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NSAttributedString.html">NSAttributedString</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/String.html">String</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIColor.html">UIColor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIImage.html">UIImage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIImageView.html">UIImageView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIView.html">UIView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F3RM_oi2neFTV10Foundation4DateS1__Sb">!=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F3RM_oi1lFTV10Foundation4DateS1__Sb">&lt;(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F3RM_oi2leFTV10Foundation4DateS1__Sb">&lt;=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F3RM_oi2eeFTV10Foundation4DateS1__Sb">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F3RM_oi1gFTV10Foundation4DateS1__Sb">&gt;(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F3RM_oi2geFTV10Foundation4DateS1__Sb">&gt;=(_:_:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/RM_BackgroundedSectionTableViewDelegate.html">RM_BackgroundedSectionTableViewDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RM_DALType.html">RM_DALType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:P3RM_13RM_EntityType">RM_EntityType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RM_MutableDALType.html">RM_MutableDALType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RM_ParsableElementType.html">RM_ParsableElementType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RM_UserType.html">RM_UserType</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>RM_MutableDALType</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">RM_MutableDALType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/RM_DALType.html">RM_DALType</a></span></code></pre>
+
+                </div>
+              </div>
+            <p>Mutable DAL type. </p>
+
+<p>This type of the DAL&rsquo;s inherits all readable/immutable functionality
+and extends with editing functionality.</p>
+
+<p>The main difference is that, the <code>PublicType</code> is same as <code>InternalType</code> type.
+Let&rsquo;s say, mutable DAL&rsquo;s operates with entity original type, like <code><a href="../Classes/RM_User.html">RM_User</a></code> ( <strong>NOT</strong> public <code><a href="../Protocols/RM_UserType.html">RM_UserType</a></code> protocol ) and
+inherited read functionality will return actual <code>InternalType</code> type of the entities.</p>
+
+<p>With mutable DAL&rsquo;s you could modify CoreData entity properties, relationships, etc.
+Use this DAL type for update/modify mada model.</p>
+
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    All mutable methods doesn&rsquo;t save changes, thats why developer should call <code>save()</code> manualy after all operations/modifications are done.
+
+</div>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP3RM_17RM_MutableDALType12createEntityFT_wx12InternalType"></a>
+                    <a name="//apple_ref/swift/Method/createEntity()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP3RM_17RM_MutableDALType12createEntityFT_wx12InternalType">createEntity()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Create new entity instance with the <code>InternalType</code> type.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">createEntity</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">InternalType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Newly created entity instance.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP3RM_17RM_MutableDALType12deleteEntityFwx12InternalTypeT_"></a>
+                    <a name="//apple_ref/swift/Method/deleteEntity(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP3RM_17RM_MutableDALType12deleteEntityFwx12InternalTypeT_">deleteEntity(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Delete entity instance.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">deleteEntity</span><span class="p">(</span><span class="n">_</span> <span class="nv">entity</span><span class="p">:</span> <span class="kt">InternalType</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP3RM_17RM_MutableDALType9deleteAllFT_T_"></a>
+                    <a name="//apple_ref/swift/Method/deleteAll()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP3RM_17RM_MutableDALType9deleteAllFT_T_">deleteAll()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Delete all instances of the <code>InternalType</code> type.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">deleteAll</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP3RM_17RM_MutableDALType4saveFT_T_"></a>
+                    <a name="//apple_ref/swift/Method/save()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP3RM_17RM_MutableDALType4saveFT_T_">save()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Save changes after modifications of the data model, entities, etc.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">save</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="http://www.resident.name" target="_blank" rel="external">Oleh Kulykov</a>. All rights reserved. (Last updated: 2017-03-29)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.5</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
